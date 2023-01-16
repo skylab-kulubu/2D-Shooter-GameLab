@@ -1,40 +1,61 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class Movement : MonoBehaviour
 {
-    public float speed = 5f;
-    private Vector2 move;
-    private Rigidbody2D rb;
-    [SerializeField] private InputAction moveAction;
-    private Animator animator;
+    [SerializeField]
+    private float _speed;
 
-    private void OnEnable()
-    {
-        moveAction.Enable();
-    }
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField]
+    private float _rotationSpeed;
 
-    private void OnDisable()
-    {
-        moveAction.Disable();
-    }
+    [SerializeField] private Rigidbody2D _rigidbody;
+    private Vector2 _movementInput;
+    private Vector2 _smoothedMovementInput;
+    private Vector2 _movementInputSmoothVelocity;
+
+    private bool isFacingRight = true;
+
+
+    [SerializeField] Camera cam;
+
+    [SerializeField] private Animator animator;
 
     private void Update()
     {
-        move = moveAction.ReadValue<Vector2>();
-        animator.SetFloat("Speed", rb.velocity.magnitude);
+        animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(move.x * speed, move.y * speed);
+        SetPlayerVelocity();
+    }
+
+    private void SetPlayerVelocity()
+    {
+        _smoothedMovementInput = Vector2.SmoothDamp(
+                    _smoothedMovementInput,
+                    _movementInput,
+                    ref _movementInputSmoothVelocity,
+                    0.1f);
+
+        _rigidbody.velocity = _smoothedMovementInput * _speed;
+    }
+
+
+
+    private void OnMove(InputValue inputValue)
+    {
+        _movementInput = inputValue.Get<Vector2>();
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale *= -1f;
+        transform.localScale = localScale;
     }
 }
+
+

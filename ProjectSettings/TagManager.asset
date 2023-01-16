@@ -47,6 +47,9 @@ TagManager:
   - name: Bullet
     uniqueID: 3547992907
     locked: 0
+  - name: Raycast
+    uniqueID: 1487708989
+    locked: 0
   - name: Enemy
     uniqueID: 4165058855
     locked: 0
