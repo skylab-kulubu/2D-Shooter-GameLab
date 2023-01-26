@@ -2,20 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System;
 
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private float shootingDistance = 100f;
     [SerializeField] private LineRenderer lineRenderer;
-    [SerializeField] private Transform firePoint;
+    [SerializeField] private Transform firePoint = null;
     [SerializeField] private float lnOnFor = 0.1f;
 
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     private float shakeTimer = 0;
     [SerializeField] private float shakeIntensity = 3;
 
+    [SerializeField] Transform weaponMainTransform;
+    [SerializeField] Weapon weapon = null;
 
+    
 
+    private void Start()
+    {
+        SpawnWeapon();
+        firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
+    }
+
+    private void SpawnWeapon()
+    {
+        if (weapon == null) return;
+        weapon.Spawn(weaponMainTransform);
+    }
+
+    private void Update()
+    {
+        if (shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
+            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+            }
+        }
+    }
     private void OnFire() 
     {
         StartCoroutine(Shoot());
@@ -59,18 +89,5 @@ public class Shooting : MonoBehaviour
         shakeTimer = timer;
     }
 
-    private void Update()
-    {
-        if(shakeTimer > 0)
-        {
-            shakeTimer -= Time.deltaTime;
-            if(shakeTimer <= 0f)
-            {
-                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
-            }
-        }
-    }
+    
 }
