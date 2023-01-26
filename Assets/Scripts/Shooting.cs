@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Shooting : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class Shooting : MonoBehaviour
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float lnOnFor = 0.1f;
+
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    private float shakeTimer = 0;
+    [SerializeField] private float shakeIntensity = 3;
 
 
 
@@ -18,7 +23,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-
+        ShakeCamera(shakeIntensity, .1f);
         Vector2 shootingDirection = transform.right;
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingDirection, shootingDistance);
         lineRenderer.SetPosition(0, firePoint.position);
@@ -43,5 +48,29 @@ public class Shooting : MonoBehaviour
         lineRenderer.startWidth = 0f;
         lineRenderer.endWidth = 0f;
 
-    } 
+    }
+    
+    public void ShakeCamera(float intensity, float timer)
+    {
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = 
+            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+        shakeTimer = timer;
+    }
+
+    private void Update()
+    {
+        if(shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            if(shakeTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
+            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+            }
+        }
+    }
 }
