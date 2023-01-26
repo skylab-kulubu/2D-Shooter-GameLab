@@ -6,14 +6,12 @@ using System;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] private float shootingDistance = 100f;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private Transform firePoint = null;
     [SerializeField] private float lnOnFor = 0.1f;
 
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     private float shakeTimer = 0;
-    [SerializeField] private float shakeIntensity = 3;
 
     [SerializeField] Transform weaponMainTransform;
     [SerializeField] Weapon weapon = null;
@@ -53,9 +51,9 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        ShakeCamera(shakeIntensity, .1f);
+        ShakeCamera(weapon.GetShakeIntensity(), .1f);
         Vector2 shootingDirection = transform.right;
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingDirection, shootingDistance);
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingDirection, weapon.GetWeaponRange());
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
@@ -72,7 +70,7 @@ public class Shooting : MonoBehaviour
             Debug.Log("Missed");
         }
         
-        lineRenderer.SetPosition(1, firePoint.transform.position + firePoint.transform.right * shootingDistance);
+        lineRenderer.SetPosition(1, firePoint.transform.position + firePoint.transform.right * weapon.GetWeaponRange());
 
         yield return new WaitForSeconds(lnOnFor);
         lineRenderer.startWidth = 0f;
@@ -88,6 +86,8 @@ public class Shooting : MonoBehaviour
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
         shakeTimer = timer;
     }
+
+    
 
     
 }
