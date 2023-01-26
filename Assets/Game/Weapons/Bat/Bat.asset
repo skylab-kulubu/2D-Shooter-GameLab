@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75df5e6d74a98a540bbb135b28bf93dc, type: 3}
+  m_Name: Bat
+  m_EditorClassIdentifier: 
+  equippedPrefab: {fileID: 4164475790106585254, guid: fa1edad0f699e914aa4dc8dce50687e9, type: 3}
+  weaponRange: 2
+  shakeIntensity: 2
+  weaponDamage: 5
+  isInFighting: 1
+  bulletFrequency: 1
+  firePoint: {fileID: 7410619583708369031, guid: 18a10c771724fa241972d8c4d8358d66, type: 3}

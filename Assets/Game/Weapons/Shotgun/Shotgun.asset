@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75df5e6d74a98a540bbb135b28bf93dc, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 4164475790106585254, guid: e3bf998f294fb5642b3a963187eb9193, type: 3}
+  equippedPrefab: {fileID: 4164475790106585254, guid: e3bf998f294fb5642b3a963187eb9193, type: 3}
   weaponRange: 5
   shakeIntensity: 5
   weaponDamage: 10
+  isInFighting: 0
+  bulletFrequency: 1.5
+  firePoint: {fileID: 1103931609525126836, guid: 67752a311468b7043a5d76deb98e43c1, type: 3}

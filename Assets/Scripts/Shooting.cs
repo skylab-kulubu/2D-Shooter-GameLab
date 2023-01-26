@@ -7,27 +7,31 @@ using System;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private LineRenderer lineRenderer;
-    [SerializeField] private Transform firePoint = null;
     [SerializeField] private float lnOnFor = 0.1f;
 
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     private float shakeTimer = 0;
 
     [SerializeField] Transform weaponMainTransform;
-    [SerializeField] Weapon weapon = null;
+    [SerializeField] Weapon defaultWeapon = null;
+    Weapon currentWeapon = null;
 
-    
+
+
+
 
     private void Start()
     {
-        SpawnWeapon();
-        firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
+        EquipWeapon(defaultWeapon);
+        //firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
     }
 
-    private void SpawnWeapon()
+    private void EquipWeapon(Weapon weapon)
     {
-        if (weapon == null) return;
+        currentWeapon = weapon;
         weapon.Spawn(weaponMainTransform);
+        
+
     }
 
     private void Update()
@@ -51,12 +55,10 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        ShakeCamera(weapon.GetShakeIntensity(), .1f);
+        ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
         Vector2 shootingDirection = transform.right;
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingDirection, weapon.GetWeaponRange());
-        lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.startWidth = 0.1f;
-        lineRenderer.endWidth = 0.1f;
+        RaycastHit2D hit = Physics2D.Raycast(currentWeapon.GetFirePoint(), shootingDirection, currentWeapon.GetWeaponRange());
+        
 
 
         if (hit.collider != null)
@@ -69,8 +71,15 @@ public class Shooting : MonoBehaviour
             // Did not hit anything
             Debug.Log("Missed");
         }
-        
-        lineRenderer.SetPosition(1, firePoint.transform.position + firePoint.transform.right * weapon.GetWeaponRange());
+
+        if (currentWeapon.GetIsInFighting()) yield break;
+
+        lineRenderer.SetPosition(0, currentWeapon.GetFirePoint());
+        print(currentWeapon.GetFirePoint());
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
+
+        lineRenderer.SetPosition(1, ((currentWeapon.GetFirePoint() + currentWeapon.GetFirePoint()) + Vector3.right) * currentWeapon.GetWeaponRange());
 
         yield return new WaitForSeconds(lnOnFor);
         lineRenderer.startWidth = 0f;
