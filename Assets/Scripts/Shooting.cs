@@ -53,12 +53,14 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(Shoot());
+        }
+
+
     }
-    private void OnFire() 
-    {
-        StartCoroutine(Shoot());
-    }
+
 
     private IEnumerator Shoot()
     {

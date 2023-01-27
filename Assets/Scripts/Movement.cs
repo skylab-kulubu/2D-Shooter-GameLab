@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        _movementInput = new Vector3(horizontal, vertical) * _speed * Time.deltaTime;
+        _movementInput = new Vector3(horizontal, vertical);
     }
 
     
