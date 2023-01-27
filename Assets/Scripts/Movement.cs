@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -16,15 +15,22 @@ public class Movement : MonoBehaviour
 
     private bool isFacingRight = true;
 
-
     [SerializeField] Camera cam;
 
     [SerializeField] private Animator animator;
+    float dalga;
 
     private void Update()
     {
         animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        _movementInput = new Vector3(horizontal, vertical) * _speed * Time.deltaTime;
     }
+
+    
 
     private void FixedUpdate()
     {
@@ -44,10 +50,11 @@ public class Movement : MonoBehaviour
 
 
 
-    private void OnMove(InputValue inputValue)
-    {
-        _movementInput = inputValue.Get<Vector2>();
-    }
+    
+
+
+
+
 
     private void Flip()
     {

@@ -16,6 +16,11 @@ public class Shooting : MonoBehaviour
     [SerializeField] Weapon defaultWeapon = null;
     Weapon currentWeapon = null;
 
+    [SerializeField] private Transform firePoint = null;
+
+    private bool isLookingRight = true;
+
+
 
 
 
@@ -47,6 +52,8 @@ public class Shooting : MonoBehaviour
                 cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
             }
         }
+
+        
     }
     private void OnFire() 
     {
@@ -57,7 +64,7 @@ public class Shooting : MonoBehaviour
     {
         ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
         Vector2 shootingDirection = transform.right;
-        RaycastHit2D hit = Physics2D.Raycast(currentWeapon.GetFirePoint(), shootingDirection, currentWeapon.GetWeaponRange());
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingDirection, currentWeapon.GetWeaponRange());
         
 
 
@@ -74,12 +81,11 @@ public class Shooting : MonoBehaviour
 
         if (currentWeapon.GetIsInFighting()) yield break;
 
-        lineRenderer.SetPosition(0, currentWeapon.GetFirePoint());
-        print(currentWeapon.GetFirePoint());
+        lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
 
-        lineRenderer.SetPosition(1, ((currentWeapon.GetFirePoint() + currentWeapon.GetFirePoint()) + Vector3.right) * currentWeapon.GetWeaponRange());
+        lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * currentWeapon.GetWeaponRange()));
 
         yield return new WaitForSeconds(lnOnFor);
         lineRenderer.startWidth = 0f;

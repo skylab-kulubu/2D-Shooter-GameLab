@@ -9,9 +9,8 @@ public class Weapon : ScriptableObject
     [SerializeField] private float weaponDamage = 5;
     [SerializeField] private bool isInFighting = false;
     [SerializeField] private float bulletFrequency = 1;
-    [SerializeField] private Transform firePoint = null;
 
-
+    //[SerializeField] private Transform firePointWeapon = null;
 
 
     public void Spawn(Transform weaponMainTransform)
@@ -52,8 +51,8 @@ public class Weapon : ScriptableObject
         return equippedPrefab;
     }
 
-    public Vector3 GetFirePoint()
-    {
-        return firePoint.TransformPoint(firePoint.position);
-    }
+    //public Transform GetFirePoint()
+    //{
+    //    return firePointWeapon;
+    //}
 }

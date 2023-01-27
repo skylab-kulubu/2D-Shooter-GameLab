@@ -18,4 +18,3 @@ MonoBehaviour:
   weaponDamage: 5
   isInFighting: 0
   bulletFrequency: 1
-  firePoint: {fileID: 1165086930749051987, guid: d346d3d214e3f9f4ab0256e237753c4f, type: 3}
