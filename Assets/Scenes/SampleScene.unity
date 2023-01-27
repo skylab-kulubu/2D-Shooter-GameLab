@@ -975,7 +975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 49851559537050536, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
       propertyPath: _speed
-      value: 1000
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3144170400534003328, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
       propertyPath: m_RootOrder

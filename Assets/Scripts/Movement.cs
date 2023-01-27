@@ -28,6 +28,15 @@ public class Movement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         _movementInput = new Vector3(horizontal, vertical);
+
+        if(Input.GetAxisRaw("Horizontal") == 1 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (Input.GetAxisRaw("Horizontal") == -1 && isFacingRight)
+        {
+            Flip();
+        }
     }
 
     
@@ -50,17 +59,12 @@ public class Movement : MonoBehaviour
 
 
 
-    
-
-
-
-
 
     private void Flip()
     {
         isFacingRight = !isFacingRight;
         Vector3 localScale = transform.localScale;
-        localScale *= -1f;
+        localScale.x *= -1f;
         transform.localScale = localScale;
     }
 }
