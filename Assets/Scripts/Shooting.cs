@@ -20,7 +20,9 @@ public class Shooting : MonoBehaviour
 
     private bool isLookingRight = true;
 
+    private Vector2 shootingVector;
 
+    private float shootingDirection;
 
 
 
@@ -41,6 +43,8 @@ public class Shooting : MonoBehaviour
 
     private void Update()
     {
+        SetShootingDirection();
+
         if (shakeTimer > 0)
         {
             shakeTimer -= Time.deltaTime;
@@ -61,12 +65,22 @@ public class Shooting : MonoBehaviour
 
     }
 
-
+    private void SetShootingDirection()
+    {
+        if (Mathf.Sign(transform.localScale.x) == 1)
+        {
+            shootingDirection = currentWeapon.GetWeaponRange();
+        }
+        else if (Mathf.Sign(transform.localScale.x) == -1)
+        {
+            shootingDirection = -currentWeapon.GetWeaponRange();
+        }
+    }
     private IEnumerator Shoot()
     {
         ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
-        Vector2 shootingDirection = transform.right;
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingDirection, currentWeapon.GetWeaponRange());
+        shootingVector = transform.right;
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingVector, shootingDirection);
         
 
 
@@ -87,7 +101,7 @@ public class Shooting : MonoBehaviour
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
 
-        lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * currentWeapon.GetWeaponRange()));
+        lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
 
         yield return new WaitForSeconds(lnOnFor);
         lineRenderer.startWidth = 0f;

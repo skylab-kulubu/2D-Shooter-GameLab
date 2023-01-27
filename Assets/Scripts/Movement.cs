@@ -24,10 +24,7 @@ public class Movement : MonoBehaviour
     {
         animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
 
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        _movementInput = new Vector3(horizontal, vertical);
+        _movementInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         if(Input.GetAxisRaw("Horizontal") == 1 && !isFacingRight)
         {
