@@ -171,7 +171,7 @@ MonoBehaviour:
   lnOnFor: 0.05
   virtualCamera: {fileID: 0}
   weaponMainTransform: {fileID: 3144170400534003328}
-  defaultWeapon: {fileID: 0}
+  defaultWeapon: {fileID: 11400000, guid: 167537a74d682e84ab4a833a7265f13b, type: 2}
   firePoint: {fileID: 3394453284619710256}
 --- !u!95 &5970035454877373060
 Animator:
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a74268919af89418bf539fe6c0542b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10000
+  _speed: 15
   _rotationSpeed: 5
   _rigidbody: {fileID: 5970035454877373066}
   cam: {fileID: 0}
