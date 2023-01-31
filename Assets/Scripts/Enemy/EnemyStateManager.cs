@@ -8,15 +8,14 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyAttackState AttackState = new EnemyAttackState();
     public EnemyDeathState DeathState = new EnemyDeathState();
     public EnemyTakeDamageState TakeDamageState = new EnemyTakeDamageState();
+    public EnemyStats enemyStats;
 
-    // Start is called before the first frame update
     void Start()
     {
         currenState = AttackState;
         currenState.EnterState(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
         currenState.UpdateState(this);
@@ -32,4 +31,11 @@ public class EnemyStateManager : MonoBehaviour
         currenState = state;
         state.EnterState(this);
     }
+
+    void FixedUpdate()
+    {
+        currenState.FixedUpdate(this);
+    }
+
+    
 }
