@@ -4,38 +4,51 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    EnemyBaseState currenState;
+    EnemyBaseState currentState;
     public EnemyAttackState AttackState = new EnemyAttackState();
     public EnemyDeathState DeathState = new EnemyDeathState();
     public EnemyTakeDamageState TakeDamageState = new EnemyTakeDamageState();
     public EnemyStats enemyStats;
+    public float currentHealthPoints;
+
+    public float damageTaken;
 
     void Start()
     {
-        currenState = AttackState;
-        currenState.EnterState(this);
+        currentHealthPoints = enemyStats.GetHealthPoints();
+        currentState = AttackState;
+        currentState.EnterState(this);
     }
 
     void Update()
     {
-        currenState.UpdateState(this);
+        currentState.UpdateState(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        currenState.OnCollisionEnter2D(this, collision);
+        currentState.OnCollisionEnter2D(this, collision);
     }
 
     public void SwitchState(EnemyBaseState state)
     {
-        currenState = state;
+        currentState = state;
         state.EnterState(this);
     }
 
     void FixedUpdate()
     {
-        currenState.FixedUpdate(this);
+        currentState.FixedUpdate(this);
     }
 
-    
+    public void GetAmountofDamage(float amountofDamage)
+    {
+        damageTaken = amountofDamage;
+    }
+
+    public void EnemyDie()
+    {
+    }
+
+
 }

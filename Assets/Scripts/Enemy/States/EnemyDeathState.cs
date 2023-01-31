@@ -6,6 +6,8 @@ public class EnemyDeathState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        Debug.Log("ya");
+        EnemyDie(enemy);
     }
 
     public override void FixedUpdate(EnemyStateManager enemy)
@@ -19,5 +21,12 @@ public class EnemyDeathState : EnemyBaseState
     {
     }
 
-    
+    public void EnemyDie(EnemyStateManager enemy)
+    {
+        enemy.SwitchState(enemy.DeathState);
+        Debug.Log("enemy died");
+        UnityEngine.Object.Destroy(enemy.gameObject);
+    }
+
+
 }

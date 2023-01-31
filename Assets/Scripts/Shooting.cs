@@ -86,8 +86,12 @@ public class Shooting : MonoBehaviour
 
         if (hit.collider != null)
         {
-            // Hit something
-            Debug.Log("Hit " + hit.collider.name);
+            if(hit.transform.tag == "Enemy")
+            {
+                hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
+                Debug.Log(hit.transform.GetComponent<EnemyStateManager>().currentHealthPoints);
+                hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+            }
         }
         else
         {
