@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float playerHealthPoints;
+
+    public void PlayerGetDamage(float damage)
     {
-        
+        playerHealthPoints = Mathf.Max(playerHealthPoints - damage, 0);
+        if (playerHealthPoints == 0)
+        {
+            PlayerDie();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public float GetPlayerHealthPoints()
     {
-        
+        return playerHealthPoints;
+    }
+
+    public void PlayerDie()
+    {
+        print("player dead");
     }
 }

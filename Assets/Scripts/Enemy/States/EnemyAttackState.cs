@@ -11,11 +11,12 @@ public class EnemyAttackState : EnemyBaseState
 
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.zero;
+
     }
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        
+        Attack(enemy);
     }
     public override void FixedUpdate(EnemyStateManager enemy)
     {
@@ -39,8 +40,9 @@ public class EnemyAttackState : EnemyBaseState
         }
     }
 
-    public IEnumerator Attack()
+    public void Attack(EnemyStateManager enemy)
     {
-
+        float damage = enemy.enemyStats.GetDamage();
+        enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
     }
 }

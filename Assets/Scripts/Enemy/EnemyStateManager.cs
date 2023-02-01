@@ -16,6 +16,8 @@ public class EnemyStateManager : MonoBehaviour
 
     public float damageTaken;
 
+    public Collision2D currentCollision;
+
     void Start()
     {
         currentHealthPoints = enemyStats.GetHealthPoints();
@@ -36,6 +38,7 @@ public class EnemyStateManager : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         currentState.OnCollisionStay2D(this, collision);
+        currentCollision = collision;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
