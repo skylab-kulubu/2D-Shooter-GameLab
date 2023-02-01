@@ -6,7 +6,13 @@ public class EnemyTakeDamageState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        TakeDamage(enemy, enemy.damageTaken);       
+        Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
+        animator.Play("Take Hit");
+
+        Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
+        rb.velocity = Vector2.zero;
+
+        enemy.StartCoroutine(TakeDamage(enemy, enemy.damageTaken));
     }
 
     public override void FixedUpdate(EnemyStateManager enemy)
@@ -23,12 +29,18 @@ public class EnemyTakeDamageState : EnemyBaseState
 
     }
 
-    public void TakeDamage(EnemyStateManager enemy, float amountDamage)
+    public IEnumerator TakeDamage(EnemyStateManager enemy, float amountDamage)
     {
         enemy.currentHealthPoints = Mathf.Max(enemy.currentHealthPoints - amountDamage, 0);
         if (enemy.currentHealthPoints == 0)
         {
-            Object.Destroy(enemy.gameObject);
+            enemy.SwitchState(enemy.DeathState);
         }
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+            enemy.SwitchState(enemy.MoveState);
+        }
+        
     }
 }

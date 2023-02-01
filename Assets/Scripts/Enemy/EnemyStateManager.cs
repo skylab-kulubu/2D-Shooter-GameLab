@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    EnemyBaseState currentState;
+    public EnemyBaseState currentState;
+
     public EnemyAttackState AttackState = new EnemyAttackState();
     public EnemyDeathState DeathState = new EnemyDeathState();
     public EnemyTakeDamageState TakeDamageState = new EnemyTakeDamageState();
+    public EnemyMoveState MoveState = new EnemyMoveState();
+
     public EnemyStats enemyStats;
     public float currentHealthPoints;
 
@@ -16,12 +19,13 @@ public class EnemyStateManager : MonoBehaviour
     void Start()
     {
         currentHealthPoints = enemyStats.GetHealthPoints();
-        currentState = AttackState;
+        currentState = MoveState;
         currentState.EnterState(this);
     }
 
     void Update()
     {
+        print(currentState);
         currentState.UpdateState(this);
     }
 
@@ -46,9 +50,6 @@ public class EnemyStateManager : MonoBehaviour
         damageTaken = amountofDamage;
     }
 
-    public void EnemyDie()
-    {
-    }
 
 
 }
