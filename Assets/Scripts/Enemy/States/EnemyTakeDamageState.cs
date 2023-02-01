@@ -43,4 +43,12 @@ public class EnemyTakeDamageState : EnemyBaseState
         }
         
     }
+
+    public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
+    {
+    }
+
+    public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
+    {
+    }
 }

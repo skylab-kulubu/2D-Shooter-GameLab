@@ -22,6 +22,18 @@ public class EnemyMoveState : EnemyBaseState
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
     {
+        if(collision.gameObject.tag == "Player")
+        {
+            enemy.SwitchState(enemy.AttackState);
+        }
+    }
+
+    public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
+    {
+    }
+
+    public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
+    {
 
     }
 

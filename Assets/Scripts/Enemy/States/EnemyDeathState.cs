@@ -33,5 +33,13 @@ public class EnemyDeathState : EnemyBaseState
         UnityEngine.Object.Destroy(enemy.gameObject);
     }
 
+    public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
+    {
 
+    }
+
+    public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
+    {
+
+    }
 }
