@@ -14,6 +14,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyStats enemyStats;
     public float currentHealthPoints;
 
+
     public float damageTaken;
 
     public Collision2D currentCollision;
