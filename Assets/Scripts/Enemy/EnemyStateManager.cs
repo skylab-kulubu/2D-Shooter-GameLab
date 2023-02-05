@@ -40,6 +40,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         currentState.OnCollisionStay2D(this, collision);
         currentCollision = collision;
+        print(currentCollision.transform.name);
     }
 
     private void OnCollisionExit2D(Collision2D collision)

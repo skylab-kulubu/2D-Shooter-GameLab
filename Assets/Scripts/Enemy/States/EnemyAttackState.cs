@@ -12,13 +12,12 @@ public class EnemyAttackState : EnemyBaseState
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>(); 
         rb.velocity = Vector2.zero;                         
 
-        Attack(enemy);
 
     }
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        
+        Attack(enemy);
     }
     public override void FixedUpdate(EnemyStateManager enemy)
     {

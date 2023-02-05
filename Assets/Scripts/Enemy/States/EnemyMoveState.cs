@@ -6,10 +6,6 @@ public class EnemyMoveState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        if(enemy.currentCollision.transform.tag == "Player")
-        {
-            enemy.SwitchState(enemy.AttackState);
-        }
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Run");
     }
