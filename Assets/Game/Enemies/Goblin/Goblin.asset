@@ -15,3 +15,4 @@ MonoBehaviour:
   healthPoints: 50
   damage: 10
   speed: 10
+  attackSpeed: 0.5

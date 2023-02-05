@@ -17,7 +17,12 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        Attack(enemy);
+        if(enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
+        {
+            Attack(enemy);
+            enemy.timeSinceLastAttack = 0;
+        }
+        
     }
     public override void FixedUpdate(EnemyStateManager enemy)
     {
@@ -46,6 +51,5 @@ public class EnemyAttackState : EnemyBaseState
     {
         float damage = enemy.enemyStats.GetDamage();
         enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
-        enemy.SwitchState(enemy.AttackState);
     }
 }

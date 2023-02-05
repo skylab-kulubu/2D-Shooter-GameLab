@@ -14,6 +14,9 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyStats enemyStats;
     public float currentHealthPoints;
 
+    public float enemyAttackSpeed;
+    public float timeSinceLastAttack = 0;
+
 
     public float damageTaken;
 
@@ -22,12 +25,14 @@ public class EnemyStateManager : MonoBehaviour
     void Start()
     {
         currentHealthPoints = enemyStats.GetHealthPoints();
+        enemyAttackSpeed = enemyStats.GetAttackSpeed();
         currentState = MoveState;
         currentState.EnterState(this);
     }
 
     void Update()
     {
+        timeSinceLastAttack += Time.deltaTime;
         print(currentState);
         currentState.UpdateState(this);
     }

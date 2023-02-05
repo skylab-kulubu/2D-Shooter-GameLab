@@ -7,6 +7,7 @@ public class EnemyStats : ScriptableObject
     [SerializeField] private float healthPoints;
     [SerializeField] private float damage;
     [SerializeField] private float speed;
+    [SerializeField] private float attackSpeed;
 
     public float GetSpeed()
     {
@@ -21,5 +22,10 @@ public class EnemyStats : ScriptableObject
     public float GetDamage()
     {
         return damage;
+    }
+
+    public float GetAttackSpeed()
+    {
+        return attackSpeed;
     }
 }
