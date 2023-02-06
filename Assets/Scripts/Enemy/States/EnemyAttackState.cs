@@ -6,8 +6,7 @@ public class EnemyAttackState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
-        animator.Play("Attack");                                                  
+                                                          
 
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>(); 
         rb.velocity = Vector2.zero;                         
@@ -49,6 +48,9 @@ public class EnemyAttackState : EnemyBaseState
 
     public void Attack(EnemyStateManager enemy)
     {
+        Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
+        animator.Play("Attack");
+        
         float damage = enemy.enemyStats.GetDamage();
         enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
     }
