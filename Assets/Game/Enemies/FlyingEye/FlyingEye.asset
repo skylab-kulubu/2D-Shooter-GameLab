@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5f0a60d2f91344694b48c2e57839fb, type: 3}
   m_Name: FlyingEye
   m_EditorClassIdentifier: 
-  healthPoints: 50
-  damage: 10
-  speed: 75
+  healthPoints: 20
+  damage: 5
+  speed: 25
+  attackSpeed: 0.5
