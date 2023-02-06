@@ -17,6 +17,7 @@ public class EnemyStateManager : MonoBehaviour
     public float enemyAttackSpeed;
     public float timeSinceLastAttack = 0;
 
+    public bool isDead = false;
 
     public float damageTaken;
 

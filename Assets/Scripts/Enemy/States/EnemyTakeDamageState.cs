@@ -6,6 +6,7 @@ public class EnemyTakeDamageState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        enemy.StopCoroutine(TakeDamage(enemy, enemy.damageTaken));
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Take Hit");
 
@@ -32,14 +33,21 @@ public class EnemyTakeDamageState : EnemyBaseState
     public IEnumerator TakeDamage(EnemyStateManager enemy, float amountDamage)
     {
         enemy.currentHealthPoints = Mathf.Max(enemy.currentHealthPoints - amountDamage, 0);
-        if (enemy.currentHealthPoints == 0)
+        if (enemy.currentHealthPoints <= 0)
         {
             enemy.SwitchState(enemy.DeathState);
         }
         else
         {
             yield return new WaitForSeconds(0.5f);
-            enemy.SwitchState(enemy.MoveState);
+            if (enemy.isDead)
+            {
+                enemy.SwitchState(enemy.DeathState);
+            }
+            else
+            {
+                enemy.SwitchState(enemy.MoveState);
+            }
         }
         
     }
