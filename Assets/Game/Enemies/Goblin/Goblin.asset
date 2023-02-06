@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Goblin
   m_EditorClassIdentifier: 
   healthPoints: 50
-  damage: 10
+  damage: 20
   speed: 10
-  attackSpeed: 5
+  attackSpeed: 0.5
