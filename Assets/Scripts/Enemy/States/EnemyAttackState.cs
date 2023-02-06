@@ -52,6 +52,13 @@ public class EnemyAttackState : EnemyBaseState
         animator.Play("Attack");
         
         float damage = enemy.enemyStats.GetDamage();
-        enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
+        if(enemy.currentCollision.transform.tag == "Player")
+        {
+            enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
+        }
+        else if(enemy.currentCollision.transform.tag == "Fence")
+        {
+            enemy.currentCollision.transform.GetComponent<Fence>().FenceGetDamage(damage);
+        }
     }
 }
