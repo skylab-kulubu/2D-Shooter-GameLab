@@ -16,7 +16,7 @@ public class EnemyAttackState : EnemyBaseState
         TurnToPlayer(enemy);
         if (enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
         {
-            Attack(enemy);
+            Attack(enemy, enemy.target);
             enemy.timeSinceLastAttack = 0;
         }
         
@@ -28,7 +28,10 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
     {
-        
+        if(collision.gameObject.tag == "Player")
+        {
+
+        }
     }
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
@@ -46,33 +49,29 @@ public class EnemyAttackState : EnemyBaseState
     private void TurnToPlayer(EnemyStateManager enemy)
     {
         if (enemy.currentCollision == null) return;
-        Debug.Log("peki bura???");
         if (enemy.transform.position.x > enemy.currentCollision.transform.position.x)
         {
-            Debug.Log("burdamýsýn lan ibneeee");
             enemy.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (enemy.transform.position.x < enemy.currentCollision.transform.position.x)
         {
-            Debug.Log("dönsene oç");
             enemy.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
-    public void Attack(EnemyStateManager enemy)
+    public void Attack(EnemyStateManager enemy, GameObject target)
     {
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Attack");
-        
+
         float damage = enemy.enemyStats.GetDamage();
 
-        if (enemy.currentCollision == null) return;
-        if(enemy.currentCollision.transform.tag == "Player")
+        if (target.gameObject.tag == "Player")
         {
-            enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
+            target.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
         }
-        else if(enemy.currentCollision.transform.tag == "Fence")
+        else if (target.gameObject.tag == "Fence")
         {
-            enemy.currentCollision.transform.GetComponent<Fence>().FenceGetDamage(damage);
+            target.GetComponent<Fence>().FenceGetDamage(damage);
         }
     }
 }

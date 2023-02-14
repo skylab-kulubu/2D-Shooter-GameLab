@@ -23,6 +23,8 @@ public class EnemyStateManager : MonoBehaviour
 
     public Collision2D currentCollision;
 
+    public GameObject target;
+
     void Start()
     {
         currentHealthPoints = enemyStats.GetHealthPoints();
