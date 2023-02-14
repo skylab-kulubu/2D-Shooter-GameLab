@@ -64,6 +64,13 @@ public class PlayerMovement : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Fence")
+        {
+            Debug.Log(collision.gameObject.name);
+        }
+    }
 }
 
 

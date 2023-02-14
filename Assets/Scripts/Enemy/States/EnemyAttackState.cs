@@ -46,15 +46,12 @@ public class EnemyAttackState : EnemyBaseState
     private void TurnToPlayer(EnemyStateManager enemy)
     {
         if (enemy.currentCollision == null) return;
-        Debug.Log("peki bura???");
         if (enemy.transform.position.x > enemy.currentCollision.transform.position.x)
         {
-            Debug.Log("burdamýsýn lan ibneeee");
             enemy.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (enemy.transform.position.x < enemy.currentCollision.transform.position.x)
         {
-            Debug.Log("dönsene oç");
             enemy.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
@@ -72,6 +69,10 @@ public class EnemyAttackState : EnemyBaseState
         }
         else if(enemy.currentCollision.transform.tag == "Fence")
         {
+            if(enemy.currentCollision.transform.GetComponent<Fence>() == null)
+            {
+                enemy.SwitchState(enemy.MoveState);
+            }
             enemy.currentCollision.transform.GetComponent<Fence>().FenceGetDamage(damage);
         }
     }
