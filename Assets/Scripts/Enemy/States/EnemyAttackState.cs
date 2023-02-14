@@ -28,10 +28,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
-        {
 
-        }
     }
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
