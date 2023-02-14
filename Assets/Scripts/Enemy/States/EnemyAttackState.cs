@@ -38,7 +38,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
         {
             enemy.SwitchState(enemy.MoveState);
         }
