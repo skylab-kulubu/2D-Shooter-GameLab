@@ -38,7 +38,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
+        if (collision.gameObject.tag == "Player")
         {
             enemy.SwitchState(enemy.MoveState);
         }
@@ -46,12 +46,15 @@ public class EnemyAttackState : EnemyBaseState
     private void TurnToPlayer(EnemyStateManager enemy)
     {
         if (enemy.currentCollision == null) return;
+        Debug.Log("peki bura???");
         if (enemy.transform.position.x > enemy.currentCollision.transform.position.x)
         {
+            Debug.Log("burdamýsýn lan ibneeee");
             enemy.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (enemy.transform.position.x < enemy.currentCollision.transform.position.x)
         {
+            Debug.Log("dönsene oç");
             enemy.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
@@ -62,12 +65,8 @@ public class EnemyAttackState : EnemyBaseState
         
         float damage = enemy.enemyStats.GetDamage();
 
-        if (enemy.currentCollision == null)
-        {
-            enemy.SwitchState(enemy.MoveState);
-        }
-       
-        else if(enemy.currentCollision.transform.tag == "Player")
+        if (enemy.currentCollision == null) return;
+        if(enemy.currentCollision.transform.tag == "Player")
         {
             enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
         }

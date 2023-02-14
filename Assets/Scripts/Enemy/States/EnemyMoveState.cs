@@ -23,8 +23,7 @@ public class EnemyMoveState : EnemyBaseState
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
     {
-        Debug.Log(enemy.currentCollision);
-        if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
+        if(collision.gameObject.tag == "Player")
         {
             enemy.SwitchState(enemy.AttackState);
         }
@@ -41,13 +40,6 @@ public class EnemyMoveState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        if(enemy.currentCollision != null)
-        {
-            if (enemy.currentCollision.gameObject.tag == "Player" || enemy.currentCollision.gameObject.tag == "Fence")
-            {
-                enemy.SwitchState(enemy.AttackState);
-            }
-        }
     }
 
 }
