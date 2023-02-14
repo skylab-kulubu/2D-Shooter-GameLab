@@ -34,7 +34,7 @@ public class EnemyStateManager : MonoBehaviour
     void Update()
     {
         timeSinceLastAttack += Time.deltaTime;
-        print(currentState);
+        Debug.Log("current state: " + currentState);
         currentState.UpdateState(this);
     }
 
@@ -46,7 +46,6 @@ public class EnemyStateManager : MonoBehaviour
     {
         currentCollision = collision;
         currentState.OnCollisionStay2D(this, collision);
-        print("currentCollision: " + currentCollision.transform.name);
     }
 
     private void OnCollisionExit2D(Collision2D collision)

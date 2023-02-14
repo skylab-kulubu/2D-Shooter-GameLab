@@ -26,7 +26,6 @@ public class EnemyMoveState : EnemyBaseState
         Debug.Log(enemy.currentCollision);
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
         {
-            Debug.Log("into attack stateeeeeeeeeeeeeeeeeeeeeeeee");
             enemy.SwitchState(enemy.AttackState);
         }
     }
@@ -42,7 +41,13 @@ public class EnemyMoveState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-
+        if(enemy.currentCollision != null)
+        {
+            if (enemy.currentCollision.gameObject.tag == "Player" || enemy.currentCollision.gameObject.tag == "Fence")
+            {
+                enemy.SwitchState(enemy.AttackState);
+            }
+        }
     }
 
 }

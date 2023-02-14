@@ -38,7 +38,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
         {
             enemy.SwitchState(enemy.MoveState);
         }
@@ -62,17 +62,17 @@ public class EnemyAttackState : EnemyBaseState
         
         float damage = enemy.enemyStats.GetDamage();
 
-        if (enemy.currentCollision == null) return;
-        if(enemy.currentCollision.transform.tag == "Player")
+        if (enemy.currentCollision == null)
+        {
+            enemy.SwitchState(enemy.MoveState);
+        }
+       
+        else if(enemy.currentCollision.transform.tag == "Player")
         {
             enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
         }
         else if(enemy.currentCollision.transform.tag == "Fence")
         {
-            if(enemy.currentCollision.transform.GetComponent<Fence>() == null)
-            {
-                enemy.SwitchState(enemy.MoveState);
-            }
             enemy.currentCollision.transform.GetComponent<Fence>().FenceGetDamage(damage);
         }
     }
