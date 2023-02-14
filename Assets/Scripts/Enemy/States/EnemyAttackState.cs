@@ -14,13 +14,21 @@ public class EnemyAttackState : EnemyBaseState
     public override void UpdateState(EnemyStateManager enemy)
     {
         TurnToPlayer(enemy);
+
+        StartAttackAction(enemy);
+        
+        
+    }
+
+    private void StartAttackAction(EnemyStateManager enemy)
+    {
         if (enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
         {
             Attack(enemy, enemy.target);
             enemy.timeSinceLastAttack = 0;
         }
-        
     }
+
     public override void FixedUpdate(EnemyStateManager enemy)
     {
         
@@ -28,7 +36,10 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
     {
-
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Attack(enemy, collision.gameObject);
+        }
     }
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)

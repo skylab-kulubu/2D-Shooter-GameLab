@@ -25,6 +25,8 @@ public class EnemyStateManager : MonoBehaviour
 
     public GameObject target;
 
+    public bool enemyAttacksPlayer = false;
+
     void Start()
     {
         currentHealthPoints = enemyStats.GetHealthPoints();
