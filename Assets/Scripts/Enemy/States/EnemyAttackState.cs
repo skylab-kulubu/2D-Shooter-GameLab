@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,14 @@ public class EnemyAttackState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-                                                          
-
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>(); 
-        rb.velocity = Vector2.zero;                         
-
-
+        rb.velocity = Vector2.zero;
     }
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        if(enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
+        TurnToPlayer(enemy);
+        if (enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
         {
             Attack(enemy);
             enemy.timeSinceLastAttack = 0;
@@ -45,13 +43,29 @@ public class EnemyAttackState : EnemyBaseState
             enemy.SwitchState(enemy.MoveState);
         }
     }
-
+    private void TurnToPlayer(EnemyStateManager enemy)
+    {
+        if (enemy.currentCollision == null) return;
+        Debug.Log("peki bura???");
+        if (enemy.transform.position.x > enemy.currentCollision.transform.position.x)
+        {
+            Debug.Log("burdamýsýn lan ibneeee");
+            enemy.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (enemy.transform.position.x < enemy.currentCollision.transform.position.x)
+        {
+            Debug.Log("dönsene oç");
+            enemy.transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
     public void Attack(EnemyStateManager enemy)
     {
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Attack");
         
         float damage = enemy.enemyStats.GetDamage();
+
+        if (enemy.currentCollision == null) return;
         if(enemy.currentCollision.transform.tag == "Player")
         {
             enemy.currentCollision.transform.GetComponent<PlayerHealth>().PlayerGetDamage(damage);

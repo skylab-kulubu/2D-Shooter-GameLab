@@ -6,6 +6,7 @@ public class EnemyMoveState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        enemy.transform.localScale = new Vector3(1, 1, 1);
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Run");
     }
