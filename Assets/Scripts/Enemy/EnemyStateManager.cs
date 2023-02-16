@@ -77,13 +77,7 @@ public class EnemyStateManager : MonoBehaviour
         damageTaken = amountofDamage;
     }
 
-    public void SetTarget(EnemyStateManager enemy, GameObject target)
-    {
-        if (!enemyAttacksPlayer)
-        {
-
-        }
-    }
+    
 
 
 

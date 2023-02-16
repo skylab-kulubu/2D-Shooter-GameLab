@@ -677,6 +677,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 526901382}
     m_Modifications:
+    - target: {fileID: -7355112609265999964, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: fenceHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 120292044195923729, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_RootOrder
       value: 8

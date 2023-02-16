@@ -45,10 +45,17 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
+        if (collision.gameObject.tag == "Player")
         {
             enemy.target = null;
             enemy.SwitchState(enemy.MoveState);
+        }
+        else if (collision.gameObject.tag == "Fence")
+        {
+            enemy.target = null;
+            enemy.SwitchState(enemy.MoveState);
+            enemy.StartCoroutine(EnemyAttacksVillage(enemy, enemy.enemyStats.GetDamage()));
+
         }
     }
     private void TurnToPlayer(EnemyStateManager enemy, GameObject target)
@@ -80,5 +87,19 @@ public class EnemyAttackState : EnemyBaseState
         {
             target.GetComponent<Fence>().FenceGetDamage(damage);
         }
+    }
+
+    private IEnumerator EnemyAttacksVillage(EnemyStateManager enemy, float damage)
+    {
+        
+        VillageHealth.villageHealthPoints = Mathf.Max(VillageHealth.villageHealthPoints - damage, 0);
+        Debug.Log(VillageHealth.villageHealthPoints);
+        if (VillageHealth.villageHealthPoints == 0)
+        {
+            
+            //GameOver();
+        }
+        yield return new WaitForSeconds(5f);
+        UnityEngine.Object.Destroy(enemy.gameObject);
     }
 }
