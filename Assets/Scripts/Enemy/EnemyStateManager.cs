@@ -39,6 +39,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         timeSinceLastAttack += Time.deltaTime;
         print(currentState);
+        Debug.Log("target " +target);
         currentState.UpdateState(this);
     }
 
@@ -74,6 +75,14 @@ public class EnemyStateManager : MonoBehaviour
     public void GetAmountofDamage(float amountofDamage)
     {
         damageTaken = amountofDamage;
+    }
+
+    public void SetTarget(EnemyStateManager enemy, GameObject target)
+    {
+        if (!enemyAttacksPlayer)
+        {
+
+        }
     }
 
 

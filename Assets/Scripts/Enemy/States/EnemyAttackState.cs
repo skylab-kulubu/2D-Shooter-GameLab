@@ -13,18 +13,17 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        TurnToPlayer(enemy);
 
-        StartAttackAction(enemy);
+        StartAttackAction(enemy, enemy.target);
         
         
     }
 
-    private void StartAttackAction(EnemyStateManager enemy)
+    private void StartAttackAction(EnemyStateManager enemy, GameObject target)
     {
         if (enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
         {
-            Attack(enemy, enemy.target);
+            Attack(enemy, target);
             enemy.timeSinceLastAttack = 0;
         }
     }
@@ -36,10 +35,7 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Attack(enemy, collision.gameObject);
-        }
+        
     }
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
@@ -51,23 +47,26 @@ public class EnemyAttackState : EnemyBaseState
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
         {
+            enemy.target = null;
             enemy.SwitchState(enemy.MoveState);
         }
     }
-    private void TurnToPlayer(EnemyStateManager enemy)
+    private void TurnToPlayer(EnemyStateManager enemy, GameObject target)
     {
         if (enemy.currentCollision == null) return;
-        if (enemy.transform.position.x > enemy.currentCollision.transform.position.x)
+        if (enemy.transform.position.x > target.transform.position.x)
         {
             enemy.transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (enemy.transform.position.x < enemy.currentCollision.transform.position.x)
+        else if (enemy.transform.position.x < target.transform.position.x)
         {
             enemy.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
     public void Attack(EnemyStateManager enemy, GameObject target)
     {
+        TurnToPlayer(enemy, target);
+
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Attack");
 

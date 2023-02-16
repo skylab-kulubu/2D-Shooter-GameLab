@@ -25,6 +25,15 @@ public class EnemyMoveState : EnemyBaseState
     {
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
         {
+            if (enemy.target != null) return;
+            if(collision.gameObject.tag == "Player")
+            {
+                enemy.enemyAttacksPlayer = true;
+            }
+            else if(collision.gameObject.tag == "Fence")
+            {
+                enemy.enemyAttacksPlayer = false;
+            }
             enemy.target = collision.gameObject;
             enemy.SwitchState(enemy.AttackState);
         }
