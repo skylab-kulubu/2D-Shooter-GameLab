@@ -91,15 +91,14 @@ public class EnemyAttackState : EnemyBaseState
 
     private IEnumerator EnemyAttacksVillage(EnemyStateManager enemy, float damage)
     {
-        
+        yield return new WaitForSeconds(5f);
         VillageHealth.villageHealthPoints = Mathf.Max(VillageHealth.villageHealthPoints - damage, 0);
         Debug.Log(VillageHealth.villageHealthPoints);
         if (VillageHealth.villageHealthPoints == 0)
         {
-            
+
             //GameOver();
         }
-        yield return new WaitForSeconds(5f);
         UnityEngine.Object.Destroy(enemy.gameObject);
     }
 }
