@@ -13,20 +13,21 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
+        Attack(enemy, enemy.target);
 
-        StartAttackAction(enemy, enemy.target);
-        
-        
+        //StartAttackAction(enemy, enemy.target);
+
+
     }
 
-    private void StartAttackAction(EnemyStateManager enemy, GameObject target)
-    {
-        if (enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
-        {
-            Attack(enemy, target);
-            enemy.timeSinceLastAttack = 0;
-        }
-    }
+    //private void StartAttackAction(EnemyStateManager enemy, GameObject target)
+    //{
+    //    if (enemy.enemyAttackSpeed <= enemy.timeSinceLastAttack)
+    //    {
+    //        Attack(enemy, target);
+    //        enemy.timeSinceLastAttack = 0;
+    //    }
+    //}
 
     public override void FixedUpdate(EnemyStateManager enemy)
     {
