@@ -53,9 +53,7 @@ public class EnemyAttackState : EnemyBaseState
         else if (collision.gameObject.tag == "Fence")
         {
             enemy.target = null;
-            enemy.SwitchState(enemy.MoveState);
-            enemy.StartCoroutine(EnemyAttacksVillage(enemy, enemy.enemyStats.GetDamage()));
-
+            enemy.SwitchState(enemy.RunToVillageState);
         }
     }
     private void TurnToPlayer(EnemyStateManager enemy, GameObject target)
@@ -76,6 +74,7 @@ public class EnemyAttackState : EnemyBaseState
 
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Attack");
+        
 
         float damage = enemy.enemyStats.GetDamage();
 
@@ -89,16 +88,9 @@ public class EnemyAttackState : EnemyBaseState
         }
     }
 
-    private IEnumerator EnemyAttacksVillage(EnemyStateManager enemy, float damage)
-    {
-        yield return new WaitForSeconds(5f);
-        VillageHealth.villageHealthPoints = Mathf.Max(VillageHealth.villageHealthPoints - damage, 0);
-        Debug.Log(VillageHealth.villageHealthPoints);
-        if (VillageHealth.villageHealthPoints == 0)
-        {
+    
 
-            //GameOver();
-        }
-        UnityEngine.Object.Destroy(enemy.gameObject);
-    }
+
+
+
 }

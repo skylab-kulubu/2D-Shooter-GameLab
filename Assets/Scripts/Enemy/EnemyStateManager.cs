@@ -10,6 +10,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyDeathState DeathState = new EnemyDeathState();
     public EnemyTakeDamageState TakeDamageState = new EnemyTakeDamageState();
     public EnemyMoveState MoveState = new EnemyMoveState();
+    public EnemyRunsToVillageState RunToVillageState = new EnemyRunsToVillageState();
 
     public EnemyStats enemyStats;
     public float currentHealthPoints;
