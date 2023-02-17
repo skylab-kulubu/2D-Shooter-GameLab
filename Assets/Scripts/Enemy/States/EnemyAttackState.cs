@@ -74,19 +74,9 @@ public class EnemyAttackState : EnemyBaseState
 
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Attack");
-        
-
-        float damage = enemy.enemyStats.GetDamage();
-
-        if (target.gameObject.tag == "Player")
-        {
-            target.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
-        }
-        else if (target.gameObject.tag == "Fence")
-        {
-            target.GetComponent<Fence>().FenceGetDamage(damage);
-        }
     }
+
+    
 
     
 

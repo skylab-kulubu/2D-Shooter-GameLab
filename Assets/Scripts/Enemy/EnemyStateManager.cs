@@ -78,7 +78,19 @@ public class EnemyStateManager : MonoBehaviour
         damageTaken = amountofDamage;
     }
 
-    
+    public void HitEvent(EnemyStateManager enemy, GameObject target)
+    {
+        float damage = enemy.enemyStats.GetDamage();
+
+        if (target.gameObject.tag == "Player")
+        {
+            target.GetComponent<PlayerHealth>().PlayerGetDamage(damage);
+        }
+        else if (target.gameObject.tag == "Fence")
+        {
+            target.GetComponent<Fence>().FenceGetDamage(damage);
+        }
+    }
 
 
 
