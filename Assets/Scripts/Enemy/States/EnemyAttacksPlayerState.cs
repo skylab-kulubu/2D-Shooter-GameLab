@@ -7,7 +7,6 @@ public class EnemyAttacksPlayerState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        enemy.target = enemy.currentCollision.gameObject;
         enemy.enemyAttacksPlayer = true;
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>(); 
         rb.velocity = Vector2.zero;
@@ -43,7 +42,7 @@ public class EnemyAttacksPlayerState : EnemyBaseState
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
     {
-
+        enemy.target = enemy.currentCollision.gameObject;
     }
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
