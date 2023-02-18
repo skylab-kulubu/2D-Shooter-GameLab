@@ -19,7 +19,7 @@ public class EnemyStateManager : MonoBehaviour
     public float enemyAttackSpeed;
     public float timeSinceLastAttack = 0;
 
-    [SerializeField] private int enemyLineID;
+    public int enemyLineID;
 
     public bool isDead = false;
 

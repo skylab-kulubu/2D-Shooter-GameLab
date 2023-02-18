@@ -55,8 +55,17 @@ TagManager:
   - name: Raycast
     uniqueID: 1487708989
     locked: 0
-  - name: Enemy
+  - name: 1
     uniqueID: 4165058855
+    locked: 0
+  - name: 2
+    uniqueID: 2856471721
+    locked: 0
+  - name: 3
+    uniqueID: 1722653625
+    locked: 0
+  - name: 4
+    uniqueID: 1900805805
     locked: 0
   - name: Player
     uniqueID: 1587048027
