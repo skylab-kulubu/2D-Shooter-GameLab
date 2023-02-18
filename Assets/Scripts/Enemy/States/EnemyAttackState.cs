@@ -71,6 +71,11 @@ public class EnemyAttackState : EnemyBaseState
     }
     public void Attack(EnemyStateManager enemy, GameObject target)
     {
+        if(target == null)
+        {
+            Debug.Log(enemy.gameObject.name + "'s target is null");
+            return;
+        }
         TurnToPlayer(enemy, target);
 
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();

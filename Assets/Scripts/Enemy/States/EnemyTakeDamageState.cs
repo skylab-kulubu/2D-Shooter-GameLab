@@ -46,7 +46,15 @@ public class EnemyTakeDamageState : EnemyBaseState
             }
             else
             {
-                enemy.SwitchState(enemy.MoveState);
+                if (enemy.enemyWasRunningToVillage)
+                {
+                    enemy.SwitchState(enemy.RunToVillageState);
+
+                }
+                else
+                {
+                    enemy.SwitchState(enemy.MoveState);
+                }
             }
         }
         

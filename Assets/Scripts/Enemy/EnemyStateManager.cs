@@ -18,6 +18,8 @@ public class EnemyStateManager : MonoBehaviour
     public float enemyAttackSpeed;
     public float timeSinceLastAttack = 0;
 
+    [SerializeField] private int enemyLineID;
+
     public bool isDead = false;
 
     public float damageTaken;
@@ -27,6 +29,8 @@ public class EnemyStateManager : MonoBehaviour
     public GameObject target;
 
     public bool enemyAttacksPlayer = false;
+
+    public bool enemyWasRunningToVillage = false;
 
     void Start()
     {
@@ -40,12 +44,12 @@ public class EnemyStateManager : MonoBehaviour
     {
         timeSinceLastAttack += Time.deltaTime;
         print(currentState);
-        Debug.Log("target " +target);
         currentState.UpdateState(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("collisin sayýsý: " + collision.contactCount);
         currentState.OnCollisionEnter2D(this, collision);
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -92,6 +96,9 @@ public class EnemyStateManager : MonoBehaviour
         }
     }
 
-
+    public int GetEnemyLineID()
+    {
+        return enemyLineID;
+    }
 
 }
