@@ -7,11 +7,13 @@ public class Fence : MonoBehaviour
 {
     [SerializeField] private float fenceHealth = 500;
     [SerializeField] private int fenceLineID;
+    [SerializeField] private GameObject enemyThatAttacksThisFence = null;
     public void FenceGetDamage(float damage)
     {
         fenceHealth = Mathf.Max(fenceHealth - damage, 0);
         if (fenceHealth == 0)
         {
+            enemyThatAttacksThisFence.GetComponent<EnemyStateManager>().destroyedAFence = true;
             DestroyFence();
         }
     }
@@ -34,13 +36,16 @@ public class Fence : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        int enemyLineID = collision.gameObject.GetComponent<EnemyStateManager>().GetEnemyLineID();
-        Debug.Log("enemyLineID: " +enemyLineID);
-        Debug.Log("fenceLineID " +fenceLineID);
-        if(enemyLineID == fenceLineID)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyStateManager>().target = gameObject;
+            int enemyLineID = collision.gameObject.GetComponent<EnemyStateManager>().GetEnemyLineID();
+            if (enemyLineID == fenceLineID)
+            {
+                enemyThatAttacksThisFence = collision.gameObject;
+                enemyThatAttacksThisFence.GetComponent<EnemyStateManager>().target = gameObject;
+            }
         }
+        
     }
 
 }

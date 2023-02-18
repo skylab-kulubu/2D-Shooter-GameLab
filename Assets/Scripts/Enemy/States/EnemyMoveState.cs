@@ -6,6 +6,10 @@ public class EnemyMoveState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        if(enemy.target != null)
+        {
+            enemy.SwitchState(enemy.AttacksPlayerState);
+        }
         enemy.transform.localScale = new Vector3(1, 1, 1);
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Run");
@@ -28,15 +32,13 @@ public class EnemyMoveState : EnemyBaseState
             //if (enemy.target != null) return;
             if (collision.gameObject.tag == "Player")
             {
-                enemy.enemyAttacksPlayer = true;
-                enemy.target = collision.gameObject;
+                enemy.SwitchState(enemy.AttacksPlayerState);
             }
-            //else if (collision.gameObject.tag == "Fence")
-            //{
-            //    enemy.enemyAttacksPlayer = false;
-            //    int enemyLineID = enemy.enemyLineID;
-            //}
-            enemy.SwitchState(enemy.AttackState);
+            else if (collision.gameObject.tag == "Fence")
+            {
+                enemy.SwitchState(enemy.AttacksFenceState);
+            }
+
         }
     }
 

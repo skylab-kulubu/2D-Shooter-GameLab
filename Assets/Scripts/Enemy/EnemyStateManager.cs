@@ -6,7 +6,8 @@ public class EnemyStateManager : MonoBehaviour
 {
     public EnemyBaseState currentState;
 
-    public EnemyAttackState AttackState = new EnemyAttackState();
+    public EnemyAttacksPlayerState AttacksPlayerState = new EnemyAttacksPlayerState();
+    public EnemyAttacksFenceState AttacksFenceState = new EnemyAttacksFenceState();
     public EnemyDeathState DeathState = new EnemyDeathState();
     public EnemyTakeDamageState TakeDamageState = new EnemyTakeDamageState();
     public EnemyMoveState MoveState = new EnemyMoveState();
@@ -30,7 +31,12 @@ public class EnemyStateManager : MonoBehaviour
 
     public bool enemyAttacksPlayer = false;
 
+    public bool enemyAttacksFence = false;
+
     public bool enemyWasRunningToVillage = false;
+
+    public bool destroyedAFence = false;
+
 
     void Start()
     {
@@ -43,20 +49,19 @@ public class EnemyStateManager : MonoBehaviour
     void Update()
     {
         timeSinceLastAttack += Time.deltaTime;
-        print(currentState);
+        print(gameObject.name + "'s " + currentState);
         currentState.UpdateState(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collisin sayýsý: " + collision.contactCount);
         currentState.OnCollisionEnter2D(this, collision);
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         currentCollision = collision;
         currentState.OnCollisionStay2D(this, collision);
-        print("currentCollision: " + currentCollision.transform.name);
+        print(gameObject.name + "'s currentCollision: " + currentCollision.transform.name);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
