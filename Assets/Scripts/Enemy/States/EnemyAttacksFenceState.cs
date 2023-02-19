@@ -66,7 +66,7 @@ public class EnemyAttacksFenceState : EnemyBaseState
     {
         if (target == null)
         {
-            Debug.Log(enemy.gameObject.name + "'s target is null");
+            Debug.LogError(enemy.gameObject.name + "'s target is null");
             return;
         }
         TurnToTarget(enemy, target);

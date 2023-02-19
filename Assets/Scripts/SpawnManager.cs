@@ -47,12 +47,13 @@ public class SpawnManager : MonoBehaviour
         int listSize = spawnPoints.Count;
         int randomIndex = UnityEngine.Random.Range(0, listSize);
         enemy.GetComponent<EnemyStateManager>().enemyLineID = randomIndex + 1;
-        enemy.GetComponentInChildren<SpriteRenderer>().sortingLayerID = randomIndex + 5;
+        enemy.GetComponentInChildren<SpriteRenderer>().sortingLayerName = (randomIndex + 1).ToString();
 
 
         Debug.Log("transform listSize " + listSize);
         Debug.Log("transform randomIndex " + randomIndex);
-        Transform transform = spawnPoints[randomIndex];
+        Debug.Log("spawnpoint name: " + spawnPoints[randomIndex].name);
+        Transform transform = spawnPoints[randomIndex + 1];
         return transform;
     }
 }
