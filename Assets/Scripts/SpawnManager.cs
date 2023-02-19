@@ -26,20 +26,33 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<Transform> line3 = new List<Transform>();
     [SerializeField] private List<Transform> line4 = new List<Transform>();
 
+    private Transform previousSpawnPoint;
+
 
     private void Start()
     {
-        SpawnEnemy();
-        //Instantiate(goblin, spawnPoint21.position, Quaternion.identity);
+
+        StartCoroutine(SpawnEnemyInARow(10));
 
     }
     private void SpawnEnemy()
     {
         GameObject enemy = RandomEnemyPicker();
         Transform spawnPoint = RandomSpawnPointGenerator(enemy);
+        if(previousSpawnPoint != null)
+        {
+            while(spawnPoint == previousSpawnPoint)
+            {
+                spawnPoint = RandomSpawnPointGenerator(enemy);
+            }
+            Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+        }
 
-
-        Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+        previousSpawnPoint = spawnPoint;
     }
 
     private GameObject RandomEnemyPicker()
@@ -108,6 +121,20 @@ public class SpawnManager : MonoBehaviour
         }
         Debug.LogError("spawnpoint is null");
         return null;
+    }
+
+    private IEnumerator SpawnEnemyInARow(int enemyNumber)
+    {
+        for (int j = 0; j < Mathf.Ceil(enemyNumber / 3) ; j++)
+        {
+            Debug.Log("kulanýlýormuymuþ");
+            for (int i = 0; i < 4; i++)
+            {
+                SpawnEnemy();
+            }
+            yield return new WaitForSeconds(2f);
+        }
+        
     }
 
     

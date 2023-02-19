@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float playerHealthPoints;
+    [SerializeField] private bool isPlayerDead = false;
 
     public void PlayerGetDamage(float damage)
     {
@@ -22,6 +23,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDie()
     {
+        isPlayerDead = true;
+        GetComponent<BoxCollider2D>().enabled = false;
         print("player dead");
+    }
+
+    public bool GetIsPlayerDead()
+    {
+        return isPlayerDead;
     }
 }

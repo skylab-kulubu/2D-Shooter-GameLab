@@ -42,7 +42,14 @@ public class EnemyAttacksPlayerState : EnemyBaseState
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
     {
-        enemy.target = enemy.currentCollision.gameObject;
+        if(enemy.currentCollision == null)
+        {
+            enemy.SwitchState(enemy.MoveState);
+        }
+        else
+        {
+            enemy.target = enemy.currentCollision.gameObject;
+        }
     }
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
@@ -68,9 +75,28 @@ public class EnemyAttacksPlayerState : EnemyBaseState
     }
     public void Attack(EnemyStateManager enemy, GameObject target)
     {
-        if(target == null)
+        if (target == null)
         {
             Debug.Log(enemy.gameObject.name + "'s target is null");
+            if (enemy.currentCollision.transform.CompareTag("Fence"))
+            {
+                enemy.target = enemy.currentCollision.gameObject;
+            }
+            else if (enemy.currentCollision.transform.CompareTag("Player"))
+            {
+                if (enemy.currentCollision.transform.GetComponent<PlayerHealth>().GetIsPlayerDead())
+                {
+                    enemy.SwitchState(enemy.MoveState);
+                }
+                else
+                {
+                    enemy.target = enemy.currentCollision.gameObject;
+                }
+            }
+            else
+            {
+                enemy.SwitchState(enemy.MoveState);
+            }
             return;
         }
         TurnToTarget(enemy, target);
