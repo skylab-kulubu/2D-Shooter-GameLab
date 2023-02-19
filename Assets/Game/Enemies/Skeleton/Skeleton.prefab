@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4130671440705123855}
   - component: {fileID: 9218116567448837378}
   - component: {fileID: 946567440473938359}
+  - component: {fileID: 737875061120632145}
   m_Layer: 0
   m_Name: SkeletonSprite
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -129908441
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,6 +106,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &737875061120632145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680855063194826244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd3eda8a9b51bc4c8c1c03498478328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8811264573382271693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,6 +193,10 @@ PrefabInstance:
       propertyPath: enemyStats
       value: 
       objectReference: {fileID: 11400000, guid: a0ddd0b64ee8b3a46a7d32bbd3d03e11, type: 2}
+    - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: enemyLineID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
 --- !u!4 &6943308568667457313 stripped

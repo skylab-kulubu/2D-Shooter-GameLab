@@ -44,11 +44,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5632b1549de4b5e44ac678fb65c821a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint1: {fileID: 1341248960066394539, guid: 689232d9d703183418fc9a0c372b4509, type: 3}
-  spawnPoint2: {fileID: 893585127779175415, guid: eb5d7568232a4454c876c67e315e19d1, type: 3}
-  spawnPoint3: {fileID: 1691754402073558696, guid: 3d9c4497ca3d051499373fcb17b39f84, type: 3}
-  spawnPoint4: {fileID: 980088705188245513, guid: bf3b2f42888281c45b8958d80b348f52, type: 3}
+  spawnPoint11: {fileID: 6658289442124567187, guid: 689232d9d703183418fc9a0c372b4509, type: 3}
+  spawnPoint21: {fileID: 3107762405577544651, guid: eb5d7568232a4454c876c67e315e19d1, type: 3}
+  spawnPoint31: {fileID: 6355943397262321220, guid: 3d9c4497ca3d051499373fcb17b39f84, type: 3}
+  spawnPoint41: {fileID: 5186796553879966425, guid: bf3b2f42888281c45b8958d80b348f52, type: 3}
+  spawnPoint12: {fileID: 6067674228587040756, guid: b49450d2ad8060044b71eacff92f7a6e, type: 3}
+  spawnPoint22: {fileID: 6024229403604914325, guid: 89fc92cc3689d214ab1c9b37a4c9a35d, type: 3}
+  spawnPoint32: {fileID: 3014064284151652676, guid: 7c4f33f3f043b2745ad68be46f106859, type: 3}
+  spawnPoint42: {fileID: 494635167192198082, guid: d36246067a93415469b0b700399346ca, type: 3}
   goblin: {fileID: 2141141049649379042, guid: 083f9ffb93eba5a4da7c42e4bd1fd8ef, type: 3}
   flyingEye: {fileID: 2454908492582527516, guid: 999cfa1d56f610445a69a032a2f3e0b7, type: 3}
   skeleton: {fileID: 6165346654824333067, guid: cc94916631340e44599cc1b42ed4f1b6, type: 3}
   mushroom: {fileID: 6859614746523173055, guid: 38afe2a33ab2f0b4391b4cfd9ddb8f10, type: 3}
+  enemies:
+  - {fileID: 2454908492582527516, guid: 999cfa1d56f610445a69a032a2f3e0b7, type: 3}
+  - {fileID: 2141141049649379042, guid: 083f9ffb93eba5a4da7c42e4bd1fd8ef, type: 3}
+  - {fileID: 6859614746523173055, guid: 38afe2a33ab2f0b4391b4cfd9ddb8f10, type: 3}
+  - {fileID: 6165346654824333067, guid: cc94916631340e44599cc1b42ed4f1b6, type: 3}
+  line1:
+  - {fileID: 6658289442124567187, guid: 689232d9d703183418fc9a0c372b4509, type: 3}
+  - {fileID: 6067674228587040756, guid: b49450d2ad8060044b71eacff92f7a6e, type: 3}
+  line2:
+  - {fileID: 3107762405577544651, guid: eb5d7568232a4454c876c67e315e19d1, type: 3}
+  - {fileID: 6024229403604914325, guid: 89fc92cc3689d214ab1c9b37a4c9a35d, type: 3}
+  line3:
+  - {fileID: 6355943397262321220, guid: 3d9c4497ca3d051499373fcb17b39f84, type: 3}
+  - {fileID: 3014064284151652676, guid: 7c4f33f3f043b2745ad68be46f106859, type: 3}
+  line4:
+  - {fileID: 5186796553879966425, guid: bf3b2f42888281c45b8958d80b348f52, type: 3}
+  - {fileID: 494635167192198082, guid: d36246067a93415469b0b700399346ca, type: 3}
