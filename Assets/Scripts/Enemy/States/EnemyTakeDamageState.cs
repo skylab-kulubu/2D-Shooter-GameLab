@@ -35,6 +35,8 @@ public class EnemyTakeDamageState : EnemyBaseState
         enemy.currentHealthPoints = Mathf.Max(enemy.currentHealthPoints - amountDamage, 0);
         if (enemy.currentHealthPoints <= 0)
         {
+            SpawnManager.enemyKilled++;
+            Debug.Log(SpawnManager.enemyKilled);
             enemy.SwitchState(enemy.DeathState);
         }
         else

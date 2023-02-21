@@ -26,6 +26,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<Transform> line3 = new List<Transform>();
     [SerializeField] private List<Transform> line4 = new List<Transform>();
 
+    public static int enemyKilled = 0;
+
     private Transform previousSpawnPoint;
 
 

@@ -6,6 +6,7 @@ public class EnemyDeathState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        
         enemy.isDead = true;
         enemy.StartCoroutine(EnemyDie(enemy));
     }
@@ -23,15 +24,17 @@ public class EnemyDeathState : EnemyBaseState
 
     public IEnumerator EnemyDie(EnemyStateManager enemy)
     {
+
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Death");
 
         Collider2D collider = enemy.GetComponent<Collider2D>();
         collider.enabled = false;
-
+        
         yield return new WaitForSeconds(5f);
         Debug.Log("enemy died");
-        UnityEngine.Object.Destroy(enemy.gameObject);
+
+        enemy.gameObject.SetActive(false);
     }
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
