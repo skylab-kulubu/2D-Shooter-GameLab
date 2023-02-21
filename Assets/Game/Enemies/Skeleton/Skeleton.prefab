@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1900805805
-  m_SortingLayer: 8
+  m_SortingLayerID: 1722653625
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -195,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a0ddd0b64ee8b3a46a7d32bbd3d03e11, type: 2}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyLineID
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}

@@ -90,7 +90,7 @@ public class EnemyStateManager : MonoBehaviour
     public void HitEvent(EnemyStateManager enemy, GameObject target)
     {
         float damage = enemy.enemyStats.GetDamage();
-
+        if (target == null) return;
         if (target.gameObject.tag == "Player")
         {
             target.GetComponent<PlayerHealth>().PlayerGetDamage(damage);

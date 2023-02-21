@@ -42,20 +42,14 @@ public class EnemyAttacksPlayerState : EnemyBaseState
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
     {
-        if(enemy.currentCollision == null)
-        {
-            enemy.SwitchState(enemy.MoveState);
-        }
-        else
-        {
-            enemy.target = enemy.currentCollision.gameObject;
-        }
+        
     }
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            enemy.enemyAttacksPlayer = false;
             enemy.target = null;
             enemy.SwitchState(enemy.MoveState);
         }
@@ -77,32 +71,45 @@ public class EnemyAttacksPlayerState : EnemyBaseState
     {
         if (target == null)
         {
+
             Debug.Log(enemy.gameObject.name + "'s target is null");
-            if (enemy.currentCollision.transform.CompareTag("Fence"))
-            {
-                enemy.target = enemy.currentCollision.gameObject;
-            }
-            else if (enemy.currentCollision.transform.CompareTag("Player"))
-            {
-                if (enemy.currentCollision.transform.GetComponent<PlayerHealth>().GetIsPlayerDead())
-                {
-                    enemy.SwitchState(enemy.MoveState);
-                }
-                else
-                {
-                    enemy.target = enemy.currentCollision.gameObject;
-                }
-            }
-            else
+            if (enemy.currentCollision == null)
             {
                 enemy.SwitchState(enemy.MoveState);
             }
-            return;
-        }
-        TurnToTarget(enemy, target);
+            else
+            {
+                if (enemy.currentCollision.transform.CompareTag("Fence"))
+                {
+                    enemy.target = enemy.currentCollision.gameObject;
+                }
+                else if (enemy.currentCollision.transform.CompareTag("Player"))
+                {
+                    if (enemy.currentCollision.transform.GetComponent<PlayerHealth>().GetIsPlayerDead())
+                    {
+                        enemy.SwitchState(enemy.MoveState);
+                    }
+                    else
+                    {
+                        enemy.target = enemy.currentCollision.gameObject;
+                    }
+                }
+                else if (enemy.currentCollision.transform.CompareTag("Enemy"))
+                {
+                    enemy.SwitchState(enemy.MoveState);
+                }
+                return;
+            }
 
-        Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
-        animator.Play("Attack");
+        }
+        else
+        {
+            TurnToTarget(enemy, target);
+
+            Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
+            animator.Play("Attack");
+        }
+        
     }
 
     

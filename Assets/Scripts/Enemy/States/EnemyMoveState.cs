@@ -6,10 +6,10 @@ public class EnemyMoveState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        if(enemy.target != null)
-        {
-            enemy.SwitchState(enemy.AttacksPlayerState);
-        }
+        //if(enemy.target != null)
+        //{
+        //    enemy.SwitchState(enemy.AttacksPlayerState);
+        //}
         enemy.transform.localScale = new Vector3(1, 1, 1);
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Run");
@@ -38,7 +38,7 @@ public class EnemyMoveState : EnemyBaseState
             {
                 enemy.SwitchState(enemy.AttacksFenceState);
             }
-
+            enemy.target = collision.gameObject;
         }
     }
 

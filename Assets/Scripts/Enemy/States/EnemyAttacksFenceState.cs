@@ -43,6 +43,10 @@ public class EnemyAttacksFenceState : EnemyBaseState
                 enemy.SwitchState(enemy.MoveState);
                 enemy.target = null;
             }
+            else if (!enemy.destroyedAFence)
+            {
+                enemy.SwitchState(enemy.MoveState);
+            }
         }
     }
 

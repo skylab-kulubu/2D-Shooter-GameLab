@@ -37,7 +37,7 @@ public class Shooting : MonoBehaviour
     {
         currentWeapon = weapon;
         weapon.Spawn(weaponMainTransform);
-        
+
 
     }
 
@@ -80,18 +80,24 @@ public class Shooting : MonoBehaviour
     {
         ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
         shootingVector = transform.right;
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, shootingVector, shootingDirection);
-        
 
-
-        if (hit.collider != null)
+        RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.position, shootingVector, shootingDirection);
+        GameObject hittedEnemy = null;
+        foreach (RaycastHit2D hit in hits)
         {
-            if(hit.transform.tag == "Enemy")
+            if (hit.collider.CompareTag("Enemy"))
             {
-                hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
-                Debug.Log(hit.transform.GetComponent<EnemyStateManager>().currentHealthPoints);
-                hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+                hittedEnemy = hit.collider.gameObject;
+                break;
             }
+        }
+
+        if (hittedEnemy != null)
+        {
+
+            hittedEnemy.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
+            Debug.Log(hittedEnemy.transform.GetComponent<EnemyStateManager>().currentHealthPoints);
+            hittedEnemy.transform.GetComponent<EnemyStateManager>().SwitchState(hittedEnemy.transform.GetComponent<EnemyStateManager>().TakeDamageState);
         }
         else
         {
@@ -112,17 +118,17 @@ public class Shooting : MonoBehaviour
         lineRenderer.endWidth = 0f;
 
     }
-    
+
     public void ShakeCamera(float intensity, float timer)
     {
-        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = 
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
             virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
         shakeTimer = timer;
     }
 
-    
 
-    
+
+
 }
