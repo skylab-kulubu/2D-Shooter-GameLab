@@ -96,7 +96,6 @@ public class Shooting : MonoBehaviour
         {
 
             hittedEnemy.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
-            Debug.Log(hittedEnemy.transform.GetComponent<EnemyStateManager>().currentHealthPoints);
             hittedEnemy.transform.GetComponent<EnemyStateManager>().SwitchState(hittedEnemy.transform.GetComponent<EnemyStateManager>().TakeDamageState);
         }
         else

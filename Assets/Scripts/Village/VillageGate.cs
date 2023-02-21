@@ -8,6 +8,7 @@ public class VillageGate : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            SpawnManager.enemyDestroyed++;
             float damage = collision.gameObject.GetComponent<EnemyStateManager>().enemyStats.GetDamage();
             VillageHealth.villageHealthPoints = Mathf.Max(VillageHealth.villageHealthPoints - damage, 0);
             if (VillageHealth.villageHealthPoints == 0)

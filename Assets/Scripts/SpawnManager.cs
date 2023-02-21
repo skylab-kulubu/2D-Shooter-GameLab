@@ -26,19 +26,34 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<Transform> line3 = new List<Transform>();
     [SerializeField] private List<Transform> line4 = new List<Transform>();
 
-    public static int enemyKilled = 0;
+    public static int enemyDestroyed = 0;
 
     private Transform previousSpawnPoint;
 
+    private int starterEnemyNumber = 4;
 
+    [SerializeField] private int createdEnemyNumber = 0;
     private void Start()
     {
 
-        StartCoroutine(SpawnEnemyInARow(10));
+        StartCoroutine(SpawnEnemyInARow(starterEnemyNumber));
 
+    }
+    private void Update()
+    {
+        if (enemyDestroyed >= createdEnemyNumber)
+        {
+            StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 2));
+        }
+    }
+
+    private IEnumerator WaitForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
     private void SpawnEnemy()
     {
+        createdEnemyNumber++;
         GameObject enemy = RandomEnemyPicker();
         Transform spawnPoint = RandomSpawnPointGenerator(enemy);
         if(previousSpawnPoint != null)
@@ -61,8 +76,6 @@ public class SpawnManager : MonoBehaviour
     {
         int listSize = enemies.Count;
         int randomIndex = UnityEngine.Random.Range(0, listSize);
-        Debug.Log("gameobject listSize " + listSize);
-        Debug.Log("gameobject randomIndex " + randomIndex);
 
         GameObject randomEnemy = enemies[randomIndex];
         return randomEnemy;
@@ -78,7 +91,6 @@ public class SpawnManager : MonoBehaviour
             enemy.GetComponent<EnemyStateManager>().enemyLineID = randomLineID;
             enemy.GetComponentInChildren<SpriteRenderer>().sortingLayerName = randomLineID.ToString();
             Transform transform = line1[randomSpawnPointID];
-            Debug.Log("spawnPoint name: " + transform.name);
 
             return transform;
 
@@ -91,7 +103,6 @@ public class SpawnManager : MonoBehaviour
             enemy.GetComponentInChildren<SpriteRenderer>().sortingLayerName = randomLineID.ToString();
 
             Transform transform = line2[randomSpawnPointID];
-            Debug.Log("spawnPoint name: " + transform.name);
 
             return transform;
 
@@ -104,7 +115,6 @@ public class SpawnManager : MonoBehaviour
             enemy.GetComponentInChildren<SpriteRenderer>().sortingLayerName = randomLineID.ToString();
 
             Transform transform = line3[randomSpawnPointID];
-            Debug.Log("spawnPoint name: " + transform.name);
 
             return transform;
 
@@ -117,7 +127,6 @@ public class SpawnManager : MonoBehaviour
             enemy.GetComponentInChildren<SpriteRenderer>().sortingLayerName = randomLineID.ToString();
 
             Transform transform = line4[randomSpawnPointID];
-            Debug.Log("spawnPoint name: " + transform.name);
 
             return transform;
         }
@@ -129,14 +138,13 @@ public class SpawnManager : MonoBehaviour
     {
         for (int j = 0; j < Mathf.Ceil(enemyNumber / 3) ; j++)
         {
-            Debug.Log("kulanýlýormuymuþ");
             for (int i = 0; i < 4; i++)
             {
                 SpawnEnemy();
             }
             yield return new WaitForSeconds(2f);
         }
-        
+        yield break;
     }
 
     

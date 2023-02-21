@@ -32,7 +32,6 @@ public class EnemyDeathState : EnemyBaseState
         collider.enabled = false;
         
         yield return new WaitForSeconds(5f);
-        Debug.Log("enemy died");
 
         enemy.gameObject.SetActive(false);
     }
