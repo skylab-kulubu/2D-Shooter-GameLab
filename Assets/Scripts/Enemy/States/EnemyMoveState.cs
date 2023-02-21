@@ -36,6 +36,8 @@ public class EnemyMoveState : EnemyBaseState
             }
             else if (collision.gameObject.tag == "Fence")
             {
+                collision.gameObject.GetComponent<Fence>().enemiesThatAttacksThisFence.Add(enemy.gameObject);
+
                 enemy.SwitchState(enemy.AttacksFenceState);
             }
             enemy.target = collision.gameObject;
