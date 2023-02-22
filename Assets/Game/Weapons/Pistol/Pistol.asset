@@ -17,4 +17,4 @@ MonoBehaviour:
   shakeIntensity: 1
   weaponDamage: 5
   isInFighting: 0
-  bulletFrequency: 1
+  bulletFrequency: 0.4

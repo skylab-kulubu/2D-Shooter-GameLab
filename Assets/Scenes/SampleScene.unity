@@ -1631,6 +1631,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5970035454877373069, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: c082b827af77f524488ed075c35f5212, type: 2}
+    - target: {fileID: 5970035454877373069, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1269339484}
@@ -1814,7 +1818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6676399337546668529, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}

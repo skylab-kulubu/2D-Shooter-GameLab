@@ -18,7 +18,8 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] private Transform firePoint = null;
 
-    private bool isLookingRight = true;
+
+    private float sinceLastShoot = 0;
 
     private Vector2 shootingVector;
 
@@ -43,6 +44,7 @@ public class Shooting : MonoBehaviour
 
     private void Update()
     {
+        sinceLastShoot += Time.deltaTime;
         SetShootingDirection();
 
         if (shakeTimer > 0)
@@ -59,7 +61,10 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(Shoot());
+            if (sinceLastShoot > currentWeapon.GetBulletFrequency())
+            {
+                StartCoroutine(Shoot());
+            }
         }
 
 
@@ -80,6 +85,7 @@ public class Shooting : MonoBehaviour
     {
         ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
         shootingVector = transform.right;
+        sinceLastShoot = 0;
 
         RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.position, shootingVector, shootingDirection);
         GameObject hittedEnemy = null;
