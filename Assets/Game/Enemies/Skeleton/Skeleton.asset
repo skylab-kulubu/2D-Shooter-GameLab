@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: 
   healthPoints: 200
-  damage: 10
+  damage: 5
   speed: 5
   attackSpeed: 0.75

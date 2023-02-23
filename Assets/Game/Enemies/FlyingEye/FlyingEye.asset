@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FlyingEye
   m_EditorClassIdentifier: 
   healthPoints: 60
-  damage: 10
+  damage: 5
   speed: 25
   attackSpeed: 0.5

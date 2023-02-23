@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6d45ec58d703049a7d0393bc30efab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthPoints: 200
+  playerHealthPoints: 100
   isPlayerDead: 0
 --- !u!114 &5970035454877373069
 MonoBehaviour:

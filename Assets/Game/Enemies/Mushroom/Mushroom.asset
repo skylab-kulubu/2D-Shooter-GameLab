@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   healthPoints: 120
-  damage: 50
+  damage: 25
   speed: 10
   attackSpeed: 1.5
