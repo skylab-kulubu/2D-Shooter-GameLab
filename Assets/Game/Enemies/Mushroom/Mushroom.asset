@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5f0a60d2f91344694b48c2e57839fb, type: 3}
   m_Name: Mushroom
   m_EditorClassIdentifier: 
-  healthPoints: 22.5
+  healthPoints: 120
   damage: 50
   speed: 10
   attackSpeed: 1.5

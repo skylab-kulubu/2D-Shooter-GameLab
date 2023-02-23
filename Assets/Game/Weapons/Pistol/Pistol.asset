@@ -15,6 +15,6 @@ MonoBehaviour:
   equippedPrefab: {fileID: 62304717120912871, guid: e1a21586247270d40b6a3801db04f219, type: 3}
   weaponRange: 10
   shakeIntensity: 1
-  weaponDamage: 5
+  weaponDamage: 30
   isInFighting: 0
   bulletFrequency: 0.4

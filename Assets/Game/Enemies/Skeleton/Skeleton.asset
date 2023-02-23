@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5f0a60d2f91344694b48c2e57839fb, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  healthPoints: 100
-  damage: 20
+  healthPoints: 200
+  damage: 10
   speed: 5
   attackSpeed: 0.75

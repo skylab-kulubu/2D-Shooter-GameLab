@@ -143,7 +143,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1587048027
-  m_SortingLayer: 6
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 1590260766, guid: 3ccc95fb4a080e441a8fe10cb5db5ce9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -168,7 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6d45ec58d703049a7d0393bc30efab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthPoints: 100
+  playerHealthPoints: 200
+  isPlayerDead: 0
 --- !u!114 &5970035454877373069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ MonoBehaviour:
   lnOnFor: 0.05
   virtualCamera: {fileID: 0}
   weaponMainTransform: {fileID: 3144170400534003328}
-  defaultWeapon: {fileID: 11400000, guid: 167537a74d682e84ab4a833a7265f13b, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: c082b827af77f524488ed075c35f5212, type: 2}
   firePoint: {fileID: 3394453284619710256}
 --- !u!95 &5970035454877373060
 Animator:
