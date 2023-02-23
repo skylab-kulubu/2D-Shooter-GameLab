@@ -29,6 +29,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private bool isReadyForNextWave = false;
 
+    [SerializeField] private GameObject readyforNextWaveButton;
+
     public static int enemyDestroyed = 0;
 
     private Transform previousSpawnPoint;
@@ -51,14 +53,16 @@ public class SpawnManager : MonoBehaviour
         if (enemyDestroyed >= createdEnemyNumber)
         {
             currentBreakTime += Time.deltaTime;
+            readyforNextWaveButton.SetActive(true);
             if(currentBreakTime > breakTime)
             {
                 isReadyForNextWave = true;
-                if (isReadyForNextWave)
-                {
-                    StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 2));
-                    currentBreakTime = 0;
-                }
+            }
+            if (isReadyForNextWave)
+            {
+                readyforNextWaveButton.SetActive(false);
+                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 2));
+                currentBreakTime = 0;
             }
         }
     }
