@@ -26,11 +26,18 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<Transform> line3 = new List<Transform>();
     [SerializeField] private List<Transform> line4 = new List<Transform>();
 
+    [SerializeField] private GameObject marketPanel;
+    [SerializeField] private bool isReadyForNextWave = false;
+
     public static int enemyDestroyed = 0;
 
     private Transform previousSpawnPoint;
 
     private int starterEnemyNumber = 4;
+
+    [SerializeField] private float currentBreakTime = 0;
+    [SerializeField] private float breakTime = 30;
+
 
     [SerializeField] private int createdEnemyNumber = 0;
     private void Start()
@@ -43,7 +50,16 @@ public class SpawnManager : MonoBehaviour
     {
         if (enemyDestroyed >= createdEnemyNumber)
         {
-            StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 2));
+            currentBreakTime += Time.deltaTime;
+            if(currentBreakTime > breakTime)
+            {
+                isReadyForNextWave = true;
+                if (isReadyForNextWave)
+                {
+                    StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 2));
+                    currentBreakTime = 0;
+                }
+            }
         }
     }
 
@@ -144,8 +160,12 @@ public class SpawnManager : MonoBehaviour
             }
             yield return new WaitForSeconds(2f);
         }
-        yield break;
+        isReadyForNextWave = false;
     }
 
+    public void SetReadyForNextWaveTrue()
+    {
+        isReadyForNextWave = true;
+    }
     
 }
