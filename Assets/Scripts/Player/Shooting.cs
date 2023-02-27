@@ -31,7 +31,23 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         EquipWeapon(defaultWeapon);
+
+        List<Bullet> magazine = new List<Bullet>();
+        int defaultBulletAmount = currentWeapon.GetDefaultBulletAmount();
+        int magazineCapacity = currentWeapon.GetMagazineCapacity();
+        LoadMagazine(magazine, magazineCapacity, defaultBulletAmount);
+
         //firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
+    }
+
+    private void LoadMagazine(List<Bullet> magazine, int magazineCapacity, int bulletAmount)
+    {
+        for (int i = 0; i < bulletAmount; i++)
+        {
+            if (magazine.ToArray().Length >= magazineCapacity) return;
+            Bullet bullet = Instantiate(currentWeapon.GetBullet());
+            magazine.Add(bullet);
+        }
     }
 
     private void EquipWeapon(Weapon weapon)
@@ -144,6 +160,18 @@ public class Shooting : MonoBehaviour
                         {
                             hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
                             hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+
+                            Bullet bullet = currentWeapon.GetBullet();
+                            LineRenderer lineRenderer = bullet.GetBulletPrefab().GetComponent<LineRenderer>();
+                            lineRenderer.SetPosition(0, firePoint.position);
+                            lineRenderer.startWidth = 0.1f;
+                            lineRenderer.endWidth = 0.1f;
+
+                            lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
+
+                            yield return new WaitForSeconds(lnOnFor);
+                            lineRenderer.startWidth = 0f;
+                            lineRenderer.endWidth = 0f;
 
                             hittedEnemies.Add(hit.transform.gameObject);
                         }

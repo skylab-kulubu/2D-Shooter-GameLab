@@ -7,6 +7,9 @@ public class Weapon : ScriptableObject
     [SerializeField] private float weaponRange = 100f;
     [SerializeField] private float shakeIntensity = 3;
     [SerializeField] private float weaponDamage = 5;
+    [SerializeField] private int magazineCapacity = 0;
+    [SerializeField] private int defaultBulletAmount = 0;
+
     [SerializeField] private bool isInFighting = false;
     [SerializeField] private float bulletFrequency = 1;
     [SerializeField] private bool isShot = false;
@@ -21,6 +24,16 @@ public class Weapon : ScriptableObject
         {
             Instantiate(equippedPrefab, weaponMainTransform);
         }
+    }
+
+    public int GetMagazineCapacity()
+    {
+        return magazineCapacity;
+    }
+
+    public int GetDefaultBulletAmount()
+    {
+        return defaultBulletAmount;
     }
 
     public float GetWeaponDamage()
@@ -56,6 +69,11 @@ public class Weapon : ScriptableObject
     public bool GetIsShot()
     {
         return isShot;
+    }
+
+    public Bullet GetBullet()
+    {
+        return bullet;
     }
 
     //public Transform GetFirePoint()
