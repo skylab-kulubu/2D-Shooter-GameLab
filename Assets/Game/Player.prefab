@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2321983fc50e40c4794d0058f45db36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 5970035454877373068}
+  lineRendererPrefab: {fileID: 5970035454877373068}
   lnOnFor: 0.05
   virtualCamera: {fileID: 0}
   weaponMainTransform: {fileID: 3144170400534003328}

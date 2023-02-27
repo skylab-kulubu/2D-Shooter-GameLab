@@ -18,3 +18,4 @@ MonoBehaviour:
   weaponDamage: 60
   isInFighting: 0
   bulletFrequency: 0.75
+  isShot: 1

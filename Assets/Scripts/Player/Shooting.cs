@@ -87,40 +87,72 @@ public class Shooting : MonoBehaviour
         shootingVector = transform.right;
         sinceLastShoot = 0;
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.position, shootingVector, shootingDirection);
-        GameObject hittedEnemy = null;
-        foreach (RaycastHit2D hit in hits)
+        if (!currentWeapon.GetIsShot())
         {
-            if (hit.collider.CompareTag("Enemy"))
+            RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.position, shootingVector, shootingDirection);
+            GameObject hittedEnemy = null;
+            foreach (RaycastHit2D hit in hits)
             {
-                hittedEnemy = hit.collider.gameObject;
-                break;
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    hittedEnemy = hit.collider.gameObject;
+                    break;
+                }
             }
-        }
 
-        if (hittedEnemy != null)
-        {
+            if (hittedEnemy != null)
+            {
 
-            hittedEnemy.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
-            hittedEnemy.transform.GetComponent<EnemyStateManager>().SwitchState(hittedEnemy.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+                hittedEnemy.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
+                hittedEnemy.transform.GetComponent<EnemyStateManager>().SwitchState(hittedEnemy.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+            }
+            else
+            {
+                // Did not hit anything
+                Debug.Log("Missed");
+            }
+
+            if (currentWeapon.GetIsInFighting()) yield break;
+
+            lineRenderer.SetPosition(0, firePoint.position);
+            lineRenderer.startWidth = 0.1f;
+            lineRenderer.endWidth = 0.1f;
+
+            lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
+
+            yield return new WaitForSeconds(lnOnFor);
+            lineRenderer.startWidth = 0f;
+            lineRenderer.endWidth = 0f;
         }
         else
         {
-            // Did not hit anything
-            Debug.Log("Missed");
+            List<GameObject> hittedEnemies = null;
+            float angleA = UnityEngine.Random.Range(45, 91);
+            float angleB = UnityEngine.Random.Range(-45, 46);
+            float angleC = UnityEngine.Random.Range(-90, -44);
+
+
+            for (int i = 0; i < 3; i++)
+            {
+                float angle = (i == 0 ? angleA : (i == 1 ? angleB : angleC));
+                for (int j = 0; j < 2; j++)
+                {
+                    RaycastHit2D[] bulletHits = Physics2D.RaycastAll(firePoint.position, shootingVector * angle, shootingDirection);
+                    foreach (RaycastHit2D hit in bulletHits)
+                    {
+                        if (hit.transform.CompareTag("Enemy"))
+                        {
+                            hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
+                            hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+
+                            hittedEnemies.Add(hit.transform.gameObject);
+                        }
+                    }
+                }
+                
+            }
         }
-
-        if (currentWeapon.GetIsInFighting()) yield break;
-
-        lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.startWidth = 0.1f;
-        lineRenderer.endWidth = 0.1f;
-
-        lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
-
-        yield return new WaitForSeconds(lnOnFor);
-        lineRenderer.startWidth = 0f;
-        lineRenderer.endWidth = 0f;
+        
 
     }
 

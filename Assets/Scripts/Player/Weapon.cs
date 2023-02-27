@@ -9,6 +9,8 @@ public class Weapon : ScriptableObject
     [SerializeField] private float weaponDamage = 5;
     [SerializeField] private bool isInFighting = false;
     [SerializeField] private float bulletFrequency = 1;
+    [SerializeField] private bool isShot = false;
+    [SerializeField] private Bullet bullet = null;
 
     //[SerializeField] private Transform firePointWeapon = null;
 
@@ -49,6 +51,11 @@ public class Weapon : ScriptableObject
     public GameObject GetEquippedPrebaf()
     {
         return equippedPrefab;
+    }
+
+    public bool GetIsShot()
+    {
+        return isShot;
     }
 
     //public Transform GetFirePoint()
