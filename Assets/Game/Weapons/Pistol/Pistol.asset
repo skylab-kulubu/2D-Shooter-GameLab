@@ -16,5 +16,9 @@ MonoBehaviour:
   weaponRange: 10
   shakeIntensity: 1
   weaponDamage: 30
+  magazineCapacity: 0
+  defaultBulletAmount: 0
   isInFighting: 0
   bulletFrequency: 0.4
+  isShot: 0
+  bullet: {fileID: 11400000, guid: f1180b747e92ea947948ebd4cb52b13f, type: 2}

@@ -6,7 +6,6 @@ using System;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private float lnOnFor = 0.1f;
 
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
@@ -14,6 +13,8 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] Transform weaponMainTransform;
     [SerializeField] Weapon defaultWeapon = null;
+
+    [SerializeField] List<GameObject> currentMagazine = new List<GameObject>();
     Weapon currentWeapon = null;
 
     [SerializeField] private Transform firePoint = null;
@@ -25,28 +26,36 @@ public class Shooting : MonoBehaviour
 
     private float shootingDirection;
 
-
+    private GameObject bullet = null;
 
 
     private void Start()
     {
         EquipWeapon(defaultWeapon);
 
-        List<Bullet> magazine = new List<Bullet>();
         int defaultBulletAmount = currentWeapon.GetDefaultBulletAmount();
-        int magazineCapacity = currentWeapon.GetMagazineCapacity();
-        LoadMagazine(magazine, magazineCapacity, defaultBulletAmount);
+        LoadMagazine(currentMagazine, defaultBulletAmount);
 
         //firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
     }
 
-    private void LoadMagazine(List<Bullet> magazine, int magazineCapacity, int bulletAmount)
+    private void LoadMagazine(List<GameObject> magazine, int bulletAmount)
     {
         for (int i = 0; i < bulletAmount; i++)
         {
-            if (magazine.ToArray().Length >= magazineCapacity) return;
-            Bullet bullet = Instantiate(currentWeapon.GetBullet());
-            magazine.Add(bullet);
+            if (currentWeapon == null)
+            {
+                Debug.LogError("Current Weapon is null");
+            }
+            else
+            {
+                if (magazine.ToArray().Length >= currentWeapon.GetMagazineCapacity()) return;
+                Debug.Log((magazine.ToArray().Length));
+
+                bullet = Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), gameObject.transform);
+                magazine.Add(bullet);
+            }
+
         }
     }
 
@@ -79,7 +88,7 @@ public class Shooting : MonoBehaviour
         {
             if (sinceLastShoot > currentWeapon.GetBulletFrequency())
             {
-                StartCoroutine(Shoot());
+                HitTheTrigger();
             }
         }
 
@@ -95,6 +104,20 @@ public class Shooting : MonoBehaviour
         else if (Mathf.Sign(transform.localScale.x) == -1)
         {
             shootingDirection = -currentWeapon.GetWeaponRange();
+        }
+    }
+    private void HitTheTrigger()
+    {
+        if (currentMagazine.ToArray().Length > 0)
+        {
+            StartCoroutine(Shoot());
+            Debug.Log(currentMagazine.ToArray().Length);
+            currentMagazine.RemoveAt(0);
+
+        }
+        else
+        {
+            Debug.Log("magazine is empty");
         }
     }
     private IEnumerator Shoot()
@@ -130,6 +153,12 @@ public class Shooting : MonoBehaviour
 
             if (currentWeapon.GetIsInFighting()) yield break;
 
+            LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
+            if (lineRenderer == null)
+            {
+                Debug.LogError("linerenderer null");
+            }
+
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.startWidth = 0.1f;
             lineRenderer.endWidth = 0.1f;
@@ -139,6 +168,8 @@ public class Shooting : MonoBehaviour
             yield return new WaitForSeconds(lnOnFor);
             lineRenderer.startWidth = 0f;
             lineRenderer.endWidth = 0f;
+
+
         }
         else
         {
@@ -161,13 +192,14 @@ public class Shooting : MonoBehaviour
                             hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
                             hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
 
-                            Bullet bullet = currentWeapon.GetBullet();
-                            LineRenderer lineRenderer = bullet.GetBulletPrefab().GetComponent<LineRenderer>();
+                            LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
+
                             lineRenderer.SetPosition(0, firePoint.position);
                             lineRenderer.startWidth = 0.1f;
                             lineRenderer.endWidth = 0.1f;
 
                             lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
+                            Debug.Log("yav ananýn amý");
 
                             yield return new WaitForSeconds(lnOnFor);
                             lineRenderer.startWidth = 0f;
@@ -177,10 +209,10 @@ public class Shooting : MonoBehaviour
                         }
                     }
                 }
-                
+
             }
         }
-        
+
 
     }
 
