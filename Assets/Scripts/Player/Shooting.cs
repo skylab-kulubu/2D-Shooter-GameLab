@@ -50,8 +50,6 @@ public class Shooting : MonoBehaviour
             else
             {
                 if (magazine.ToArray().Length >= currentWeapon.GetMagazineCapacity()) return;
-                Debug.Log((magazine.ToArray().Length));
-
                 bullet = Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), gameObject.transform);
                 magazine.Add(bullet);
             }
@@ -90,6 +88,12 @@ public class Shooting : MonoBehaviour
             {
                 HitTheTrigger();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            LoadMagazine(currentMagazine, currentWeapon.GetMagazineCapacity());
+            Debug.Log("reloaded");
         }
 
 
@@ -154,11 +158,15 @@ public class Shooting : MonoBehaviour
             if (currentWeapon.GetIsInFighting()) yield break;
 
             LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
+
             if (lineRenderer == null)
             {
                 Debug.LogError("linerenderer null");
             }
-
+            if (!lineRenderer.enabled)
+            {
+                lineRenderer.enabled = true;
+            }
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.startWidth = 0.1f;
             lineRenderer.endWidth = 0.1f;
@@ -173,7 +181,7 @@ public class Shooting : MonoBehaviour
         }
         else
         {
-            List<GameObject> hittedEnemies = null;
+            List<GameObject> hittedEnemies = new List<GameObject>();
             float angleA = UnityEngine.Random.Range(45, 91);
             float angleB = UnityEngine.Random.Range(-45, 46);
             float angleC = UnityEngine.Random.Range(-90, -44);
@@ -199,7 +207,6 @@ public class Shooting : MonoBehaviour
                             lineRenderer.endWidth = 0.1f;
 
                             lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
-                            Debug.Log("yav ananýn amý");
 
                             yield return new WaitForSeconds(lnOnFor);
                             lineRenderer.startWidth = 0f;
