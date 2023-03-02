@@ -28,9 +28,13 @@ public class EnemyDeathState : EnemyBaseState
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Death");
 
-        Collider2D collider = enemy.GetComponent<Collider2D>();
-        collider.enabled = false;
-        
+        Collider2D[] colliders = enemy.GetComponents<Collider2D>();
+
+        foreach (Collider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+
         yield return new WaitForSeconds(5f);
 
         enemy.gameObject.SetActive(false);

@@ -1,9 +1,9 @@
 using System.Collections;
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System;
+using System.Linq;
 
 public class Shooting : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class Shooting : MonoBehaviour
 
     private void LoadMagazine(List<GameObject> magazine, int bulletAmount)
     {
-        for (int i = 0; i < bulletAmount && magazine.Count < currentWeapon.GetMagazineCapacity(); i++)
+        for (int i = 0; i < bulletAmount; i++)
         {
             if (currentWeapon == null)
             {
@@ -50,10 +50,13 @@ public class Shooting : MonoBehaviour
             }
             else
             {
-                magazine.Add(Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), gameObject.transform));
-            }
-        }
+                if (magazine.ToArray().Length >= currentWeapon.GetMagazineCapacity()) return;
 
+                bullet = Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), gameObject.transform);
+                magazine.Add(bullet);
+            }
+
+        }
     }
 
     private void EquipWeapon(Weapon weapon)
@@ -68,7 +71,18 @@ public class Shooting : MonoBehaviour
     {
         sinceLastShoot += Time.deltaTime;
         SetShootingDirection();
-        ShakeTimer();
+
+        if (shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
+            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+            }
+        }
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -81,30 +95,21 @@ public class Shooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             LoadMagazine(currentMagazine, currentWeapon.GetMagazineCapacity());
-            Debug.Log("reloaded");
         }
 
 
-    }
-
-    private void ShakeTimer()
-    {
-        if (shakeTimer > 0)
-        {
-            shakeTimer -= Time.deltaTime;
-            if (shakeTimer <= 0f)
-            {
-                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
-            }
-        }
     }
 
     private void SetShootingDirection()
     {
-        shootingDirection = currentWeapon.GetWeaponRange() * Mathf.Sign(transform.localScale.x);
+        if (Mathf.Sign(transform.localScale.x) == 1)
+        {
+            shootingDirection = currentWeapon.GetWeaponRange();
+        }
+        else if (Mathf.Sign(transform.localScale.x) == -1)
+        {
+            shootingDirection = -currentWeapon.GetWeaponRange();
+        }
     }
     private void HitTheTrigger()
     {
