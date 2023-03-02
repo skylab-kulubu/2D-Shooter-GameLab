@@ -37,6 +37,8 @@ public class EnemyStateManager : MonoBehaviour
 
     public bool destroyedAFence = false;
 
+    public BoxCollider2D takeDamageCollider;
+    public BoxCollider2D hitFenceCollider;
 
     void Start()
     {

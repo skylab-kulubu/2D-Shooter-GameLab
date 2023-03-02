@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -129908441
-  m_SortingLayer: 5
+  m_SortingLayerID: 1722653625
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,7 +127,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Size.x
-      value: 1.3493636
+      value: 1.3908436
       objectReference: {fileID: 0}
     - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Size.y
@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Offset.x
-      value: -0.17468178
+      value: -0.15394175
       objectReference: {fileID: 0}
     - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Offset.y
@@ -189,18 +189,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Size.x
+      value: 1.235054
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8710825
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.15900755
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.020740032
+      objectReference: {fileID: 0}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyStats
       value: 
       objectReference: {fileID: 11400000, guid: a0ddd0b64ee8b3a46a7d32bbd3d03e11, type: 2}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyLineID
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: HitFenceCollider
+      value: 
+      objectReference: {fileID: 1898462115221248071}
+    - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: TakeDamageCollider
+      value: 
+      objectReference: {fileID: 8299901008935619671}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+--- !u!61 &1898462115221248071 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+  m_PrefabInstance: {fileID: 8811264573382271693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6943308568667457313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1881502066387887596, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+  m_PrefabInstance: {fileID: 8811264573382271693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &8299901008935619671 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
   m_PrefabInstance: {fileID: 8811264573382271693}
   m_PrefabAsset: {fileID: 0}

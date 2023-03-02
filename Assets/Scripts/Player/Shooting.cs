@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -41,7 +42,7 @@ public class Shooting : MonoBehaviour
 
     private void LoadMagazine(List<GameObject> magazine, int bulletAmount)
     {
-        for (int i = 0; i < bulletAmount; i++)
+        for (int i = 0; i < bulletAmount && magazine.Count < currentWeapon.GetMagazineCapacity(); i++)
         {
             if (currentWeapon == null)
             {
@@ -49,12 +50,10 @@ public class Shooting : MonoBehaviour
             }
             else
             {
-                if (magazine.ToArray().Length >= currentWeapon.GetMagazineCapacity()) return;
-                bullet = Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), gameObject.transform);
-                magazine.Add(bullet);
+                magazine.Add(Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), gameObject.transform));
             }
-
         }
+
     }
 
     private void EquipWeapon(Weapon weapon)
@@ -69,18 +68,7 @@ public class Shooting : MonoBehaviour
     {
         sinceLastShoot += Time.deltaTime;
         SetShootingDirection();
-
-        if (shakeTimer > 0)
-        {
-            shakeTimer -= Time.deltaTime;
-            if (shakeTimer <= 0f)
-            {
-                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
-            }
-        }
+        ShakeTimer();
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -99,16 +87,24 @@ public class Shooting : MonoBehaviour
 
     }
 
+    private void ShakeTimer()
+    {
+        if (shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
+            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+            }
+        }
+    }
+
     private void SetShootingDirection()
     {
-        if (Mathf.Sign(transform.localScale.x) == 1)
-        {
-            shootingDirection = currentWeapon.GetWeaponRange();
-        }
-        else if (Mathf.Sign(transform.localScale.x) == -1)
-        {
-            shootingDirection = -currentWeapon.GetWeaponRange();
-        }
+        shootingDirection = currentWeapon.GetWeaponRange() * Mathf.Sign(transform.localScale.x);
     }
     private void HitTheTrigger()
     {
@@ -133,64 +129,38 @@ public class Shooting : MonoBehaviour
         if (!currentWeapon.GetIsShot())
         {
             RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.position, shootingVector, shootingDirection);
-            GameObject hittedEnemy = null;
-            foreach (RaycastHit2D hit in hits)
-            {
-                if (hit.collider.CompareTag("Enemy"))
-                {
-                    hittedEnemy = hit.collider.gameObject;
-                    break;
-                }
-            }
+            GameObject hittedEnemy = hits.Where(hit => hit.collider.CompareTag("Enemy")).Select(hit => hit.collider.gameObject).FirstOrDefault();
 
             if (hittedEnemy != null)
             {
-
-                hittedEnemy.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
-                hittedEnemy.transform.GetComponent<EnemyStateManager>().SwitchState(hittedEnemy.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+                EnemyStateManager enemyStateManager = hittedEnemy.transform.GetComponent<EnemyStateManager>();
+                enemyStateManager.GetAmountofDamage(currentWeapon.GetWeaponDamage());
+                enemyStateManager.SwitchState(enemyStateManager.TakeDamageState);
             }
             else
             {
-                // Did not hit anything
                 Debug.Log("Missed");
             }
 
             if (currentWeapon.GetIsInFighting()) yield break;
 
             LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
-
-            if (lineRenderer == null)
-            {
-                Debug.LogError("linerenderer null");
-            }
-            if (!lineRenderer.enabled)
-            {
-                lineRenderer.enabled = true;
-            }
-            lineRenderer.SetPosition(0, firePoint.position);
+            if (lineRenderer == null) Debug.LogError("LineRenderer is null");
+            lineRenderer.enabled = true;
+            lineRenderer.SetPositions(new Vector3[] { firePoint.position, firePoint.position + Vector3.right * shootingDirection });
             lineRenderer.startWidth = 0.1f;
             lineRenderer.endWidth = 0.1f;
-
-            lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
-
             yield return new WaitForSeconds(lnOnFor);
             lineRenderer.startWidth = 0f;
             lineRenderer.endWidth = 0f;
-
-
         }
         else
         {
-            List<GameObject> hittedEnemies = new List<GameObject>();
-            float angleA = UnityEngine.Random.Range(45, 91);
-            float angleB = UnityEngine.Random.Range(-45, 46);
-            float angleC = UnityEngine.Random.Range(-90, -44);
+            List<float> angles = new List<float> { UnityEngine.Random.Range(45, 91), UnityEngine.Random.Range(-45, 46), UnityEngine.Random.Range(-90, -44) };
 
-
-            for (int i = 0; i < 3; i++)
+            foreach (float angle in angles)
             {
-                float angle = (i == 0 ? angleA : (i == 1 ? angleB : angleC));
-                for (int j = 0; j < 2; j++)
+                for (int i = 0; i < 2; i++)
                 {
                     RaycastHit2D[] bulletHits = Physics2D.RaycastAll(firePoint.position, shootingVector * angle, shootingDirection);
                     foreach (RaycastHit2D hit in bulletHits)
@@ -199,29 +169,22 @@ public class Shooting : MonoBehaviour
                         {
                             hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
                             hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
-
-                            LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
-
-                            lineRenderer.SetPosition(0, firePoint.position);
-                            lineRenderer.startWidth = 0.1f;
-                            lineRenderer.endWidth = 0.1f;
-
-                            lineRenderer.SetPosition(1, (firePoint.position + Vector3.right * shootingDirection));
-
-                            yield return new WaitForSeconds(lnOnFor);
-                            lineRenderer.startWidth = 0f;
-                            lineRenderer.endWidth = 0f;
-
-                            hittedEnemies.Add(hit.transform.gameObject);
                         }
                     }
-                }
 
+                    LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
+                    if (lineRenderer == null) Debug.LogError("LineRenderer is null");
+                    lineRenderer.SetPositions(new Vector3[] { firePoint.position, firePoint.position + Vector3.right * shootingDirection });
+                    lineRenderer.startWidth = 0.1f;
+                    lineRenderer.endWidth = 0.1f;
+                    yield return new WaitForSeconds(lnOnFor);
+                    lineRenderer.startWidth = 0f;
+                    lineRenderer.endWidth = 0f;
+                }
             }
         }
-
-
     }
+
 
     public void ShakeCamera(float intensity, float timer)
     {

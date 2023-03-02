@@ -16,8 +16,8 @@ MonoBehaviour:
   weaponRange: 10
   shakeIntensity: 1
   weaponDamage: 30
-  magazineCapacity: 0
-  defaultBulletAmount: 0
+  magazineCapacity: 15
+  defaultBulletAmount: 15
   isInFighting: 0
   bulletFrequency: 0.4
   isShot: 0

@@ -173,6 +173,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEye
       objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8612881
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8278058
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0023915768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.009566337
+      objectReference: {fileID: 0}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyStats
       value: 
@@ -181,10 +197,28 @@ PrefabInstance:
       propertyPath: enemyLineID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: HitFenceCollider
+      value: 
+      objectReference: {fileID: 7910169661466363216}
+    - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: TakeDamageCollider
+      value: 
+      objectReference: {fileID: 338064261618684224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+--- !u!61 &338064261618684224 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+  m_PrefabInstance: {fileID: 998046682772275162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1712975355890063926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1881502066387887596, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+  m_PrefabInstance: {fileID: 998046682772275162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &7910169661466363216 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
   m_PrefabInstance: {fileID: 998046682772275162}
   m_PrefabAsset: {fileID: 0}
