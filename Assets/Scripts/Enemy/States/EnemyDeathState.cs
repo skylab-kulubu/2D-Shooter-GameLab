@@ -27,7 +27,7 @@ public class EnemyDeathState : EnemyBaseState
 
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Death");
-
+        enemy.GetComponent<DropManager>().DropSomething();
         Collider2D[] colliders = enemy.GetComponents<Collider2D>();
 
         foreach (Collider2D collider in colliders)
