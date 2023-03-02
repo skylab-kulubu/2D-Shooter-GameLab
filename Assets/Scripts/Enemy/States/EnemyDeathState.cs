@@ -15,7 +15,7 @@ public class EnemyDeathState : EnemyBaseState
     {
     }
 
-    public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
+    public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D collision)
     {
     }
     public override void UpdateState(EnemyStateManager enemy)
@@ -40,12 +40,12 @@ public class EnemyDeathState : EnemyBaseState
         enemy.gameObject.SetActive(false);
     }
 
-    public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
+    public override void OnTriggerStay2D(EnemyStateManager enemy, Collider2D collision)
     {
 
     }
 
-    public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
+    public override void OnTriggerExit2D(EnemyStateManager enemy, Collider2D collision)
     {
 
     }

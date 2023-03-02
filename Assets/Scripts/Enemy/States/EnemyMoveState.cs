@@ -25,7 +25,7 @@ public class EnemyMoveState : EnemyBaseState
         rb.velocity = moveVector * speed * Time.deltaTime;
     }
 
-    public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
+    public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Fence")
         {
@@ -33,37 +33,58 @@ public class EnemyMoveState : EnemyBaseState
             if (collision.gameObject.tag == "Player")
             {
                 enemy.SwitchState(enemy.AttacksPlayerState);
+                enemy.target = collision.gameObject;
+
             }
             else if (collision.gameObject.tag == "Fence")
             {
-                collision.gameObject.GetComponent<Fence>().enemiesThatAttacksThisFence.Add(enemy.gameObject);
+                Debug.Log("yarrak");
 
-                enemy.SwitchState(enemy.AttacksFenceState);
+                float fenceId = collision.gameObject.GetComponent<Fence>().GetFenceLineID();
+                float enemyId = enemy.enemyLineID;
+
+                
+                    collision.gameObject.GetComponent<Fence>().enemiesThatAttacksThisFence.Add(enemy.gameObject);
+
+                    enemy.SwitchState(enemy.AttacksFenceState);
+                    enemy.target = collision.gameObject;
+
+                
+                
+
             }
-            enemy.target = collision.gameObject;
         }
     }
 
-    public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
+    public override void OnTriggerExit2D(EnemyStateManager enemy, Collider2D collision)
     {
     }
 
-    public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
+    public override void OnTriggerStay2D(EnemyStateManager enemy, Collider2D collision)
     {
 
-        if (collision != null)
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                enemy.target = collision.gameObject;
-                enemy.SwitchState(enemy.AttacksPlayerState);
-            }
-            else if (collision.gameObject.tag == "Fence")
-            {
-                enemy.target = collision.gameObject;
-                enemy.SwitchState(enemy.AttacksFenceState);
-            }
-        }
+        //if (collision != null)
+        //{
+        //    if (collision.gameObject.tag == "Player")
+        //    {
+        //        enemy.target = collision.gameObject;
+        //        enemy.SwitchState(enemy.AttacksPlayerState);
+        //    }
+        //    else if (collision.gameObject.tag == "Fence")
+        //    {
+        //        float fenceId = collision.gameObject.GetComponent<Fence>().GetFenceLineID();
+        //        float enemyId = enemy.enemyLineID;
+
+        //        if (fenceId == enemyId)
+        //        {
+        //            collision.gameObject.GetComponent<Fence>().enemiesThatAttacksThisFence.Add(enemy.gameObject);
+
+        //            enemy.SwitchState(enemy.AttacksFenceState);
+        //            enemy.target = collision.gameObject;
+
+        //        }
+        //    }
+        //}
     }
 
     public override void UpdateState(EnemyStateManager enemy)

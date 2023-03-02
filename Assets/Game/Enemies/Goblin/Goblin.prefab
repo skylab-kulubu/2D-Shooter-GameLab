@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1438495575
-  m_SortingLayer: 6
+  m_SortingLayerID: 1900805805
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: c1cdd26cc09ad224884556bc4d8296ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,6 +153,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.37836814
       objectReference: {fileID: 0}
+    - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1881502066387887596, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -203,11 +207,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Size.y
-      value: 1.1565571
+      value: 0.62331045
       objectReference: {fileID: 0}
     - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Offset.y
-      value: -0.38537085
+      value: -0.65199417
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyStats
@@ -215,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 26d68a181ff02b34ab640bc7a6b375a7, type: 2}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyLineID
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: HitFenceCollider

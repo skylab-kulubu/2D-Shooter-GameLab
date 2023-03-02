@@ -25,7 +25,7 @@ public class EnemyStateManager : MonoBehaviour
 
     public float damageTaken;
 
-    public Collision2D currentCollision;
+    public Collider2D currentCollision;
 
     public GameObject target;
 
@@ -55,20 +55,20 @@ public class EnemyStateManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        currentState.OnCollisionEnter2D(this, collision);
+        currentState.OnTriggerEnter2D(this, collision);
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         currentCollision = collision;
-        currentState.OnCollisionStay2D(this, collision);
+        currentState.OnTriggerStay2D(this, collision);
         print(gameObject.name + "'s currentCollision: " + currentCollision.transform.name);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        currentState.OnCollisionExit2D(this, collision);
+        currentState.OnTriggerExit2D(this, collision);
     }
 
     public void SwitchState(EnemyBaseState state)
@@ -77,7 +77,7 @@ public class EnemyStateManager : MonoBehaviour
         state.EnterState(this);
     }
 
-    
+
 
     void FixedUpdate()
     {

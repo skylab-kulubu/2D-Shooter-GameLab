@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1722653625
-  m_SortingLayer: 7
+  m_SortingLayerID: 1900805805
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: f8b30c2afe165d645b54d500a9c30862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -126,12 +126,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8484941
+      objectReference: {fileID: 0}
+    - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Size.y
-      value: 1.4393368
+      value: 0.37879586
+      objectReference: {fileID: 0}
+    - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.004734546
       objectReference: {fileID: 0}
     - target: {fileID: -8545354291036246374, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Offset.y
-      value: -0.29181853
+      value: -0.71319413
       objectReference: {fileID: 0}
     - target: {fileID: 1881502066387887596, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_RootOrder
@@ -187,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Size.y
-      value: 1.3184526
+      value: 1.3705326
       objectReference: {fileID: 0}
     - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Offset.x
@@ -195,7 +203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Offset.y
-      value: -0.29446018
+      value: -0.3205003
       objectReference: {fileID: 0}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyStats
@@ -203,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: bc8c43281673438458a3528ccf32661c, type: 2}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: enemyLineID
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7713629221847395854, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: HitFenceCollider
