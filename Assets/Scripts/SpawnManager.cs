@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private bool isReadyForNextWave = false;
 
-    [SerializeField] private GameObject readyforNextWaveButton;
+    [SerializeField] private GameObject breakTimeElements;
 
     public static int enemyDestroyed = 0;
 
@@ -44,7 +44,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private int createdEnemyNumber = 0;
     private void Start()
     {
-
+        currentBreakTime = breakTime;
         StartCoroutine(SpawnEnemyInARow(starterEnemyNumber));
 
     }
@@ -52,21 +52,22 @@ public class SpawnManager : MonoBehaviour
     {
         if (enemyDestroyed >= createdEnemyNumber)
         {
-            currentBreakTime += Time.deltaTime;
-            readyforNextWaveButton.SetActive(true);
-            if(currentBreakTime > breakTime)
+            currentBreakTime -= Time.deltaTime;
+            breakTimeElements.SetActive(true);
+            if(currentBreakTime <= 0)
             {
                 isReadyForNextWave = true;
             }
             if (isReadyForNextWave)
             {
-                readyforNextWaveButton.SetActive(false);
-                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 2));
-                currentBreakTime = 0;
+                breakTimeElements.SetActive(false);
+                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 3/2));
+                currentBreakTime = breakTime;
             }
         }
     }
 
+    
     private IEnumerator WaitForSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -171,5 +172,10 @@ public class SpawnManager : MonoBehaviour
     {
         isReadyForNextWave = true;
     }
-    
+
+    public float GetBreakTime()
+    {
+        return Mathf.FloorToInt(currentBreakTime);
+    }
+
 }

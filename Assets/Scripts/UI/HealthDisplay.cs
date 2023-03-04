@@ -9,10 +9,12 @@ public class HealthDisplay : MonoBehaviour
     [SerializeField] private float playerHealthPoints;
     [SerializeField] private int currentAmmo;
     [SerializeField] private int magazineCapacity;
+    [SerializeField] private float breakTime;
 
     [SerializeField] Text playerHealthDisplayText;
     [SerializeField] Text villageHealthDisplayText;
     [SerializeField] Text ammoDisplayText;
+    [SerializeField] Text breakTimeDisplayText;
 
 
 
@@ -20,6 +22,9 @@ public class HealthDisplay : MonoBehaviour
 
     void Update()
     {
+        breakTime = FindObjectOfType<SpawnManager>().GetBreakTime();
+        breakTimeDisplayText.text = $"Break Time: {breakTime}"; 
+
         currentAmmo = GameObject.FindGameObjectWithTag("Player").GetComponent<Shooting>().GetCurrentMagazine().Count;
         magazineCapacity = GameObject.FindGameObjectWithTag("Player").GetComponent<Shooting>().GetCurrentWeapon().GetMagazineCapacity();
 
