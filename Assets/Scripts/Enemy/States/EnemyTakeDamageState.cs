@@ -53,40 +53,55 @@ public class EnemyTakeDamageState : EnemyBaseState
                     enemy.SwitchState(enemy.RunToVillageState);
 
                 }
+                else if(enemy.enemyAttacksFence)
+                {
+                    enemy.SwitchState(enemy.AttacksFenceState);
+
+                    //if(enemy.currentCollision != null && enemy.currentTrigger != null)
+                    //{
+                    //    enemy.target = enemy.currentTrigger.transform.gameObject;
+                    //    enemy.SwitchState(enemy.AttacksFenceState);
+                    //}
+                    //if(enemy.currentTrigger != null)
+                    //{
+                    //    if (enemy.currentTrigger.CompareTag("Fence") )
+                    //    {
+                    //        enemy.target = enemy.currentTrigger.gameObject;
+                    //        enemy.SwitchState(enemy.AttacksFenceState);
+                    //    }
+                    //    else
+                    //    {
+                    //        enemy.target = null;
+                    //        enemy.SwitchState(enemy.MoveState);
+
+                    //    }
+                    //}
+                    //else if (enemy.currentCollision != null)
+                    //{
+                    //    if (enemy.currentCollision.transform.CompareTag("Player"))
+                    //    {
+                    //        enemy.target = enemy.currentCollision.gameObject;
+                    //        enemy.SwitchState(enemy.AttacksPlayerState);
+                    //    }
+                    //    else
+                    //    {
+                    //        enemy.target = null;
+                    //        enemy.SwitchState(enemy.MoveState);
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    enemy.target = null;
+                    //    enemy.SwitchState(enemy.MoveState);
+                    //}
+                }
+                else if (enemy.enemyAttacksPlayer)
+                {
+                    enemy.SwitchState(enemy.AttacksPlayerState);
+                }
                 else
                 {
-                    if(enemy.currentTrigger != null)
-                    {
-                        if (enemy.currentTrigger.CompareTag("Fence"))
-                        {
-                            enemy.target = enemy.currentTrigger.gameObject;
-                            enemy.SwitchState(enemy.AttacksFenceState);
-                        }
-                        else
-                        {
-                            enemy.target = null;
-                            enemy.SwitchState(enemy.MoveState);
-
-                        }
-                    }
-                    else if (enemy.currentCollision != null)
-                    {
-                        if (enemy.currentCollision.transform.CompareTag("Player"))
-                        {
-                            enemy.target = enemy.currentCollision.gameObject;
-                            enemy.SwitchState(enemy.AttacksPlayerState);
-                        }
-                        else
-                        {
-                            enemy.target = null;
-                            enemy.SwitchState(enemy.MoveState);
-                        }
-                    }
-                    else
-                    {
-                        enemy.target = null;
-                        enemy.SwitchState(enemy.MoveState);
-                    }
+                    enemy.SwitchState(enemy.MoveState);
                 }
             }
         }

@@ -10,6 +10,8 @@ public class EnemyMoveState : EnemyBaseState
         //{
         //    enemy.SwitchState(enemy.AttacksPlayerState);
         //}
+        enemy.enemyAttacksPlayer = false;
+        enemy.enemyAttacksFence = false;
         enemy.transform.localScale = new Vector3(1, 1, 1);
         Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
         animator.Play("Run");
@@ -52,28 +54,15 @@ public class EnemyMoveState : EnemyBaseState
     public override void OnTriggerStay2D(EnemyStateManager enemy, Collider2D collision)
     {
 
-        //if (collision != null)
-        //{
-        //    if (collision.gameObject.tag == "Player")
-        //    {
-        //        enemy.target = collision.gameObject;
-        //        enemy.SwitchState(enemy.AttacksPlayerState);
-        //    }
-        //    else if (collision.gameObject.tag == "Fence")
-        //    {
-        //        float fenceId = collision.gameObject.GetComponent<Fence>().GetFenceLineID();
-        //        float enemyId = enemy.enemyLineID;
-
-        //        if (fenceId == enemyId)
-        //        {
-        //            collision.gameObject.GetComponent<Fence>().enemiesThatAttacksThisFence.Add(enemy.gameObject);
-
-        //            enemy.SwitchState(enemy.AttacksFenceState);
-        //            enemy.target = collision.gameObject;
-
-        //        }
-        //    }
-        //}
+        if (collision != null)
+        {
+            
+            if (collision.gameObject.tag == "Fence")
+            {
+                enemy.SwitchState(enemy.AttacksFenceState);
+                enemy.target = collision.gameObject;
+            }
+        }
     }
 
     public override void UpdateState(EnemyStateManager enemy)
@@ -90,6 +79,14 @@ public class EnemyMoveState : EnemyBaseState
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
     {
+        if (collision != null)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                enemy.target = collision.gameObject;
+                enemy.SwitchState(enemy.AttacksPlayerState);
+            }
+        }
     }
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)

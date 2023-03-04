@@ -54,6 +54,7 @@ public class EnemyStateManager : MonoBehaviour
         timeSinceLastAttack += Time.deltaTime;
         print(gameObject.name + "'s " + currentState);
         currentState.UpdateState(this);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -72,6 +73,7 @@ public class EnemyStateManager : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         currentState.OnTriggerExit2D(this, collision);
+        currentTrigger = null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -91,6 +93,7 @@ public class EnemyStateManager : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         currentState.OnCollisionExit2D(this, collision);
+        currentCollision = null;
     }
 
     public void SwitchState(EnemyBaseState state)

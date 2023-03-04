@@ -8,7 +8,7 @@ public class EnemyAttacksFenceState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         enemy.enemyAttacksPlayer = false;
-
+        enemy.enemyAttacksFence = true;
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.zero;
     }
@@ -36,30 +36,30 @@ public class EnemyAttacksFenceState : EnemyBaseState
             {
                 enemy.SwitchState(enemy.RunToVillageState);
                 enemy.target = null;
-
+                enemy.enemyAttacksFence = false;
             }
-            else if(collision.gameObject == enemy.target)
-            {
-                enemy.SwitchState(enemy.MoveState);
-                enemy.target = null;
-            }
-            else if (!enemy.destroyedAFence)
-            {
-                enemy.SwitchState(enemy.MoveState);
-            }
+            //else if(collision.gameObject == enemy.target)
+            //{
+            //    enemy.SwitchState(enemy.MoveState);
+            //    enemy.target = null;
+            //}
+            //else if (!enemy.destroyedAFence)
+            //{
+            //    enemy.SwitchState(enemy.MoveState);
+            //}
         }
     }
 
     public override void OnTriggerStay2D(EnemyStateManager enemy, Collider2D collision)
     {
-        //if (enemy.target == null)
-        //{
-        //    enemy.SwitchState(enemy.MoveState);
-        //}
-        //else
-        //{
-        //    enemy.target = enemy.currentCollision.gameObject;
-        //}
+        if (enemy.target == null)
+        {
+            enemy.SwitchState(enemy.MoveState);
+        }
+        else if(collision.gameObject.CompareTag("Fence"))
+        {
+            enemy.target = enemy.currentTrigger.gameObject;
+        }
     }
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)

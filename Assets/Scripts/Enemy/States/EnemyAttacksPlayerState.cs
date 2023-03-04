@@ -8,6 +8,7 @@ public class EnemyAttacksPlayerState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         enemy.enemyAttacksPlayer = true;
+        enemy.enemyAttacksFence = false;
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>(); 
         rb.velocity = Vector2.zero;
     }
@@ -16,6 +17,10 @@ public class EnemyAttacksPlayerState : EnemyBaseState
     {
         Attack(enemy, enemy.target);
 
+        if(enemy.currentTrigger == null && enemy.currentCollision == null)
+        {
+            enemy.target = null;
+        }
         //StartAttackAction(enemy, enemy.target);
 
 
@@ -56,6 +61,7 @@ public class EnemyAttacksPlayerState : EnemyBaseState
 
     public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
     {
+        
     }
 
     public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
@@ -81,52 +87,57 @@ public class EnemyAttacksPlayerState : EnemyBaseState
     }
     public void Attack(EnemyStateManager enemy, GameObject target)
     {
-        if (target == null)
+        if (target != null)
         {
-
-            Debug.Log(enemy.gameObject.name + "'s target is null");
-            if (enemy.currentCollision == null)
-            {
-                enemy.SwitchState(enemy.MoveState);
-            }
-            else
-            {
-                if (enemy.currentCollision.transform.CompareTag("Fence"))
-                {
-                    enemy.target = enemy.currentCollision.gameObject;
-                }
-                else if (enemy.currentCollision.transform.CompareTag("Player"))
-                {
-                    if (enemy.currentCollision.transform.GetComponent<PlayerHealth>().GetIsPlayerDead())
-                    {
-                        enemy.SwitchState(enemy.MoveState);
-                    }
-                    else
-                    {
-                        enemy.target = enemy.currentCollision.gameObject;
-                    }
-                }
-                else if (enemy.currentCollision.transform.CompareTag("Enemy"))
-                {
-                    enemy.SwitchState(enemy.MoveState);
-                }
-                return;
-            }
+            AttackBehaivor(enemy, target);
+            
+            //if (enemy.currentCollision == null)
+            //{
+            //    enemy.SwitchState(enemy.MoveState);
+            //}
+            //else
+            //{
+            //    if (enemy.currentTrigger.transform.CompareTag("Fence"))
+            //    {
+            //        enemy.target = enemy.currentTrigger.gameObject;
+            //    }
+            //    else if (enemy.currentCollision.transform.CompareTag("Player"))
+            //    {
+            //        if (enemy.currentCollision.transform.GetComponent<PlayerHealth>().GetIsPlayerDead())
+            //        {
+            //            enemy.SwitchState(enemy.MoveState);
+            //        }
+            //        else
+            //        {
+            //            enemy.target = enemy.currentCollision.gameObject;
+            //        }
+            //    }
+            //    else if (enemy.currentCollision.transform.CompareTag("Enemy"))
+            //    {
+            //        enemy.SwitchState(enemy.MoveState);
+            //    }
+            //    return;
+            //}
 
         }
         else
         {
-            TurnToTarget(enemy, target);
+            enemy.SwitchState(enemy.MoveState);
 
-            Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
-            animator.Play("Attack");
         }
-        
+
     }
 
-    
+    private void AttackBehaivor(EnemyStateManager enemy, GameObject target)
+    {
+        TurnToTarget(enemy, target);
 
-    
+        Animator animator = enemy.transform.GetChild(0).GetComponent<Animator>();
+        animator.Play("Attack");
+    }
+
+
+
 
 
 
