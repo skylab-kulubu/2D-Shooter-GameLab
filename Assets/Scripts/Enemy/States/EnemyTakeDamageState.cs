@@ -55,7 +55,38 @@ public class EnemyTakeDamageState : EnemyBaseState
                 }
                 else
                 {
-                    enemy.SwitchState(enemy.MoveState);
+                    if(enemy.currentTrigger != null)
+                    {
+                        if (enemy.currentTrigger.CompareTag("Fence"))
+                        {
+                            enemy.target = enemy.currentTrigger.gameObject;
+                            enemy.SwitchState(enemy.AttacksFenceState);
+                        }
+                        else
+                        {
+                            enemy.target = null;
+                            enemy.SwitchState(enemy.MoveState);
+
+                        }
+                    }
+                    else if (enemy.currentCollision != null)
+                    {
+                        if (enemy.currentCollision.transform.CompareTag("Player"))
+                        {
+                            enemy.target = enemy.currentCollision.gameObject;
+                            enemy.SwitchState(enemy.AttacksPlayerState);
+                        }
+                        else
+                        {
+                            enemy.target = null;
+                            enemy.SwitchState(enemy.MoveState);
+                        }
+                    }
+                    else
+                    {
+                        enemy.target = null;
+                        enemy.SwitchState(enemy.MoveState);
+                    }
                 }
             }
         }

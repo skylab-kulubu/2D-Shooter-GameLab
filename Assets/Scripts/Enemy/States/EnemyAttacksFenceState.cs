@@ -52,14 +52,14 @@ public class EnemyAttacksFenceState : EnemyBaseState
 
     public override void OnTriggerStay2D(EnemyStateManager enemy, Collider2D collision)
     {
-        if (enemy.target == null)
-        {
-            enemy.SwitchState(enemy.MoveState);
-        }
-        else
-        {
-            enemy.target = enemy.currentCollision.gameObject;
-        }
+        //if (enemy.target == null)
+        //{
+        //    enemy.SwitchState(enemy.MoveState);
+        //}
+        //else
+        //{
+        //    enemy.target = enemy.currentCollision.gameObject;
+        //}
     }
 
     public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
