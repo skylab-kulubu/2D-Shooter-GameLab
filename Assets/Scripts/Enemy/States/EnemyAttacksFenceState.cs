@@ -62,6 +62,18 @@ public class EnemyAttacksFenceState : EnemyBaseState
         }
     }
 
+    public override void OnCollisionEnter2D(EnemyStateManager enemy, Collision2D collision)
+    {
+    }
+
+    public override void OnCollisionStay2D(EnemyStateManager enemy, Collision2D collision)
+    {
+    }
+
+    public override void OnCollisionExit2D(EnemyStateManager enemy, Collision2D collision)
+    {
+    }
+
     private void TurnToTarget(EnemyStateManager enemy, GameObject target)
     {
         if (enemy.currentCollision == null) return;
@@ -87,5 +99,5 @@ public class EnemyAttacksFenceState : EnemyBaseState
         animator.Play("Attack");
     }
 
-
+    
 }

@@ -71,6 +71,21 @@ public class EnemyStateManager : MonoBehaviour
         currentState.OnTriggerExit2D(this, collision);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        currentState.OnCollisionEnter2D(this, collision);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        currentState.OnCollisionStay2D(this, collision);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        currentState.OnCollisionExit2D(this, collision);
+    }
+
     public void SwitchState(EnemyBaseState state)
     {
         currentState = state;
