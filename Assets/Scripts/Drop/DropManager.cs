@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class DropManager : MonoBehaviour
 {
-    List<GameObject> drops = new List<GameObject>();
-    
+    [SerializeField] private List<GameObject> drops = new List<GameObject>();
+    int droppedAmount = 0;
 
     public void DropSomething()
     {
+        if (droppedAmount > 0) return;
         int randomItemNumber = UnityEngine.Random.Range(0, drops.Count);
         GameObject dropItem = drops[randomItemNumber];
 
         Instantiate(dropItem, gameObject.transform.position, Quaternion.identity);
+
+        droppedAmount++;
     }
 }

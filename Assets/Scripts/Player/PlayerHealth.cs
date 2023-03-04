@@ -32,4 +32,9 @@ public class PlayerHealth : MonoBehaviour
     {
         return isPlayerDead;
     }
+
+    public void AddPlayerHealthPoints(float healthPoints)
+    {
+        playerHealthPoints += healthPoints;
+    }
 }

@@ -15,8 +15,8 @@ public class Shooting : MonoBehaviour
     [SerializeField] Transform weaponMainTransform;
     [SerializeField] Weapon defaultWeapon = null;
 
-    [SerializeField] List<GameObject> currentMagazine = new List<GameObject>();
-    Weapon currentWeapon = null;
+    [SerializeField] private List<GameObject> currentMagazine = new List<GameObject>();
+    [SerializeField] private Weapon currentWeapon = null;
 
     [SerializeField] private Transform firePoint = null;
 
@@ -40,7 +40,7 @@ public class Shooting : MonoBehaviour
         //firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
     }
 
-    private void LoadMagazine(List<GameObject> magazine, int bulletAmount)
+    public void LoadMagazine(List<GameObject> magazine, int bulletAmount)
     {
         for (int i = 0; i < bulletAmount; i++)
         {
@@ -116,7 +116,6 @@ public class Shooting : MonoBehaviour
         if (currentMagazine.ToArray().Length > 0)
         {
             StartCoroutine(Shoot());
-            Debug.Log(currentMagazine.ToArray().Length);
             currentMagazine.RemoveAt(0);
 
         }
@@ -141,10 +140,6 @@ public class Shooting : MonoBehaviour
                 EnemyStateManager enemyStateManager = hittedEnemy.transform.GetComponent<EnemyStateManager>();
                 enemyStateManager.GetAmountofDamage(currentWeapon.GetWeaponDamage());
                 enemyStateManager.SwitchState(enemyStateManager.TakeDamageState);
-            }
-            else
-            {
-                Debug.Log("Missed");
             }
 
             if (currentWeapon.GetIsInFighting()) yield break;
@@ -200,6 +195,15 @@ public class Shooting : MonoBehaviour
         shakeTimer = timer;
     }
 
+    public List<GameObject> GetCurrentMagazine()
+    {
+        return currentMagazine;
+    }
+
+    public Weapon GetCurrentWeapon()
+    {
+        return currentWeapon;
+    }
 
 
 

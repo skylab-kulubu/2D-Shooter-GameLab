@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class LoadAmmo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            List<GameObject> magazine = collision.gameObject.GetComponent<Shooting>().GetCurrentMagazine();
+            Weapon weapon = collision.gameObject.GetComponent<Shooting>().GetCurrentWeapon();
+            collision.gameObject.GetComponent<Shooting>().LoadMagazine(magazine, weapon.GetMagazineCapacity());
+            Destroy(gameObject);
+        }
     }
 }

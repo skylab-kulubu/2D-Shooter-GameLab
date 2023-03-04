@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8545354291036246374}
   - component: {fileID: 6926350745430375050}
   - component: {fileID: 7713629221847395854}
+  - component: {fileID: -4483665330252125356}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -127,10 +128,26 @@ MonoBehaviour:
   enemyLineID: 0
   isDead: 0
   damageTaken: 0
+  currentCollision: {fileID: 0}
   target: {fileID: 0}
   enemyAttacksPlayer: 0
   enemyAttacksFence: 0
   enemyWasRunningToVillage: 0
   destroyedAFence: 0
-  TakeDamageCollider: {fileID: 0}
-  HitFenceCollider: {fileID: 0}
+  takeDamageCollider: {fileID: 0}
+  hitFenceCollider: {fileID: 0}
+--- !u!114 &-4483665330252125356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3443090357017730502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3aff3f27ddf2440958a96e8c2cffb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 395115263044904966, guid: 246e9237688b81742a16e19feb13d2b9, type: 3}
+  - {fileID: 4766398164218829567, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}

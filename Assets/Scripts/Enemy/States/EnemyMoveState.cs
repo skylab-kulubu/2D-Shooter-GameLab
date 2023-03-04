@@ -32,6 +32,7 @@ public class EnemyMoveState : EnemyBaseState
             //if (enemy.target != null) return;
             if (collision.gameObject.tag == "Player")
             {
+                Debug.Log("triggerýmý almýyon");
                 enemy.SwitchState(enemy.AttacksPlayerState);
                 enemy.target = collision.gameObject;
 
