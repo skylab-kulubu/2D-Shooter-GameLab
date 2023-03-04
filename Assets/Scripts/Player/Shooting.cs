@@ -59,7 +59,7 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    private void EquipWeapon(Weapon weapon)
+    public void EquipWeapon(Weapon weapon)
     {
         currentWeapon = weapon;
         weapon.Spawn(weaponMainTransform);
@@ -204,6 +204,14 @@ public class Shooting : MonoBehaviour
     {
         return currentWeapon;
     }
+    public void ResetCurrentMagazine()
+    {
+        currentMagazine = new List<GameObject>();
+    } 
+
+    
+
+    
 
 
 

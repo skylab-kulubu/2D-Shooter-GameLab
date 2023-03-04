@@ -61,7 +61,7 @@ public class SpawnManager : MonoBehaviour
             if (isReadyForNextWave)
             {
                 breakTimeElements.SetActive(false);
-                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 3/2));
+                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 6/5));
                 currentBreakTime = breakTime;
             }
         }
@@ -82,12 +82,15 @@ public class SpawnManager : MonoBehaviour
             while(spawnPoint == previousSpawnPoint)
             {
                 spawnPoint = RandomSpawnPointGenerator(enemy);
+                StartCoroutine(WaitForSeconds(0.5f));
             }
-            Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+            enemy.transform.position = spawnPoint.position;
+            enemy.transform.rotation = Quaternion.identity;
         }
         else
         {
-            Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+            enemy.transform.position = spawnPoint.position;
+            enemy.transform.rotation = Quaternion.identity;
         }
 
         previousSpawnPoint = spawnPoint;
@@ -98,7 +101,7 @@ public class SpawnManager : MonoBehaviour
         int listSize = enemies.Count;
         int randomIndex = UnityEngine.Random.Range(0, listSize);
 
-        GameObject randomEnemy = enemies[randomIndex];
+        GameObject randomEnemy = GetComponent<EnemyPool>().GetEnemy(randomIndex);
         return randomEnemy;
     }
 
