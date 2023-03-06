@@ -113,18 +113,26 @@ public class Shooting : MonoBehaviour
     }
     private void HitTheTrigger()
     {
-        if (currentMagazine.ToArray().Length > 0)
+        if (currentWeapon.GetIsInFighting())
         {
-            StartCoroutine(Shoot());
-            currentMagazine.RemoveAt(0);
-
+            HitWithTheWeapon();
         }
         else
         {
-            Debug.Log("magazine is empty");
+            if (currentMagazine.ToArray().Length > 0)
+            {
+                StartCoroutine(ShootWithTheGun());
+                currentMagazine.RemoveAt(0);
+
+            }
+            else
+            {
+                Debug.Log("magazine is empty");
+            }
         }
+        
     }
-    private IEnumerator Shoot()
+    private IEnumerator ShootWithTheGun()
     {
         ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
         shootingVector = transform.right;
@@ -142,7 +150,7 @@ public class Shooting : MonoBehaviour
                 enemyStateManager.SwitchState(enemyStateManager.TakeDamageState);
             }
 
-            if (currentWeapon.GetIsInFighting()) yield break;
+            
 
             LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
             if (lineRenderer == null) Debug.LogError("LineRenderer is null");
@@ -183,6 +191,24 @@ public class Shooting : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void HitWithTheWeapon()
+    {
+        ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
+        shootingVector = transform.right;
+        sinceLastShoot = 0;
+
+        RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.position, shootingVector, shootingDirection);
+        GameObject hittedEnemy = hits.Where(hit => hit.collider.CompareTag("Enemy")).Select(hit => hit.collider.gameObject).FirstOrDefault();
+
+        if (hittedEnemy != null)
+        {
+            EnemyStateManager enemyStateManager = hittedEnemy.transform.GetComponent<EnemyStateManager>();
+            enemyStateManager.GetAmountofDamage(currentWeapon.GetWeaponDamage());
+            enemyStateManager.SwitchState(enemyStateManager.TakeDamageState);
+        }
+
     }
 
 

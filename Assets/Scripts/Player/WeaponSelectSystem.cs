@@ -11,13 +11,14 @@ public class WeaponSelectSystem : MonoBehaviour
         if (index == weapons.Count) index = 0;
         if (weapons[index].GetIsInFighting())
         {
+            FindObjectOfType<Shooting>().ResetCurrentMagazine();
             FindObjectOfType<Shooting>().EquipWeapon(weapons[index]);
             index++;
         }
         else
         {
-            FindObjectOfType<Shooting>().EquipWeapon(weapons[index]);
             FindObjectOfType<Shooting>().ResetCurrentMagazine();
+            FindObjectOfType<Shooting>().EquipWeapon(weapons[index]);
             FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().GetCurrentWeapon().GetMagazineCapacity());
             index++;
 
