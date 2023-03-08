@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf522ad7abda5f14b88f07cc9cb11174, type: 3}
+  m_Name: RockFence
+  m_EditorClassIdentifier: 
+  mainFenceHealth: 500
+  fenceMaterial: {fileID: 11400000, guid: 6cf616af043647d47bfb82de0d76045a, type: 2}
+  nextFence: {fileID: 11400000, guid: f4510ccad604f1949a323dc12eb6d563, type: 2}
+  requiredMaterialToUpgrade: 100
+  requiredMaterialToFix: 50
+  fencePrefab: {fileID: 0}
+  endOfTheUpgrades: 0

@@ -5,9 +5,12 @@ public class Fence : ScriptableObject
 {
     [SerializeField] private float mainFenceHealth;
     [SerializeField] private FenceMaterial fenceMaterial;
+    [SerializeField] private Fence nextFence;
     [SerializeField] private int requiredMaterialToUpgrade;
     [SerializeField] private int requiredMaterialToFix;
     [SerializeField] GameObject fencePrefab;
+    [SerializeField] bool endOfTheUpgrades = false;
+
 
     public float GetFenceHealthPoints()
     {
@@ -28,5 +31,9 @@ public class Fence : ScriptableObject
     public FenceMaterial GetFenceMaterial()
     {
         return fenceMaterial;
+    }
+    public bool GetEndOfTheUpgrades()
+    {
+        return endOfTheUpgrades;
     }
 }
