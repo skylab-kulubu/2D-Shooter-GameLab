@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fence : MonoBehaviour
+public class FenceController : MonoBehaviour
 {
     [SerializeField] private float fenceHealth = 500;
     [SerializeField] private int fenceLineID;

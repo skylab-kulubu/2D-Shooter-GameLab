@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiamondFence : Fence
+public class DiamondFence : FenceController
 {
     [SerializeField] private const float diamondFenceHealth = 1000;
     [SerializeField] private const int requiredDiamondToFix = 100;

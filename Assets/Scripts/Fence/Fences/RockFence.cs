@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockFence : Fence
+public class RockFence : FenceController
 {
     [SerializeField] private const float rockFenceHealth = 200;
     [SerializeField] private const int requiredRockToFix = 50;

@@ -124,7 +124,7 @@ public class EnemyStateManager : MonoBehaviour
         }
         else if (target.gameObject.tag == "Fence")
         {
-            target.GetComponent<Fence>().FenceGetDamage(damage);
+            target.GetComponent<FenceController>().FenceGetDamage(damage);
         }
     }
 

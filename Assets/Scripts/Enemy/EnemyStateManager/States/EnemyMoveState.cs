@@ -33,11 +33,11 @@ public class EnemyMoveState : EnemyBaseState
         if (collision.gameObject.CompareTag("Fence"))
         {
 
-            float fenceId = collision.gameObject.GetComponent<Fence>().GetFenceLineID();
+            float fenceId = collision.gameObject.GetComponent<FenceController>().GetFenceLineID();
             float enemyId = enemy.enemyLineID;
 
 
-            collision.gameObject.GetComponent<Fence>().enemiesThatAttacksThisFence.Add(enemy.gameObject);
+            collision.gameObject.GetComponent<FenceController>().enemiesThatAttacksThisFence.Add(enemy.gameObject);
 
             enemy.SwitchState(enemy.AttacksFenceState);
             enemy.target = collision.gameObject;

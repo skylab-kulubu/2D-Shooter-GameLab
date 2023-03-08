@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodFence : Fence
+public class WoodFence : FenceController
 {
     [SerializeField] private const float woodFenceHealth = 250;
     [SerializeField] private const int requiredWoodToFix = 25;
