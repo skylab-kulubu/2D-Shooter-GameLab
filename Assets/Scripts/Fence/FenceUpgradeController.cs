@@ -10,6 +10,10 @@ public class FenceUpgradeController : MonoBehaviour
     [SerializeField] private int numberOfCurrentMaterial = 0;
     [SerializeField] private GameObject upgradePanel;
 
+    [SerializeField] private GameObject currentUpgradePanel;
+
+    [SerializeField] private Transform upgradePanelHolder;
+
     [Header("Upgrade")]
     [SerializeField] private Text requiredMaterialToUpgradeText;
     [SerializeField] private Text requiredMaterialToUpgradeAmountText;
@@ -23,9 +27,15 @@ public class FenceUpgradeController : MonoBehaviour
 
 
 
+
+
+
     private void Start()
     {
         currentMaterial = GetComponent<FenceController>().GetCurrentFenceMaterial();
+        currentUpgradePanel = Instantiate(GetUpgradePanel(), transform.position, Quaternion.identity, upgradePanelHolder);
+        currentUpgradePanel.SetActive(false);
+
     }
 
     private void Update()
@@ -51,6 +61,11 @@ public class FenceUpgradeController : MonoBehaviour
     public GameObject GetUpgradePanel()
     {
         return upgradePanel;
+    }
+
+    public GameObject GetCurrentUpgradePanel()
+    {
+        return currentUpgradePanel;
     }
 
 

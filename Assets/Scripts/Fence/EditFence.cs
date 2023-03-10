@@ -9,7 +9,7 @@ public class EditFence : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fence"))
         {
-            Instantiate(collision.gameObject.GetComponent<FenceUpgradeController>().GetUpgradePanel(), collision.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
+            collision.gameObject.GetComponent<FenceUpgradeController>().GetCurrentUpgradePanel().SetActive(true);
         }
     }
 
@@ -17,7 +17,7 @@ public class EditFence : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fence"))
         {
-            collision.gameObject.GetComponent<FenceUpgradeController>().GetUpgradePanel().SetActive(true);
+            collision.gameObject.GetComponent<FenceUpgradeController>().GetCurrentUpgradePanel().SetActive(false);
         }
     }
 
