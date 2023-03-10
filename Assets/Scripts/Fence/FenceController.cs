@@ -29,7 +29,7 @@ public class FenceController : MonoBehaviour
         SetFenceHealth(newFence.GetFenceHealthPoints());
         SetCurrentFenceMaterial(newFence.GetFenceMaterial());
         SetNextFence(newFence.GetNextFence());
-        //GetComponent<SpriteRenderer>() = 
+        GetComponent<SpriteRenderer>().color = newFence.GetFenceMaterial().GetFenceMaterialIcon().color;
     }
 
     private void DefaultFenceIsCurrentFence()

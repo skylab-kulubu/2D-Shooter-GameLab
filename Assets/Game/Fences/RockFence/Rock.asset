@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707aaf15f5c00454dab7cd1800e48b75, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  fenceMaterialICon: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0}
+  fenceMaterialICon: {fileID: -4324234347013797587, guid: 17db322400c20d84bb081ca974fa8cbb, type: 3}

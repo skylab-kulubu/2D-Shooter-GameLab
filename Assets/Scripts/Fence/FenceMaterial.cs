@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FenceMaterial : ScriptableObject
 {
-    [SerializeField] public SpriteRenderer fenceMaterialICon;
+    [SerializeField] private SpriteRenderer fenceMaterialICon;
 
     public SpriteRenderer GetFenceMaterialIcon()
     {

@@ -70,6 +70,9 @@ TagManager:
   - name: 4
     uniqueID: 1900805805
     locked: 0
+  - name: MaterialIcon
+    uniqueID: 484540681
+    locked: 0
   - name: Player
     uniqueID: 1587048027
     locked: 0

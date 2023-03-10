@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707aaf15f5c00454dab7cd1800e48b75, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  fenceMaterialICon: {r: 0.6784314, g: 0.48627454, b: 0.3803922, a: 0}
+  fenceMaterialICon: {fileID: -1878116555981160976, guid: e47c6dc85def40140b9f3402bb84387c, type: 3}
