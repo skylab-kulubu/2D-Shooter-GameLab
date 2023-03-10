@@ -92,7 +92,7 @@ public class SpawnManager : MonoBehaviour
             enemy.transform.position = spawnPoint.position;
             enemy.transform.rotation = Quaternion.identity;
         }
-
+        enemy.GetComponent<EnemyStateManager>().SwitchState(enemy.GetComponent<EnemyStateManager>().MoveState);
         previousSpawnPoint = spawnPoint;
     }
 

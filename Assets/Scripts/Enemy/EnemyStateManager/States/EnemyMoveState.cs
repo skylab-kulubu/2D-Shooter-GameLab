@@ -6,6 +6,11 @@ public class EnemyMoveState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        Collider2D[] colliders = enemy.GetComponents<Collider2D>();
+        foreach (Collider2D collider in colliders)
+        {
+            collider.enabled = true;
+        }
         //if(enemy.target != null)
         //{
         //    enemy.SwitchState(enemy.AttacksPlayerState);

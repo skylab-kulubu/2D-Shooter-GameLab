@@ -9,15 +9,32 @@ public class FenceController : MonoBehaviour
     [SerializeField] private int fenceLineID;
     public List<GameObject> enemiesThatAttacksThisFence = new List<GameObject>();
 
+    [SerializeField] private Fence defaultFence;
     private Fence currentFence;
     private GameObject currentFencePrefab;
     private Fence nextFence;
-    private GameObject fenceMaterial;
+    private FenceMaterial fenceMaterial;
     private bool hasWeaponOnIt = false;
     private bool readyToUpgrade = false;
     private bool readyToFix = false;
 
+    private void Start()
+    {
+        DefaultFenceIsCurrentFence();
+        ChangeTheFence(defaultFence);
+    }
+    public void ChangeTheFence(Fence newFence)
+    {
+        if(newFence.GetFencePrefab() != null) SetCurrentFenceMaterial(newFence.GetFenceMaterial());
+        if(newFence.GetNextFence() != null) SetNextFence(newFence.GetNextFence());
+        if(newFence.GetFenceMaterial().GetFenceMaterialIcon() != null) gameObject.GetComponent<SpriteRenderer>().color = 
+                newFence.GetFenceMaterial().GetFenceMaterialIcon();
+    }
 
+    private void DefaultFenceIsCurrentFence()
+    {
+        defaultFence = currentFence;
+    }
 
     public void FenceGetDamage(float damage)
     {
@@ -99,7 +116,7 @@ public class FenceController : MonoBehaviour
     {
         nextFence = fence;
     }
-    public void SetCurrentFenceMaterial(GameObject fenceMaterial)
+    public void SetCurrentFenceMaterial(FenceMaterial fenceMaterial)
     {
         this.fenceMaterial = fenceMaterial;
     }

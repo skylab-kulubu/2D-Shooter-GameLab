@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DiamondFence
   m_EditorClassIdentifier: 
   mainFenceHealth: 1000
-  fenceMaterial: {fileID: 0}
+  fenceMaterial: {fileID: 11400000, guid: e11f9b27d4573654786f3776b1a43683, type: 2}
   nextFence: {fileID: 0}
   requiredMaterialToUpgrade: 200
   requiredMaterialToFix: 100

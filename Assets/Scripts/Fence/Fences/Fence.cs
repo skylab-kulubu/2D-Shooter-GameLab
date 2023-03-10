@@ -24,7 +24,7 @@ public class Fence : ScriptableObject
     {
         return requiredMaterialToUpgrade;
     }
-    public GameObject GetMaterialFencePrefab()
+    public GameObject GetFencePrefab()
     {
         return fencePrefab;
     }
@@ -35,5 +35,9 @@ public class Fence : ScriptableObject
     public bool GetEndOfTheUpgrades()
     {
         return endOfTheUpgrades;
+    }
+    public Fence GetNextFence()
+    {
+        return nextFence;
     }
 }
