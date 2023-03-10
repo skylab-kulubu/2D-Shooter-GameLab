@@ -34,9 +34,15 @@ public class EnemyPool : MonoBehaviour
     public GameObject GetEnemy(int i)
     {
         GameObject enemy = pools[i].enemies.Dequeue();
+        if (enemy.activeInHierarchy)
+        {
+            enemy = Instantiate(pools[i].enemyPrefab);
+        }
         enemy.SetActive(true);
         pools[i].enemies.Enqueue(enemy);
 
         return enemy;
     }
+
+
 }
