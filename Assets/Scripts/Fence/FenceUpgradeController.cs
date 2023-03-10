@@ -30,7 +30,8 @@ public class FenceUpgradeController : MonoBehaviour
 
     private void Update()
     {
-        
+        requiredMaterialToUpgradeAmountText.text = GetComponent<FenceController>().GetCurrentFence().GetNextFence().GetRequiredMaterialToUpgrade().ToString();
+        materialUpgradeIcon.sprite = GetComponent<FenceController>().GetCurrentFence().GetNextFence().GetFenceMaterial().GetFenceMaterialIcon();
     }
 
     public void AddMaterial(FenceMaterial fenceMaterial)

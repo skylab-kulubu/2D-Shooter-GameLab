@@ -33,6 +33,7 @@ public class HealthDisplay : MonoBehaviour
         villageHealthPoints = VillageHealth.villageHealthPoints;
         playerHealthDisplayText.text = "PlayerHealth " + playerHealthPoints.ToString();
         villageHealthDisplayText.text = "VillageHealth " + villageHealthPoints.ToString();
-        breakTime = FindObjectOfType<SpawnManager>().GetBreakTime();
+        
+        if(FindObjectOfType<SpawnManager>() != null) breakTime = FindObjectOfType<SpawnManager>().GetBreakTime();
     }
 }
