@@ -25,15 +25,17 @@ public class FenceController : MonoBehaviour
     }
     public void ChangeTheFence(Fence newFence)
     {
-        if(newFence.GetFencePrefab() != null) SetCurrentFenceMaterial(newFence.GetFenceMaterial());
-        if(newFence.GetNextFence() != null) SetNextFence(newFence.GetNextFence());
-        if(newFence.GetFenceMaterial().GetFenceMaterialIcon() != null) gameObject.GetComponent<SpriteRenderer>().color = 
-                newFence.GetFenceMaterial().GetFenceMaterialIcon();
+        if (newFence == null) return;
+        SetFenceHealth(newFence.GetFenceHealthPoints());
+        SetCurrentFenceMaterial(newFence.GetFenceMaterial());
+        SetNextFence(newFence.GetNextFence());
+        //GetComponent<SpriteRenderer>() = 
     }
 
     private void DefaultFenceIsCurrentFence()
     {
-        defaultFence = currentFence;
+
+        currentFence = defaultFence;
     }
 
     public void FenceGetDamage(float damage)
@@ -49,7 +51,7 @@ public class FenceController : MonoBehaviour
         }
     }
 
-    
+
     private void DestroyFence()
     {
         Destroy(gameObject);

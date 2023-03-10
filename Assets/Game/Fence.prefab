@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fenceHealth: 500
+  fenceLineID: 0
+  enemiesThatAttacksThisFence: []
+  defaultFence: {fileID: 11400000, guid: dfda5f6293a056d4688cbac8bbe88063, type: 2}
 --- !u!61 &2505284702504638306
 BoxCollider2D:
   m_ObjectHideFlags: 0
