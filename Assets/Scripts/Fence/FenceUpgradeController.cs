@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FenceUpgradeController : MonoBehaviour
 {
@@ -9,6 +10,19 @@ public class FenceUpgradeController : MonoBehaviour
     [SerializeField] private int numberOfCurrentMaterial = 0;
     [SerializeField] private GameObject upgradePanel;
 
+    [Header("Upgrade")]
+    [SerializeField] private Text requiredMaterialToUpgradeText;
+    [SerializeField] private Text requiredMaterialToUpgradeAmountText;
+    [SerializeField] private Image materialUpgradeIcon;
+
+    [Header("Repair")]
+    [SerializeField] private Text requiredMaterialToFixText;
+    [SerializeField] private Text requiredMaterialToFixAmountText;
+    [SerializeField] private Image materialFixIcon;
+
+
+
+
     private void Start()
     {
         currentMaterial = GetComponent<FenceController>().GetCurrentFenceMaterial();
@@ -16,7 +30,7 @@ public class FenceUpgradeController : MonoBehaviour
 
     private void Update()
     {
-
+        
     }
 
     public void AddMaterial(FenceMaterial fenceMaterial)
@@ -37,4 +51,6 @@ public class FenceUpgradeController : MonoBehaviour
     {
         return upgradePanel;
     }
+
+
 }
