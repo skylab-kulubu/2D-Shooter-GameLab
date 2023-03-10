@@ -22,7 +22,6 @@ public class HealthDisplay : MonoBehaviour
 
     void Update()
     {
-        breakTime = FindObjectOfType<SpawnManager>().GetBreakTime();
         breakTimeDisplayText.text = $"Break Time: {breakTime}"; 
 
         currentAmmo = GameObject.FindGameObjectWithTag("Player").GetComponent<Shooting>().GetCurrentMagazine().Count;
@@ -34,5 +33,6 @@ public class HealthDisplay : MonoBehaviour
         villageHealthPoints = VillageHealth.villageHealthPoints;
         playerHealthDisplayText.text = "PlayerHealth " + playerHealthPoints.ToString();
         villageHealthDisplayText.text = "VillageHealth " + villageHealthPoints.ToString();
+        breakTime = FindObjectOfType<SpawnManager>().GetBreakTime();
     }
 }
