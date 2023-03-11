@@ -47,4 +47,18 @@ public class EditFence : MonoBehaviour
             diamondAmount++;
         }
     }
+
+    public int GetWoodMaterial()
+    {
+        return woodAmount;
+    }
+
+    public int GetRockMaterial()
+    {
+        return rockAmount;
+    }
+    public int GetDiamondMaterial()
+    {
+        return diamondAmount;
+    }
 }
