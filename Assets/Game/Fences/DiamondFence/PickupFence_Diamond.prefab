@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7273578547981013859, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: fenceMaterial
+      value: 
+      objectReference: {fileID: 11400000, guid: e11f9b27d4573654786f3776b1a43683, type: 2}
+    - target: {fileID: -7273578547981013859, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: fenceMaterialNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1810781056822829333, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: m_Name
-      value: PickupFence
+      value: PickupFence_Diamond
       objectReference: {fileID: 0}
     - target: {fileID: 8803087780498880208, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: m_RootOrder

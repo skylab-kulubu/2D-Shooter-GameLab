@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707aaf15f5c00454dab7cd1800e48b75, type: 3}
   m_Name: Diamond
   m_EditorClassIdentifier: 
-  fenceMaterialICon: {fileID: 6321493244962955495, guid: eb7f2b3cde496354bbe9817e66a41bfc, type: 3}
+  fenceMaterialSpriteRenderer: {fileID: 6321493244962955495, guid: eb7f2b3cde496354bbe9817e66a41bfc, type: 3}
+  fenceMaterialIcon: {fileID: 0}
+  fenceMaterialNumber: 0
