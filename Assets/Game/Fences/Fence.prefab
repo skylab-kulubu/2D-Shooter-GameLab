@@ -167,6 +167,8 @@ MonoBehaviour:
   sumMaterials: []
   numberOfCurrentMaterial: 0
   upgradePanel: {fileID: 2498289897400624582, guid: 21948f2a5450a3a43b0067e48c9abcad, type: 3}
+  currentUpgradePanel: {fileID: 0}
+  upgradePanelHolder: {fileID: 4728787958831790576, guid: c3bc20677842ffb47a8e20e22ff162e1, type: 3}
   requiredMaterialToUpgradeText: {fileID: 6456282983275940550, guid: 3e0cde1c76aa7bc4ba32b94aa3c25c94, type: 3}
   requiredMaterialToUpgradeAmountText: {fileID: 3264982254855841084, guid: a852108005f7a67469d9e05d71ee6f13, type: 3}
   materialUpgradeIcon: {fileID: 9168033335766085920, guid: 63014268076e2844195cb6537f510d25, type: 3}

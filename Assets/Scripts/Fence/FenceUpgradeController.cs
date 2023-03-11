@@ -33,7 +33,7 @@ public class FenceUpgradeController : MonoBehaviour
     private void Start()
     {
         currentMaterial = GetComponent<FenceController>().GetCurrentFenceMaterial();
-        currentUpgradePanel = Instantiate(GetUpgradePanel(), transform.position, Quaternion.identity, upgradePanelHolder);
+        currentUpgradePanel = Instantiate(GetUpgradePanel(), transform.position + Vector3.up, Quaternion.identity, upgradePanelHolder);
         currentUpgradePanel.SetActive(false);
 
     }

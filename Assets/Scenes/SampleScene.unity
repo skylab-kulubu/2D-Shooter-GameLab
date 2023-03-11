@@ -1114,6 +1114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: upgradePanelHolder
+      value: 
+      objectReference: {fileID: 6610820781819020275}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!1 &674564158
@@ -1674,6 +1678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: upgradePanelHolder
+      value: 
+      objectReference: {fileID: 6610820781819020275}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!1 &1394866072
@@ -2027,6 +2035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence
       objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: upgradePanelHolder
+      value: 
+      objectReference: {fileID: 6610820781819020275}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!1 &1899905097
@@ -2297,6 +2309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: upgradePanelHolder
+      value: 
+      objectReference: {fileID: 6610820781819020275}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!1001 &16138818539442708
