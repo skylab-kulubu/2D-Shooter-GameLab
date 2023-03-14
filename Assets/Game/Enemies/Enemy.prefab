@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3443090357017730502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   enemyLineID: 0
   isDead: 0
   damageTaken: 0
-  currentCollision: {fileID: 0}
+  currentTrigger: {fileID: 0}
   target: {fileID: 0}
   enemyAttacksPlayer: 0
   enemyAttacksFence: 0
@@ -151,3 +151,6 @@ MonoBehaviour:
   drops:
   - {fileID: 395115263044904966, guid: 246e9237688b81742a16e19feb13d2b9, type: 3}
   - {fileID: 4766398164218829567, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+  - {fileID: 1800985172125279643, guid: 8f17e651890fb0e40aee16ee3fb59727, type: 3}
+  - {fileID: 4109796094540455780, guid: 91a40442c575e7d4eb523600238555f1, type: 3}
+  - {fileID: 6955429546088152449, guid: 9c7744e63df04e04b9981fc27dbeffbd, type: 3}
