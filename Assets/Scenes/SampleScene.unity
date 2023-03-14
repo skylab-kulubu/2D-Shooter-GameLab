@@ -1542,6 +1542,34 @@ PrefabInstance:
       propertyPath: upgradePanelHolder
       value: 
       objectReference: {fileID: 6610820781819020275}
+    - target: {fileID: 5908445398352612732, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908445398352612732, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Positions.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908445398352612732, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Positions.Array.data[0].z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908445398352612732, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908445398352612732, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908445398352612732, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Positions.Array.data[1].z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908445398352612732, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!1001 &16138818539442708

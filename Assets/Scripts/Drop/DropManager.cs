@@ -33,7 +33,6 @@ public class DropManager : MonoBehaviour
             return drops.IndexOf(ammo);
         }
 
-        // diðer öðelerin seçilme ihtimalleri
         int randomNum = UnityEngine.Random.Range(0, 100);
         if (randomNum < 10 && drops.Contains(diamond))
         {
@@ -55,7 +54,6 @@ public class DropManager : MonoBehaviour
         {
             return drops.IndexOf(ammo);
         }
-        // hiçbir öðe seçilemezse -1 döndürülür
         else
         {
             return -1;
