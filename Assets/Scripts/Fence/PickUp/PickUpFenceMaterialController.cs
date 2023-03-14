@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpFenceMaterialController : MonoBehaviour
 {
-    [SerializeField] private int fenceMaterialNumber;
+    private int fenceMaterialNumber;
     [SerializeField] private FenceMaterial fenceMaterial;
     private void Start()
     {

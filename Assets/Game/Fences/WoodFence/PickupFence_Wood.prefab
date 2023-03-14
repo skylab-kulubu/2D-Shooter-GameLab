@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7784769157830427566, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.39607847
+      objectReference: {fileID: 0}
+    - target: {fileID: -7784769157830427566, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: -7784769157830427566, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6901961
+      objectReference: {fileID: 0}
     - target: {fileID: -7273578547981013859, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: fenceMaterial
       value: 

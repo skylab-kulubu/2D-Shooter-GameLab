@@ -10,7 +10,7 @@ public class EditFence : MonoBehaviour
 
     
 
-    private bool panelIsOpen = false;
+    private bool isPanelOpen = false;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,9 +28,9 @@ public class EditFence : MonoBehaviour
     }
 
 
-    public bool GetPanelIsOpen()
+    public bool GetIsPanelpen()
     {
-        return panelIsOpen;
+        return isPanelOpen;
     }
 
     public void PickUpMaterial(int fenceMaterialNumber)
