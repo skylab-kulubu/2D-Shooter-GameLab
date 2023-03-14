@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 5970035454877373068}
   - component: {fileID: 7213276742459364995}
   - component: {fileID: 49851559537050536}
+  - component: {fileID: 7451118169820533025}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -398,6 +399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65396bef451988b4f9b4d2013cd1e87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodAmount: 0
+  rockAmount: 0
+  diamondAmount: 0
 --- !u!114 &49851559537050536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,3 +419,29 @@ MonoBehaviour:
   _rigidbody: {fileID: 5970035454877373066}
   cam: {fileID: 0}
   animator: {fileID: 5970035454877373060}
+--- !u!61 &7451118169820533025
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970035454877373059}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.020278573, y: -0.099139914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.18, y: 1.72}
+    newSize: {x: 1.18, y: 1.7199999}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1394427, y: 0.016595155}
+  m_EdgeRadius: 0
