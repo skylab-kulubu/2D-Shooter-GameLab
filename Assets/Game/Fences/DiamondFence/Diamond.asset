@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fenceMaterialSpriteRenderer: {fileID: 6321493244962955495, guid: eb7f2b3cde496354bbe9817e66a41bfc, type: 3}
   fenceMaterialIcon: {fileID: 0}
-  fenceMaterialNumber: 0
+  fenceMaterialNumber: 3

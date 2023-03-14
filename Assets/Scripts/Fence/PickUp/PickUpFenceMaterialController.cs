@@ -15,6 +15,7 @@ public class PickUpFenceMaterialController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<EditFence>().PickUpMaterial(fenceMaterialNumber);
+            Destroy(gameObject);
         }
     }
     public int GetFenceMaterialNumber()

@@ -70,6 +70,9 @@ TagManager:
   - name: 4
     uniqueID: 1900805805
     locked: 0
+  - name: PickUp
+    uniqueID: 24049525
+    locked: 0
   - name: MaterialIcon
     uniqueID: 484540681
     locked: 0
