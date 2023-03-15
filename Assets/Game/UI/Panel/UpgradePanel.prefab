@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 340.7, y: 191.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2352093783301261221
 GameObject:
@@ -435,8 +435,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.000011444, y: -0.000034332}
+  m_SizeDelta: {x: 340.7, y: 191.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7340194735891726281
 GameObject:
@@ -475,8 +475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.000011444, y: -0.000034332}
+  m_SizeDelta: {x: 340.7, y: 191.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7850530066709928205
 GameObject:
@@ -1019,6 +1019,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 67722196828158447}
     m_Modifications:
+    - target: {fileID: 3764342136540587516, guid: a4a243dc5df86754e98c29d34e778213, type: 3}
+      propertyPath: m_Size.x
+      value: 50.00038
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764342136540587516, guid: a4a243dc5df86754e98c29d34e778213, type: 3}
+      propertyPath: m_Size.y
+      value: 50.022552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764342136540587516, guid: a4a243dc5df86754e98c29d34e778213, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0011367798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764342136540587516, guid: a4a243dc5df86754e98c29d34e778213, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.009933472
+      objectReference: {fileID: 0}
     - target: {fileID: 6087298451113953390, guid: a4a243dc5df86754e98c29d34e778213, type: 3}
       propertyPath: m_Name
       value: PutWeaponButton

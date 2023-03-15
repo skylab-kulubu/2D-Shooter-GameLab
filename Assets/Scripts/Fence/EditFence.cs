@@ -8,6 +8,8 @@ public class EditFence : MonoBehaviour
     [SerializeField] private int rockAmount = 0;
     [SerializeField] private int diamondAmount = 0;
 
+    [SerializeField] private bool hasFenceWeapon = false;
+
     
 
     private bool isPanelOpen = false;
@@ -62,4 +64,17 @@ public class EditFence : MonoBehaviour
     {
         return diamondAmount;
     }
+
+    public bool GetHasFenceWeapon()
+    {
+        return hasFenceWeapon;
+    }
+    public void SetHasWeapon(bool trueOrFalse)
+    {
+        hasFenceWeapon = trueOrFalse;
+    }
+    
+
+    
+
 }

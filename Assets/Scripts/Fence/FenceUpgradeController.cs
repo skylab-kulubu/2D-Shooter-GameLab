@@ -24,8 +24,7 @@ public class FenceUpgradeController : MonoBehaviour
     [SerializeField] private Text requiredMaterialToFixAmountText;
     [SerializeField] private Image materialFixIcon;
 
-
-
+    [SerializeField] private int fenceNumber;
 
 
 
@@ -35,6 +34,7 @@ public class FenceUpgradeController : MonoBehaviour
         currentMaterial = GetComponent<FenceController>().GetCurrentFenceMaterial();
         currentUpgradePanel = Instantiate(GetUpgradePanel(), transform.position + Vector3.up, Quaternion.identity, upgradePanelHolder);
         currentUpgradePanel.SetActive(false);
+        currentUpgradePanel.name = gameObject.name;
 
     }
 
@@ -67,6 +67,12 @@ public class FenceUpgradeController : MonoBehaviour
     {
         return currentUpgradePanel;
     }
+    public int GetFenceNumber()
+    {
+        return fenceNumber;
+    }
+
+    
 
 
 }
