@@ -23,6 +23,7 @@ public class FenceWeaponAddUI : MonoBehaviour
             {
                 Debug.Log("nasý yoð");
                 obj.GetComponent<FenceWeapon>().enabled = true;
+                obj.transform.GetChild(0).gameObject.SetActive(true);
             }
         }
             
