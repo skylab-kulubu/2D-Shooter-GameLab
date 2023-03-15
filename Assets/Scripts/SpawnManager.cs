@@ -61,7 +61,7 @@ public class SpawnManager : MonoBehaviour
             if (isReadyForNextWave)
             {
                 breakTimeElements.SetActive(false);
-                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber * 6/5));
+                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber +1));
                 currentBreakTime = breakTime;
             }
         }

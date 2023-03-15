@@ -13,50 +13,54 @@ public class DropManager : MonoBehaviour
     [SerializeField] private GameObject rock;
     [SerializeField] private GameObject health;
     [SerializeField] private GameObject ammo;
+    [SerializeField] private GameObject fenceWeapon;
 
     public void DropSomething()
     {
         if (droppedAmount > 0) return;
         
-        GameObject dropItem = drops[RandomDropFormula()];
+        GameObject dropItem = RandomDropFormula();
 
         Instantiate(dropItem, gameObject.transform.position, Quaternion.identity);
 
         droppedAmount++;
     }
 
-    public int RandomDropFormula()
+    public GameObject RandomDropFormula()
     {
-        int ammoRandomNum = UnityEngine.Random.Range(0, 100);
-        if (ammoRandomNum < 60 && drops.Contains(ammo))
+        int randomNumber = UnityEngine.Random.Range(0, 101);
+        if(randomNumber < 10)
         {
-            return drops.IndexOf(ammo);
+            int randomNumber2 = UnityEngine.Random.Range(1, 4);
+            if(randomNumber2 == 1)
+            {
+                return fenceWeapon;
+            }
+            else
+            {
+                return diamond;
+            }
         }
-
-        int randomNum = UnityEngine.Random.Range(0, 100);
-        if (randomNum < 10 && drops.Contains(diamond))
+        else if (randomNumber < 35)
         {
-            return drops.IndexOf(diamond);
-        }
-        else if (randomNum < 45 && drops.Contains(wood))
-        {
-            return drops.IndexOf(wood);
-        }
-        else if (randomNum < 70 && drops.Contains(rock))
-        {
-            return drops.IndexOf(rock);
-        }
-        else if (randomNum < 95 && drops.Contains(health))
-        {
-            return drops.IndexOf(health);
-        }
-        else if (randomNum < 100 && drops.Contains(ammo))
-        {
-            return drops.IndexOf(ammo);
+            return rock;
         }
         else
         {
-            return -1;
+            int randomNumber3 = UnityEngine.Random.Range(1, 7);
+            if(randomNumber3 == 1 || randomNumber3 == 2 || randomNumber3 == 3)
+            {
+                return wood;
+            }
+            else if (randomNumber3 == 4 || randomNumber3 == 5)
+            {
+                return ammo;
+            }
+            else
+            {
+                return health;
+            }
         }
     }
+
 }
