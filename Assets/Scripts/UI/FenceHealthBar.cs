@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FenceHealthBar : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class FenceHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float fencehealth = transform.parent.parent.GetComponent<FenceController>().GetFenceHealth();
+        float defaulFenceHealth = transform.parent.parent.GetComponent<FenceController>().GetCurrentFence().GetFenceHealthPoints();
+        GetComponent<Slider>().value = (fencehealth / defaulFenceHealth);
+
     }
 }

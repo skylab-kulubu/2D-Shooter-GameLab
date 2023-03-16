@@ -604,6 +604,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: upgradePanelHolder
+      value: 
+      objectReference: {fileID: 6610820781819020275}
     - target: {fileID: 2793420253943061908, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -978,6 +982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence1
       objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: upgradePanelHolder
+      value: 
+      objectReference: {fileID: 6610820781819020275}
     - target: {fileID: 2793420253943061908, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1384,10 +1392,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
-      propertyPath: fenceNumber
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: upgradePanelHolder
       value: 
       objectReference: {fileID: 6610820781819020275}
@@ -1531,6 +1535,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: upgradePanelHolder
+      value: 
+      objectReference: {fileID: 6610820781819020275}
     - target: {fileID: 2793420253943061908, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
