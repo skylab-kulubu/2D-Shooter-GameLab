@@ -605,6 +605,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: fenceNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: upgradePanelHolder
       value: 
       objectReference: {fileID: 6610820781819020275}
@@ -985,6 +989,10 @@ PrefabInstance:
     - target: {fileID: 236875141096899755, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_Name
       value: HealthBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: fenceNumber
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: upgradePanelHolder
@@ -1396,6 +1404,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: fenceNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: upgradePanelHolder
       value: 
       objectReference: {fileID: 6610820781819020275}
@@ -1538,6 +1550,10 @@ PrefabInstance:
     - target: {fileID: 804276717387229447, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: fenceNumber
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: upgradePanelHolder
@@ -2416,7 +2432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6676399337546668529, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}

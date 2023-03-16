@@ -79,6 +79,9 @@ TagManager:
   - name: Player
     uniqueID: 1587048027
     locked: 0
+  - name: HealthBar
+    uniqueID: 2382983641
+    locked: 0
   - name: UI
     uniqueID: 1392960045
     locked: 0
