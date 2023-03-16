@@ -604,6 +604,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2793420253943061908, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!4 &884889805 stripped
@@ -931,14 +935,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 120292044195923729, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1500002
-      objectReference: {fileID: 0}
-    - target: {fileID: 120292044195923729, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 120292044195923729, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.36
       objectReference: {fileID: 0}
@@ -982,24 +978,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence1
       objectReference: {fileID: 0}
-    - target: {fileID: 804276717387229447, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 804276717387229447, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+    - target: {fileID: 2793420253943061908, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
-      propertyPath: fenceNumber
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
-      propertyPath: upgradePanelHolder
-      value: 
-      objectReference: {fileID: 6610820781819020275}
-    - target: {fileID: 5243143947186108084, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1411,6 +1391,10 @@ PrefabInstance:
       propertyPath: upgradePanelHolder
       value: 
       objectReference: {fileID: 6610820781819020275}
+    - target: {fileID: 2793420253943061908, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!1 &1947553235
@@ -1547,6 +1531,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2793420253943061908, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
 --- !u!1001 &16138818539442708
@@ -1653,6 +1641,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1461193962}
     m_Modifications:
+    - target: {fileID: 565472225480297222, guid: 1a01b6c62db63ea48a6f12ebc90ae09c, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 101
+      objectReference: {fileID: 0}
     - target: {fileID: 565472225480297224, guid: 1a01b6c62db63ea48a6f12ebc90ae09c, type: 3}
       propertyPath: m_Name
       value: Player Health
