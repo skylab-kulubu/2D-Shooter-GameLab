@@ -982,6 +982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence1
       objectReference: {fileID: 0}
+    - target: {fileID: 236875141096899755, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
+      propertyPath: m_Name
+      value: HealthBarCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 2680381607433593862, guid: 339deeb1dce6f88449a6a5686eccccb1, type: 3}
       propertyPath: upgradePanelHolder
       value: 
