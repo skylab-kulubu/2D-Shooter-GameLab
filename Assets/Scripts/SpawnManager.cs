@@ -61,8 +61,9 @@ public class SpawnManager : MonoBehaviour
             if (isReadyForNextWave)
             {
                 breakTimeElements.SetActive(false);
-                StartCoroutine(SpawnEnemyInARow(createdEnemyNumber +1));
+                StartCoroutine(SpawnEnemyInARow(starterEnemyNumber + 1));
                 currentBreakTime = breakTime;
+                starterEnemyNumber++;
             }
         }
     }
@@ -93,6 +94,8 @@ public class SpawnManager : MonoBehaviour
             enemy.transform.rotation = Quaternion.identity;
         }
         enemy.GetComponent<EnemyStateManager>().SwitchState(enemy.GetComponent<EnemyStateManager>().MoveState);
+        enemy.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+        enemy.GetComponentInChildren<EnemyHealthBar>().gameObject.SetActive(true);
         previousSpawnPoint = spawnPoint;
     }
 
@@ -160,14 +163,19 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnEnemyInARow(int enemyNumber)
     {
-        for (int j = 0; j < Mathf.Ceil(enemyNumber / 3) ; j++)
+        //for (int j = 0; j < Mathf.Ceil(enemyNumber / 3) ; j++)
+        //{
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        SpawnEnemy();
+        //    }
+        //    yield return new WaitForSeconds(2f);
+        //}
+        for (int i = 0; i < enemyNumber; i++)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                SpawnEnemy();
-            }
-            yield return new WaitForSeconds(2f);
+            SpawnEnemy();
         }
+        yield return new WaitForSeconds(2f);
         isReadyForNextWave = false;
     }
 

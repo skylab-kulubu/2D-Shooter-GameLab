@@ -36,7 +36,6 @@ public class EnemyTakeDamageState : EnemyBaseState
         if (enemy.currentHealthPoints <= 0)
         {
             SpawnManager.enemyDestroyed++;
-            Debug.Log(SpawnManager.enemyDestroyed);
             enemy.SwitchState(enemy.DeathState);
         }
         else

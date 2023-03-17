@@ -14,7 +14,7 @@ public class EnemyHealthBar : MonoBehaviour
 
         if(healthPoints <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

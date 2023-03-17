@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,22 @@ public class EditFence : MonoBehaviour
         }
     }
 
+    internal int ReturnRequiredFenceMaterial(int fenceMaterialNumber)
+    {
+        if(fenceMaterialNumber == 1)
+        {
+            return woodAmount;
+        }
+        else if (fenceMaterialNumber == 2)
+        {
+            return rockAmount;
+        }
+        else if (fenceMaterialNumber == 3)
+        {
+            return diamondAmount;
+        }
+        return 0;
+    }
 
     public bool GetIsPanelpen()
     {
@@ -63,6 +80,22 @@ public class EditFence : MonoBehaviour
     public int GetDiamondMaterial()
     {
         return diamondAmount;
+    }
+
+    public void ReduceMaterialAmound(int fenceMaterialNumber, int amount)
+    {
+        if (fenceMaterialNumber == 1)
+        {
+            woodAmount -= amount;
+        }
+        else if (fenceMaterialNumber == 2)
+        {
+            rockAmount -= amount;
+        }
+        else if (fenceMaterialNumber == 3)
+        {
+            diamondAmount -= amount;
+        }
     }
 
     public bool GetHasFenceWeapon()
