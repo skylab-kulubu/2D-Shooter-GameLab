@@ -15,10 +15,12 @@ public class Shooting : MonoBehaviour
     [SerializeField] Transform weaponMainTransform;
     [SerializeField] Weapon defaultWeapon = null;
 
-    [SerializeField] private List<GameObject> currentMagazine = new List<GameObject>();
     [SerializeField] private Weapon currentWeapon = null;
 
     [SerializeField] private Transform firePoint = null;
+
+    [SerializeField] private BulletData bulletData;
+    public BulletData BulletData { get { return bulletData; } }
 
 
     private float sinceLastShoot = 0;
@@ -35,10 +37,12 @@ public class Shooting : MonoBehaviour
         EquipWeapon(defaultWeapon);
 
         int defaultBulletAmount = currentWeapon.GetDefaultBulletAmount();
-        LoadMagazine(currentMagazine, defaultBulletAmount);
+        LoadMagazine(currentWeapon.GetCurrentMagazine(), defaultBulletAmount);
 
         //firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
     }
+
+    
 
     public void LoadMagazine(List<GameObject> magazine, int bulletAmount)
     {
@@ -94,7 +98,7 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            LoadMagazine(currentMagazine, currentWeapon.GetMagazineCapacity());
+            LoadMagazine(currentWeapon.GetCurrentMagazine(), currentWeapon.GetMagazineCapacity());
         }
 
 
@@ -119,10 +123,10 @@ public class Shooting : MonoBehaviour
         }
         else
         {
-            if (currentMagazine.ToArray().Length > 0)
+            if (currentWeapon.GetCurrentMagazine().ToArray().Length > 0)
             {
                 StartCoroutine(ShootWithTheGun());
-                currentMagazine.RemoveAt(0);
+                currentWeapon.GetCurrentMagazine().RemoveAt(0);
 
             }
             else
@@ -223,7 +227,7 @@ public class Shooting : MonoBehaviour
 
     public List<GameObject> GetCurrentMagazine()
     {
-        return currentMagazine;
+        return currentWeapon.GetCurrentMagazine();
     }
 
     public Weapon GetCurrentWeapon()
@@ -232,7 +236,7 @@ public class Shooting : MonoBehaviour
     }
     public void ResetCurrentMagazine()
     {
-        currentMagazine = new List<GameObject>();
+        currentWeapon.ResetCurrentMagazine();
     } 
 
     

@@ -33,6 +33,8 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private GameObject enemyHolder;
 
+    [SerializeField] private List<GameObject> weaponButtons = new List<GameObject>();
+
 
     public static int enemyDestroyed = 0;
 
@@ -78,6 +80,7 @@ public class SpawnManager : MonoBehaviour
             }
             if (isReadyForNextWave)
             {
+                ActiveNextWeapon();
                 breakTimeElements.SetActive(false);
                 StartCoroutine(SpawnEnemyInARow(starterEnemyNumber + 1));
                 currentBreakTime = breakTime;
@@ -87,7 +90,23 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    
+    private void ActiveNextWeapon()
+    {
+        int firstIndex = 0;
+        foreach (GameObject wepaonButton in weaponButtons)
+        {
+            if (weaponButtons[firstIndex].activeInHierarchy)
+            {
+                firstIndex++;
+            }
+            else
+            {
+                weaponButtons[firstIndex].SetActive(true);
+                return;
+            }
+        }
+    }
+
     private IEnumerator WaitForSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);

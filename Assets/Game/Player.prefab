@@ -145,7 +145,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1587048027
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 1590260766, guid: 3ccc95fb4a080e441a8fe10cb5db5ce9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -191,6 +191,7 @@ MonoBehaviour:
   currentMagazine: []
   currentWeapon: {fileID: 0}
   firePoint: {fileID: 3394453284619710256}
+  bulletData: {fileID: 11400000, guid: b8938f1ee0614ce45b7984bb034c05b3, type: 2}
 --- !u!95 &5970035454877373060
 Animator:
   serializedVersion: 4
@@ -402,6 +403,7 @@ MonoBehaviour:
   woodAmount: 0
   rockAmount: 0
   diamondAmount: 0
+  hasFenceWeapon: 0
 --- !u!114 &49851559537050536
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ public class WeaponSelectSystem : MonoBehaviour
     {
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[1]);
+
     }
     public void PickUpBat()
     {
@@ -40,21 +41,22 @@ public class WeaponSelectSystem : MonoBehaviour
     {
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[2]);
-        FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().GetCurrentWeapon().GetMagazineCapacity());
+        FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().BulletData.PistolBulletAmount);
+
 
     }
     public void PickUpShotgun()
     {
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[4]);
-        FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().GetCurrentWeapon().GetMagazineCapacity());
+        FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().BulletData.ShotgunBulletAmount);
 
     }
     public void PickUpRifle()
     {
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[3]);
-        FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().GetCurrentWeapon().GetMagazineCapacity());
+        FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().BulletData.RifleBulletAmount);
 
     }
 

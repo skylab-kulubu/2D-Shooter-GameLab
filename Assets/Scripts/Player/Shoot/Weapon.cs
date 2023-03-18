@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
@@ -15,6 +17,9 @@ public class Weapon : ScriptableObject
     [SerializeField] private bool isShot = false;
     [SerializeField] private Bullet bullet = null;
 
+    [SerializeField] private List<GameObject> currentMagazine = new List<GameObject>();
+
+
     //[SerializeField] private Transform firePointWeapon = null;
 
 
@@ -25,7 +30,10 @@ public class Weapon : ScriptableObject
             Instantiate(equippedPrefab, weaponMainTransform);
         }
     }
-
+    public List<GameObject> GetCurrentMagazine()
+    {
+        return currentMagazine;
+    }
     public int GetMagazineCapacity()
     {
         return magazineCapacity;
@@ -74,6 +82,11 @@ public class Weapon : ScriptableObject
     public Bullet GetBullet()
     {
         return bullet;
+    }
+
+    internal void ResetCurrentMagazine()
+    {
+        currentMagazine = new List<GameObject>();
     }
 
     //public Transform GetFirePoint()

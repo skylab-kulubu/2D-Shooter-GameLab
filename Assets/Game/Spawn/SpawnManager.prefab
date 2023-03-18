@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6676399337546668528}
   - component: {fileID: 4349773799788654161}
+  - component: {fileID: 3787589906751664897}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -73,3 +74,32 @@ MonoBehaviour:
   line4:
   - {fileID: 5186796553879966425, guid: bf3b2f42888281c45b8958d80b348f52, type: 3}
   - {fileID: 494635167192198082, guid: d36246067a93415469b0b700399346ca, type: 3}
+  marketPanel: {fileID: 0}
+  isReadyForNextWave: 0
+  breakTimeElements: {fileID: 0}
+  enemyHolder: {fileID: 0}
+  weaponButtons: []
+  currentBreakTime: 0
+  breakTime: 30
+  createdEnemyNumber: 0
+--- !u!114 &3787589906751664897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676399337546668529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d18a128b2d51b45a2d4b4d990adedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - enemyPrefab: {fileID: 2454908492582527516, guid: 999cfa1d56f610445a69a032a2f3e0b7, type: 3}
+    poolSize: 20
+  - enemyPrefab: {fileID: 2141141049649379042, guid: 083f9ffb93eba5a4da7c42e4bd1fd8ef, type: 3}
+    poolSize: 20
+  - enemyPrefab: {fileID: 6859614746523173055, guid: 38afe2a33ab2f0b4391b4cfd9ddb8f10, type: 3}
+    poolSize: 20
+  - enemyPrefab: {fileID: 6165346654824333067, guid: cc94916631340e44599cc1b42ed4f1b6, type: 3}
+    poolSize: 20
