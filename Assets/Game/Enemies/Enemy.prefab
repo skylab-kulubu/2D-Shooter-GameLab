@@ -317,6 +317,7 @@ MonoBehaviour:
   destroyedAFence: 0
   takeDamageCollider: {fileID: 0}
   hitFenceCollider: {fileID: 0}
+  healthBar: {fileID: 543047765489229649}
 --- !u!114 &-4483665330252125356
 MonoBehaviour:
   m_ObjectHideFlags: 0

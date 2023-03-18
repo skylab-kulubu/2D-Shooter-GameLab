@@ -31,6 +31,9 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private GameObject breakTimeElements;
 
+    [SerializeField] private GameObject enemyHolder;
+
+
     public static int enemyDestroyed = 0;
 
     private Transform previousSpawnPoint;
@@ -50,11 +53,26 @@ public class SpawnManager : MonoBehaviour
     }
     private void Update()
     {
-        if (enemyDestroyed >= createdEnemyNumber)
+        int enemiesThatActive = 0;
+
+        EnemyStateManager[] enemiesPool = enemyHolder.GetComponentsInChildren<EnemyStateManager>();
+        foreach (EnemyStateManager enemyStateManager in enemiesPool)
+        {
+            if (!enemyStateManager.gameObject.activeInHierarchy)
+            {
+                enemiesThatActive--;
+            }
+            else
+            {
+                enemiesThatActive++;
+            }
+
+        }
+        if(enemiesThatActive == 0)
         {
             currentBreakTime -= Time.deltaTime;
             breakTimeElements.SetActive(true);
-            if(currentBreakTime <= 0)
+            if (currentBreakTime <= 0)
             {
                 isReadyForNextWave = true;
             }
@@ -66,6 +84,7 @@ public class SpawnManager : MonoBehaviour
                 starterEnemyNumber++;
             }
         }
+        
     }
 
     
@@ -94,7 +113,8 @@ public class SpawnManager : MonoBehaviour
             enemy.transform.rotation = Quaternion.identity;
         }
         enemy.GetComponent<EnemyStateManager>().SwitchState(enemy.GetComponent<EnemyStateManager>().MoveState);
-        enemy.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+        enemy.GetComponent<EnemyStateManager>().currentHealthPoints = enemy.GetComponent<EnemyStateManager>().enemyStats.GetHealthPoints();
+
         enemy.GetComponentInChildren<EnemyHealthBar>().gameObject.SetActive(true);
         previousSpawnPoint = spawnPoint;
     }

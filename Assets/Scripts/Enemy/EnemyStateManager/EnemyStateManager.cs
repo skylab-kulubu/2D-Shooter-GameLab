@@ -40,6 +40,8 @@ public class EnemyStateManager : MonoBehaviour
 
     public BoxCollider2D takeDamageCollider;
     public BoxCollider2D hitFenceCollider;
+    public GameObject healthBar;
+
 
     void Start()
     {

@@ -6,6 +6,7 @@ public class EnemyMoveState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        enemy.healthBar.SetActive(true);
         Collider2D[] colliders = enemy.GetComponents<Collider2D>();
         foreach (Collider2D collider in colliders)
         {

@@ -2319,6 +2319,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4349773799788654161, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}
+      propertyPath: enemyHolder
+      value: 
+      objectReference: {fileID: 1439213387}
+    - target: {fileID: 4349773799788654161, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}
       propertyPath: spawnPoint1
       value: 
       objectReference: {fileID: 0}
