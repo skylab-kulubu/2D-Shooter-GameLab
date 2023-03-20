@@ -20,6 +20,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private Transform firePoint = null;
 
     [SerializeField] private BulletData bulletData;
+    [SerializeField] private Transform bulletsTransform;
     public BulletData BulletData { get { return bulletData; } }
 
 
@@ -29,7 +30,7 @@ public class Shooting : MonoBehaviour
 
     private float shootingDirection;
 
-    private GameObject bullet = null;
+    private Queue<GameObject> bullets = new Queue<GameObject>();
 
 
     private void Start()
@@ -48,22 +49,36 @@ public class Shooting : MonoBehaviour
         //firePoint = GameObject.Find("FirePoint").GetComponent<Transform>();
     }
 
-    
+
 
     public void LoadMagazine(List<GameObject> magazine, int bulletAmount)
     {
+        Debug.Log(bulletsTransform.childCount);
         for (int i = 0; i < bulletAmount; i++)
         {
             if (currentWeapon == null)
             {
                 Debug.LogError("Current Weapon is null");
             }
-            else
+            else if (magazine.Count < currentWeapon.GetMagazineCapacity())
             {
-                if (magazine.ToArray().Length >= currentWeapon.GetMagazineCapacity()) return;
 
-                bullet = Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), gameObject.transform);
-                magazine.Add(bullet);
+                if (bulletsTransform.childCount < currentWeapon.GetMagazineCapacity())
+                {
+                    Debug.Log("instated");
+                    GameObject bullet = Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), bulletsTransform);
+                    bullets.Enqueue(bullet);
+                    magazine.Add(bullet);
+                }
+                else
+                {
+
+                    bullets.Enqueue(bulletsTransform.GetChild(bulletsTransform.childCount - 1).gameObject);
+                    magazine.Add(bulletsTransform.GetChild(bulletsTransform.childCount - 1).gameObject);
+
+                }
+
+
             }
 
         }
@@ -157,7 +172,7 @@ public class Shooting : MonoBehaviour
                 Debug.Log("magazine is empty");
             }
         }
-        
+
     }
     private IEnumerator ShootWithTheGun()
     {
@@ -177,8 +192,8 @@ public class Shooting : MonoBehaviour
                 enemyStateManager.SwitchState(enemyStateManager.TakeDamageState);
             }
 
-            
 
+            GameObject bullet = bullets.Dequeue();
             LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
             if (lineRenderer == null) Debug.LogError("LineRenderer is null");
             lineRenderer.enabled = true;
@@ -188,36 +203,79 @@ public class Shooting : MonoBehaviour
             yield return new WaitForSeconds(lnOnFor);
             lineRenderer.startWidth = 0f;
             lineRenderer.endWidth = 0f;
+            bullets.Enqueue(bullet);
         }
         else
         {
-            List<float> angles = new List<float> { UnityEngine.Random.Range(45, 91), UnityEngine.Random.Range(-45, 46), UnityEngine.Random.Range(-90, -44) };
+            float[] angles = { UnityEngine.Random.Range(0, 15), UnityEngine.Random.Range(-15, 0) };
 
             foreach (float angle in angles)
             {
-                for (int i = 0; i < 2; i++)
+                for (int j = 0; j < 3; j++)
                 {
-                    RaycastHit2D[] bulletHits = Physics2D.RaycastAll(firePoint.position, shootingVector * angle, shootingDirection);
+                    RaycastHit2D[] bulletHits = Physics2D.RaycastAll(firePoint.position, Quaternion.Euler(0f, 0f, angle) * transform.right, shootingDirection);
                     foreach (RaycastHit2D hit in bulletHits)
                     {
                         if (hit.transform.CompareTag("Enemy"))
                         {
                             hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
                             hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
-                        }
-                    }
 
+                        }
+
+                    }
+                    Debug.Log("ssa");
+                    GameObject bullet = bullets.Dequeue();
                     LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
-                    if (lineRenderer == null) Debug.LogError("LineRenderer is null");
-                    lineRenderer.SetPositions(new Vector3[] { firePoint.position, firePoint.position + Vector3.right * shootingDirection });
+                    lineRenderer.SetPosition(0, firePoint.position);
+                    lineRenderer.SetPosition(1, firePoint.position + Quaternion.Euler(0f, 0f, angle) * transform.right * shootingDirection);
+
                     lineRenderer.startWidth = 0.1f;
                     lineRenderer.endWidth = 0.1f;
                     yield return new WaitForSeconds(lnOnFor);
                     lineRenderer.startWidth = 0f;
                     lineRenderer.endWidth = 0f;
+                    bullets.Enqueue(bullet);
+
                 }
             }
+
+
+
+
+
+
+
+            Debug.Log("ss");
+
+
+            //List<float> angles = new List<float> { UnityEngine.Random.Range(45, 91), UnityEngine.Random.Range(-45, 46), UnityEngine.Random.Range(-90, -44) };
+
+            //foreach (float angle in angles)
+            //{
+            //    for (int i = 0; i < 2; i++)
+            //    {
+            //        RaycastHit2D[] bulletHits = Physics2D.RaycastAll(firePoint.position, shootingVector * angle, shootingDirection);
+            //        foreach (RaycastHit2D hit in bulletHits)
+            //        {
+            //            if (hit.transform.CompareTag("Enemy"))
+            //            {
+            //                hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
+            //                hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+            //            }
+            //        }
+
+            //        LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
+            //        if (lineRenderer == null) Debug.LogError("LineRenderer is null");
+            //        lineRenderer.SetPositions(new Vector3[] { firePoint.position, firePoint.position + Vector3.right * shootingDirection });
+            //        lineRenderer.startWidth = 0.1f;
+            //        lineRenderer.endWidth = 0.1f;
+            //        yield return new WaitForSeconds(lnOnFor);
+            //        lineRenderer.startWidth = 0f;
+            //        lineRenderer.endWidth = 0f;
+            //    }
         }
+
     }
 
     private void HitWithTheWeapon()
@@ -260,11 +318,11 @@ public class Shooting : MonoBehaviour
     public void ResetCurrentMagazine()
     {
         currentWeapon.ResetCurrentMagazine();
-    } 
+    }
 
-    
 
-    
+
+
 
 
 
