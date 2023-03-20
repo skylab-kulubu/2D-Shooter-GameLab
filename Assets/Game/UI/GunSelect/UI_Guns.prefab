@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2484944389743621127}
+  - component: {fileID: 2296192581407039470}
   m_Layer: 5
   m_Name: UI_Guns
   m_TagString: Untagged
@@ -41,6 +42,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2296192581407039470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997944792953056175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cc2d29578578f4889de44c9215eb13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 11400000, guid: dd18618dce92eb842971f17fa119eaa3, type: 2}
+  - {fileID: 11400000, guid: 1debdf1da84152d4aa852da2901ab428, type: 2}
+  - {fileID: 11400000, guid: c082b827af77f524488ed075c35f5212, type: 2}
+  - {fileID: 11400000, guid: dd7ab92779373024fa0795602d44ad38, type: 2}
+  - {fileID: 11400000, guid: 167537a74d682e84ab4a833a7265f13b, type: 2}
+  previousWeaponID: 0
 --- !u!1001 &1653236627214726349
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class Weapon : ScriptableObject
     [SerializeField] private bool isShot = false;
     [SerializeField] private Bullet bullet = null;
 
+    [SerializeField] private int weaponID;
+
     [SerializeField] private List<GameObject> currentMagazine = new List<GameObject>();
 
 
@@ -87,6 +89,10 @@ public class Weapon : ScriptableObject
     internal void ResetCurrentMagazine()
     {
         currentMagazine = new List<GameObject>();
+    }
+    public int GetWeaponID()
+    {
+        return weaponID;
     }
 
     //public Transform GetFirePoint()

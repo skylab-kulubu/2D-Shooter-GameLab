@@ -34,6 +34,12 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
+        BulletData.PistolBulletAmount = BulletData.Weapons[0].GetDefaultBulletAmount();
+        BulletData.ShotgunBulletAmount = BulletData.Weapons[1].GetDefaultBulletAmount();
+        BulletData.RifleBulletAmount = BulletData.Weapons[2].GetDefaultBulletAmount();
+
+
+
         EquipWeapon(defaultWeapon);
 
         int defaultBulletAmount = currentWeapon.GetDefaultBulletAmount();
@@ -73,6 +79,7 @@ public class Shooting : MonoBehaviour
 
     private void Update()
     {
+        UpdateMagazines();
         sinceLastShoot += Time.deltaTime;
         SetShootingDirection();
 
@@ -104,6 +111,22 @@ public class Shooting : MonoBehaviour
 
     }
 
+    private void UpdateMagazines()
+    {
+        if (currentWeapon.GetWeaponID() == 2)
+        {
+            BulletData.PistolBulletAmount = GetCurrentMagazine().Count;
+        }
+        else if (currentWeapon.GetWeaponID() == 3)
+        {
+            BulletData.ShotgunBulletAmount = GetCurrentMagazine().Count;
+        }
+        else if (currentWeapon.GetWeaponID() == 4)
+        {
+            BulletData.RifleBulletAmount = GetCurrentMagazine().Count;
+        }
+
+    }
     private void SetShootingDirection()
     {
         if (Mathf.Sign(transform.localScale.x) == 1)

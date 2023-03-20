@@ -22,3 +22,5 @@ MonoBehaviour:
   bulletFrequency: 0.2
   isShot: 0
   bullet: {fileID: 0}
+  weaponID: 0
+  currentMagazine: []
