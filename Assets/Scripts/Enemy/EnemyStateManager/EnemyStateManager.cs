@@ -13,6 +13,8 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyMoveState MoveState = new EnemyMoveState();
     public EnemyRunsToVillageState RunToVillageState = new EnemyRunsToVillageState();
 
+    public bool hittedEnemy = true;
+
     public EnemyStats enemyStats;
     public float currentHealthPoints;
 
