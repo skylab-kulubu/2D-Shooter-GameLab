@@ -110,13 +110,10 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (sinceLastShoot > currentWeapon.GetBulletFrequency())
-            {
-                HitTheTrigger();
-            }
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    CheckandHit();
+        //}
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -124,6 +121,14 @@ public class Shooting : MonoBehaviour
         }
 
 
+    }
+
+    public void CheckandHit()
+    {
+        if (sinceLastShoot > currentWeapon.GetBulletFrequency())
+        {
+            HitTheTrigger();
+        }
     }
 
     private void UpdateMagazines()
