@@ -2000,6 +2000,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 526901382}
     m_Modifications:
+    - target: {fileID: 49851559537050536, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
+      propertyPath: _speed
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5970035454877373059, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2048,10 +2052,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5970035454877373066, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
+      propertyPath: m_LinearDrag
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5970035454877373069, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1269339484}
+    - target: {fileID: 7213276742459364995, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
+      propertyPath: rockAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213276742459364995, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
+      propertyPath: diamondAmount
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
 --- !u!1001 &6188365442532864749

@@ -7,16 +7,16 @@ public class UpgradeFenceUI : MonoBehaviour
     private void OnMouseDown()
     {
 
-        FenceUpgradeController[] objects = FindObjectsOfType<FenceUpgradeController>();
+        FenceUpgradeController[] fences = FindObjectsOfType<FenceUpgradeController>();
         string gameObj = gameObject.transform.parent.transform.parent.name;
         char lastChar = gameObj[gameObj.Length - 1];
-        foreach (FenceUpgradeController obj in objects)
+        foreach (FenceUpgradeController fence in fences)
         {
             
-            if (obj.GetFenceNumber().ToString() == lastChar.ToString())
+            if (fence.GetFenceNumber().ToString() == lastChar.ToString())
             {
-                int currentMaterialNumber = obj.GetComponent<FenceController>().GetCurrentFenceMaterial().GetFenceMaterialNumber();
-                int requiredMaterialForUpgrade = obj.GetComponent<FenceController>().GetCurrentFence().GetNextFence().GetRequiredMaterialToUpgrade();
+                int currentMaterialNumber = fence.GetComponent<FenceController>().GetCurrentFenceMaterial().GetFenceMaterialNumber();
+                int requiredMaterialForUpgrade = fence.GetComponent<FenceController>().GetCurrentFence().GetNextFence().GetRequiredMaterialToUpgrade();
 
                 int playersAmountofMaterialForNextFence = FindObjectOfType<EditFence>().ReturnRequiredFenceMaterial(currentMaterialNumber + 1);
 
@@ -26,13 +26,29 @@ public class UpgradeFenceUI : MonoBehaviour
 
                 if(playersAmountofMaterialForNextFence >= requiredMaterialForUpgrade)
                 {
-                    obj.GetComponent<FenceController>().ChangeTheFence(obj.GetComponent<FenceController>().GetCurrentFence().GetNextFence());
+                    Debug.Log("Fence is Changed");
+                    Fence nextFence = fence.GetComponent<FenceController>().GetCurrentFence().GetNextFence();
+                    fence.GetComponent<FenceController>().ChangeTheFence(nextFence);
+                    fence.GetComponent<FenceController>().SetCurrentFence(nextFence);
+
+                    int fixAmount = nextFence.GetRequiredMaterialToFix();
+                    transform.parent.parent.GetComponent<MaterialIconChanger>().FixAmount = fixAmount;
+                    if (nextFence.GetNextFence() == null) return;
+
+                    Sprite fenceMaterialIcon = nextFence.GetNextFence().GetFenceMaterial().GetFenceMaterialIcon();
+                    int upgradeAmount = nextFence.GetNextFence().GetRequiredMaterialToUpgrade();
+
+                    transform.parent.parent.GetComponent<MaterialIconChanger>().UpgradeIcon.sprite = fenceMaterialIcon;
+                    transform.parent.parent.GetComponent<MaterialIconChanger>().FixIcon.sprite = fenceMaterialIcon;
+                    transform.parent.parent.GetComponent<MaterialIconChanger>().UpgradeAmount = upgradeAmount;
                 }
                 else
                 {
-                    Debug.Log($"not enough {obj.GetComponent<FenceController>().GetCurrentFence().GetNextFence().GetFenceMaterial()}");
+                    Debug.Log($"not enough {fence.GetComponent<FenceController>().GetCurrentFence().GetNextFence().GetFenceMaterial()}");
 
                 }
+
+
             }
         }
 

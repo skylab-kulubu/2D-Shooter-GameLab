@@ -6,7 +6,6 @@ public class FixFenceUI : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        Debug.Log("sorun belimde");
         int fenceMaterialNumber;
 
         FenceUpgradeController[] objects = FindObjectsOfType<FenceUpgradeController>();
@@ -17,7 +16,10 @@ public class FixFenceUI : MonoBehaviour
 
             if (obj.GetFenceNumber().ToString() == lastChar.ToString())
             {
-                Debug.Log("sqürt");
+                
+
+
+
 
                 fenceMaterialNumber = obj.GetComponent<FenceController>().GetCurrentFenceMaterial().GetFenceMaterialNumber();
                 int playersAmountofMaterialNumber = FindObjectOfType<EditFence>().ReturnRequiredFenceMaterial(fenceMaterialNumber);
