@@ -53,7 +53,6 @@ public class Shooting : MonoBehaviour
 
     public void LoadMagazine(List<GameObject> magazine, int bulletAmount)
     {
-        Debug.Log(bulletsTransform.childCount);
         for (int i = 0; i < bulletAmount; i++)
         {
             if (currentWeapon == null)

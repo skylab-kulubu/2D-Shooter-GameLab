@@ -23,29 +23,46 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Animator animator;
     float dalga;
-    
-   
 
+
+
+    //private void Update()
+    //{
+
+    //    animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
+    //    _movementInput = FindObjectOfType<MobileJoystick>().CalculateMovementInput(FindObjectOfType<MobileJoystick>().offset);
+    //    //_movementInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+    //    if(Input.GetAxisRaw("Horizontal") == 1 && !isFacingRight)
+    //    {
+    //        Flip();
+    //    }
+    //    else if (Input.GetAxisRaw("Horizontal") == -1 && isFacingRight)
+    //    {
+    //        Flip();
+    //    }
+
+    //    Debug.Log(MovementInput);
+    //}
     private void Update()
     {
-        
         animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
         _movementInput = FindObjectOfType<MobileJoystick>().CalculateMovementInput(FindObjectOfType<MobileJoystick>().offset);
-        //_movementInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if(Input.GetAxisRaw("Horizontal") == 1 && !isFacingRight)
+        float horizontalInput = _movementInput.x != 0f ? _movementInput.x : Input.GetAxisRaw("Horizontal");
+        if (horizontalInput > 0.01f && !isFacingRight)
         {
             Flip();
         }
-        else if (Input.GetAxisRaw("Horizontal") == -1 && isFacingRight)
+        else if (horizontalInput < -0.01f && isFacingRight)
         {
             Flip();
         }
 
-        Debug.Log(MovementInput);
     }
 
-    
+
+
 
     private void FixedUpdate()
     {
@@ -76,6 +93,8 @@ public class PlayerMovement : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
     }
+
+
 }
 
 
