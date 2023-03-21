@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,8 +11,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
+    public Vector2 MovementInput { get { return _movementInput; } set { _movementInput = value; } }
+
     private Vector2 _smoothedMovementInput;
     private Vector2 _movementInputSmoothVelocity;
+    public MobileJoystick joystickInput;
 
     private bool isFacingRight = true;
 
@@ -19,12 +23,15 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Animator animator;
     float dalga;
+    
+   
 
     private void Update()
     {
+        
         animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
-
-        _movementInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _movementInput = FindObjectOfType<MobileJoystick>().CalculateMovementInput(FindObjectOfType<MobileJoystick>().offset);
+        //_movementInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         if(Input.GetAxisRaw("Horizontal") == 1 && !isFacingRight)
         {
@@ -34,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
+
+        Debug.Log(MovementInput);
     }
 
     
@@ -52,6 +61,9 @@ public class PlayerMovement : MonoBehaviour
                     0.1f);
 
         _rigidbody.velocity = _smoothedMovementInput * _speed;
+
+
+
     }
 
 
