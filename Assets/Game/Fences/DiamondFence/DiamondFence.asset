@@ -15,7 +15,7 @@ MonoBehaviour:
   mainFenceHealth: 1000
   fenceMaterial: {fileID: 11400000, guid: e11f9b27d4573654786f3776b1a43683, type: 2}
   nextFence: {fileID: 0}
-  requiredMaterialToUpgrade: 25
-  requiredMaterialToFix: 20
+  requiredMaterialToUpgrade: 20
+  requiredMaterialToFix: 15
   fencePrefab: {fileID: 5388293626941969692, guid: eb7f2b3cde496354bbe9817e66a41bfc, type: 3}
   endOfTheUpgrades: 1
