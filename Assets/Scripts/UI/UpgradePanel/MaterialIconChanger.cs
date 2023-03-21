@@ -13,6 +13,10 @@ public class MaterialIconChanger : MonoBehaviour
 
     [SerializeField] private Text _requiredMaterialAmountUpgradeText;
     [SerializeField] private Text _requiredMaterialAmountFixText;
+
+    [SerializeField] private GameObject _upgradePanel;
+
+    public GameObject UpgradePanel { get { return _upgradePanel; } }
     public Image UpgradeIcon { get { return _upgradeIcon; } set { _upgradeIcon = value; } }
     public Image FixIcon { get { return _fixIcon; } set { _fixIcon = value; } }
     public int UpgradeAmount { get { return _requiredMaterialAmountUpgrade; } set { _requiredMaterialAmountUpgrade = value; } }

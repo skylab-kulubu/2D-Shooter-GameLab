@@ -297,6 +297,7 @@ MonoBehaviour:
   _requiredMaterialAmountFix: 10
   _requiredMaterialAmountUpgradeText: {fileID: 1171459654541678126}
   _requiredMaterialAmountFixText: {fileID: 4008302506330528002}
+  _upgradePanel: {fileID: 7340194735891726281}
 --- !u!1 &3502631373030330524
 GameObject:
   m_ObjectHideFlags: 0
