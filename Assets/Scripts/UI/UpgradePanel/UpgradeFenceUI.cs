@@ -24,10 +24,12 @@ public class UpgradeFenceUI : MonoBehaviour
                 print("requiredMaterialForUpgrade: " + requiredMaterialForUpgrade);
                 print("playersAmountofMaterialForNextFence: " + playersAmountofMaterialForNextFence);
 
-                if(playersAmountofMaterialForNextFence >= requiredMaterialForUpgrade)
+                if (playersAmountofMaterialForNextFence >= requiredMaterialForUpgrade)
                 {
                     Debug.Log("Fence is Changed");
                     Fence nextFence = fence.GetComponent<FenceController>().GetCurrentFence().GetNextFence();
+                    int fenceMaterialNumber = fence.GetComponent<FenceController>().GetCurrentFenceMaterial().GetFenceMaterialNumber();
+
                     fence.GetComponent<FenceController>().ChangeTheFence(nextFence);
                     fence.GetComponent<FenceController>().SetCurrentFence(nextFence);
 
@@ -35,6 +37,8 @@ public class UpgradeFenceUI : MonoBehaviour
                     SpriteRenderer currentFenceSprite = nextFence.GetFenceMaterial().GetFenceMaterialSpriteRenderer();
                     transform.parent.parent.GetComponent<MaterialIconChanger>().FixAmount = fixAmount;
                     transform.parent.parent.GetComponent<MaterialIconChanger>().FixIcon.color = currentFenceSprite.color;
+
+                    FindObjectOfType<EditFence>().ReduceMaterialAmound(fenceMaterialNumber + 1, nextFence.GetRequiredMaterialToUpgrade());
 
                     if (nextFence.GetNextFence() == null)
                     {

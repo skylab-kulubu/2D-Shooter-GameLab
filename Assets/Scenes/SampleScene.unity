@@ -2062,11 +2062,11 @@ PrefabInstance:
       objectReference: {fileID: 1269339484}
     - target: {fileID: 7213276742459364995, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
       propertyPath: rockAmount
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7213276742459364995, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
       propertyPath: diamondAmount
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b34c93a3a1e064aaf12a5fe67a9a83, type: 3}
