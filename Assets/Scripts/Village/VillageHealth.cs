@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class VillageHealth : MonoBehaviour
+public class VillageHealth
 {
-    public static float villageHealthPoints = 1000;
-    void Start()
-    {
-        
-    }
+    public static float villageHealthPoints = 250;
 
-    // Update is called once per frame
-    void Update()
+    public void VillageDestroyed()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
 }

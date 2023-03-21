@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth:MonoBehaviour
 {
     [SerializeField] private float playerHealthPoints;
     [SerializeField] private const float maxPlayerHealth = 250;
@@ -25,8 +26,9 @@ public class PlayerHealth : MonoBehaviour
     public void PlayerDie()
     {
         isPlayerDead = true;
+        Debug.Log("player dead");
         GetComponent<BoxCollider2D>().enabled = false;
-        print("player dead");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public bool GetIsPlayerDead()
