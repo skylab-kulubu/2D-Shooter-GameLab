@@ -1006,6 +1006,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5145912366715133669, guid: 47e4f5ccdfea62e44b0afac37f7abe4a, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145912366715133669, guid: 47e4f5ccdfea62e44b0afac37f7abe4a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5145912366715133669, guid: 47e4f5ccdfea62e44b0afac37f7abe4a, type: 3}
       propertyPath: m_Color.b
       value: 0.39607844
       objectReference: {fileID: 0}
@@ -1429,6 +1437,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaterialIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 9168033335766085920, guid: 63014268076e2844195cb6537f510d25, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168033335766085920, guid: 63014268076e2844195cb6537f510d25, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 9168033335766085920, guid: 63014268076e2844195cb6537f510d25, type: 3}
       propertyPath: m_Color.b
       value: 0.42352942

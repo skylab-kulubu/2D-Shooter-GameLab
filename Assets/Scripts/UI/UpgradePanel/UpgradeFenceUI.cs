@@ -32,14 +32,16 @@ public class UpgradeFenceUI : MonoBehaviour
                     fence.GetComponent<FenceController>().SetCurrentFence(nextFence);
 
                     int fixAmount = nextFence.GetRequiredMaterialToFix();
+                    SpriteRenderer currentFenceSprite = nextFence.GetFenceMaterial().GetFenceMaterialSpriteRenderer();
                     transform.parent.parent.GetComponent<MaterialIconChanger>().FixAmount = fixAmount;
+                    transform.parent.parent.GetComponent<MaterialIconChanger>().FixIcon.color = currentFenceSprite.color;
+
                     if (nextFence.GetNextFence() == null) return;
 
-                    Sprite fenceMaterialIcon = nextFence.GetNextFence().GetFenceMaterial().GetFenceMaterialIcon();
+                    SpriteRenderer nextFenceSprite = nextFence.GetNextFence().GetFenceMaterial().GetFenceMaterialSpriteRenderer();
                     int upgradeAmount = nextFence.GetNextFence().GetRequiredMaterialToUpgrade();
 
-                    transform.parent.parent.GetComponent<MaterialIconChanger>().UpgradeIcon.sprite = fenceMaterialIcon;
-                    transform.parent.parent.GetComponent<MaterialIconChanger>().FixIcon.sprite = fenceMaterialIcon;
+                    transform.parent.parent.GetComponent<MaterialIconChanger>().UpgradeIcon.color = nextFenceSprite.color;
                     transform.parent.parent.GetComponent<MaterialIconChanger>().UpgradeAmount = upgradeAmount;
                 }
                 else

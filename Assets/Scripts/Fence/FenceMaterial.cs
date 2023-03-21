@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class FenceMaterial : ScriptableObject
 {
     [SerializeField] private SpriteRenderer fenceMaterialSpriteRenderer;
-    [SerializeField] private Sprite fenceMaterialIcon;
+    [SerializeField] private Sprite fenceSprite;
     [SerializeField] private int fenceMaterialNumber;
 
     public SpriteRenderer GetFenceMaterialSpriteRenderer()
     {
         return fenceMaterialSpriteRenderer;
     }
-    public Sprite GetFenceMaterialIcon()
+    public Sprite GetFenceSprite()
     {
-        return fenceMaterialIcon;
+        return fenceSprite;
     }
     public int GetFenceMaterialNumber()
     {
