@@ -17,7 +17,7 @@ public class EnemyAttacksPlayerState : EnemyBaseState
     {
         Attack(enemy, enemy.target);
 
-        if(enemy.currentTrigger.gameObject.CompareTag("Player") && enemy.currentCollision.gameObject.CompareTag("Player"))
+        if(!enemy.currentTrigger.gameObject.CompareTag("Player") || !enemy.currentCollision.gameObject.CompareTag("Player"))
         {
             enemy.target = null;
         }
