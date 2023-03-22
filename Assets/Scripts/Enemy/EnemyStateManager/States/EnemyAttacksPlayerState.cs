@@ -16,11 +16,21 @@ public class EnemyAttacksPlayerState : EnemyBaseState
     public override void UpdateState(EnemyStateManager enemy)
     {
         Attack(enemy, enemy.target);
-
-        if(!enemy.currentTrigger.gameObject.CompareTag("Player") || !enemy.currentCollision.gameObject.CompareTag("Player"))
+        if(enemy.currentTrigger != null)
         {
-            enemy.target = null;
+            if (!enemy.currentTrigger.gameObject.CompareTag("Player"))
+            {
+                enemy.target = null;
+            }
         }
+        if(enemy.currentCollision != null)
+        {
+            if (!enemy.currentCollision.gameObject.CompareTag("Player"))
+            {
+                enemy.target = null;
+            }
+        }
+        
         //StartAttackAction(enemy, enemy.target);
 
 

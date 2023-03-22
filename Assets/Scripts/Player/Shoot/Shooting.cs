@@ -202,8 +202,8 @@ public class Shooting : MonoBehaviour
             if (lineRenderer == null) Debug.LogError("LineRenderer is null");
             lineRenderer.enabled = true;
             lineRenderer.SetPositions(new Vector3[] { firePoint.position, firePoint.position + Vector3.right * shootingDirection });
-            lineRenderer.startWidth = 0.1f;
-            lineRenderer.endWidth = 0.1f;
+            lineRenderer.startWidth = 0.01f;
+            lineRenderer.endWidth = 0.01f;
             yield return new WaitForSeconds(lnOnFor);
             lineRenderer.startWidth = 0f;
             lineRenderer.endWidth = 0f;
@@ -234,10 +234,12 @@ public class Shooting : MonoBehaviour
                     lineRenderer.SetPosition(0, firePoint.position);
                     lineRenderer.SetPosition(1, firePoint.position + Quaternion.Euler(0f, 0f, angle) * transform.right * shootingDirection);
 
-                    lineRenderer.startColor = Color.red;
-                    lineRenderer.endColor = Color.red;
-                    lineRenderer.startWidth = 0.1f;
-                    lineRenderer.endWidth = 0.1f;
+                    //lineRenderer.material.color = Color.red;
+                    //lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
+                    //lineRenderer.endColor = Color.red;
+                    lineRenderer.startWidth = 0.01f;
+                    lineRenderer.endWidth = 0.01f;
                     yield return new WaitForSeconds(lnOnFor);
                     lineRenderer.startWidth = 0f;
                     lineRenderer.endWidth = 0f;
