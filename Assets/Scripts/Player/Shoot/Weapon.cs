@@ -17,11 +17,13 @@ public class Weapon : ScriptableObject
     [SerializeField] private bool isShot = false;
     [SerializeField] private Bullet bullet = null;
 
+    [SerializeField] private AudioClip gunSound;
+
     [SerializeField] private int weaponID;
 
     [SerializeField] private List<GameObject> currentMagazine = new List<GameObject>();
 
-
+    public AudioClip GunSound { get { return gunSound; } }
     //[SerializeField] private Transform firePointWeapon = null;
 
 

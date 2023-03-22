@@ -22,5 +22,6 @@ MonoBehaviour:
   bulletFrequency: 1.5
   isShot: 0
   bullet: {fileID: 0}
+  gunSound: {fileID: 8300000, guid: b02c6f18fc2198348a3c401b0710aa3e, type: 3}
   weaponID: 0
   currentMagazine: []

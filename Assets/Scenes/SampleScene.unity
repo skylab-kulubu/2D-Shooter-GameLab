@@ -1321,6 +1321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1618142933}
   - component: {fileID: 1618142932}
+  - component: {fileID: 1618142934}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1356,6 +1357,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618142934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618142931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6978a3bd8831e4d46b207c14903af85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAudioClipArray:
+  - sound: 0
+    audioClip: {fileID: 8300000, guid: c7a29d30d8712b84fabb06dbce2e4bf7, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: b7cf539ef15a412449e640872589b33f, type: 3}
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: ceb22794dfe9fcb4b99cab91f5dd744f, type: 3}
+  - sound: 13
+    audioClip: {fileID: 8300000, guid: a019c7d8f625367438972135eab7da59, type: 3}
+  - sound: 14
+    audioClip: {fileID: 8300000, guid: 004f33e1732ed4a4cad0a3622c0ad4b2, type: 3}
+  - sound: 16
+    audioClip: {fileID: 8300000, guid: abd3079aeebdf0c4c8a4c91264484e24, type: 3}
+  - sound: 15
+    audioClip: {fileID: 8300000, guid: f460282e49066de46b1dbb1bd44b9a74, type: 3}
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: 80791f18af542294db8eafdc8bb4efe9, type: 3}
+  - sound: 4
+    audioClip: {fileID: 8300000, guid: b02c6f18fc2198348a3c401b0710aa3e, type: 3}
+  - sound: 5
+    audioClip: {fileID: 8300000, guid: 1171c3978623f3a4287529895c9222fe, type: 3}
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: d3b8feb7dfe55a24f9395a69b2f5b477, type: 3}
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: 25e57401f5fb00d458b3bc30d9870fc6, type: 3}
+  - sound: 9
+    audioClip: {fileID: 8300000, guid: cb7a022ad1fe64c45927105866a6d49a, type: 3}
+  - sound: 8
+    audioClip: {fileID: 8300000, guid: eb3e4d867f17e15489754e5b4e00cd47, type: 3}
+  - sound: 10
+    audioClip: {fileID: 8300000, guid: 283f2a45fb0cd064a909d1558aa13b06, type: 3}
+  - sound: 11
+    audioClip: {fileID: 8300000, guid: 907423736a1bfdf44b15f0ccc95631b5, type: 3}
+  - sound: 12
+    audioClip: {fileID: 8300000, guid: 1b07eadfd67640b4aa91dd181c3e15b5, type: 3}
 --- !u!4 &1708400198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6188365443729844144, guid: 419030b53b4547a4984805a2400906e2, type: 3}

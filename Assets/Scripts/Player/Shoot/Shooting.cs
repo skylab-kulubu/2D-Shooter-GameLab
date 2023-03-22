@@ -127,6 +127,7 @@ public class Shooting : MonoBehaviour
         if (sinceLastShoot > currentWeapon.GetBulletFrequency())
         {
             HitTheTrigger();
+            
         }
     }
 
@@ -162,12 +163,17 @@ public class Shooting : MonoBehaviour
         if (currentWeapon.GetIsInFighting())
         {
             HitWithTheWeapon();
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(currentWeapon.GunSound);
         }
         else
         {
             if (currentWeapon.GetCurrentMagazine().ToArray().Length > 0)
             {
+
                 StartCoroutine(ShootWithTheGun());
+                AudioSource audioSource = GetComponent<AudioSource>();
+                audioSource.PlayOneShot(currentWeapon.GunSound);
                 currentWeapon.GetCurrentMagazine().RemoveAt(0);
 
             }
@@ -224,6 +230,7 @@ public class Shooting : MonoBehaviour
                         {
                             hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
                             hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
+
 
                         }
 

@@ -19,8 +19,9 @@ MonoBehaviour:
   magazineCapacity: 6
   defaultBulletAmount: 6
   isInFighting: 0
-  bulletFrequency: 0.75
+  bulletFrequency: 1.2
   isShot: 1
   bullet: {fileID: 11400000, guid: 26734b1f1be84e84e86a5f866dee22e7, type: 2}
+  gunSound: {fileID: 8300000, guid: a2596dbb2ba083b469b38068dc845e18, type: 3}
   weaponID: 3
   currentMagazine: []
