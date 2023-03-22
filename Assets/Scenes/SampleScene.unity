@@ -154,7 +154,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &140319649
 MonoBehaviour:
@@ -666,7 +666,7 @@ Transform:
   - {fileID: 884889805}
   - {fileID: 463589077}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1045316758
 GameObject:
@@ -907,7 +907,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1269339484 stripped
 MonoBehaviour:
@@ -1118,7 +1118,7 @@ RectTransform:
   - {fileID: 7565153669485360109}
   - {fileID: 480794736}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1321,7 +1321,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1618142933}
   - component: {fileID: 1618142932}
-  - component: {fileID: 1618142934}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1355,45 +1354,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1618142934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618142931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6978a3bd8831e4d46b207c14903af85b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundAudioClipArray:
-  - sound: 0
-    audioClip: {fileID: 8300000, guid: c7a29d30d8712b84fabb06dbce2e4bf7, type: 3}
-  - sound: 1
-    audioClip: {fileID: 8300000, guid: b7cf539ef15a412449e640872589b33f, type: 3}
-  - sound: 2
-    audioClip: {fileID: 8300000, guid: ceb22794dfe9fcb4b99cab91f5dd744f, type: 3}
-  - sound: 13
-    audioClip: {fileID: 8300000, guid: a019c7d8f625367438972135eab7da59, type: 3}
-  - sound: 14
-    audioClip: {fileID: 8300000, guid: 004f33e1732ed4a4cad0a3622c0ad4b2, type: 3}
-  - sound: 16
-    audioClip: {fileID: 8300000, guid: abd3079aeebdf0c4c8a4c91264484e24, type: 3}
-  - sound: 15
-    audioClip: {fileID: 8300000, guid: f460282e49066de46b1dbb1bd44b9a74, type: 3}
-  - sound: 9
-    audioClip: {fileID: 8300000, guid: cb7a022ad1fe64c45927105866a6d49a, type: 3}
-  - sound: 8
-    audioClip: {fileID: 8300000, guid: eb3e4d867f17e15489754e5b4e00cd47, type: 3}
-  - sound: 10
-    audioClip: {fileID: 8300000, guid: 283f2a45fb0cd064a909d1558aa13b06, type: 3}
-  - sound: 11
-    audioClip: {fileID: 8300000, guid: 907423736a1bfdf44b15f0ccc95631b5, type: 3}
-  - sound: 12
-    audioClip: {fileID: 8300000, guid: 1b07eadfd67640b4aa91dd181c3e15b5, type: 3}
 --- !u!4 &1708400198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6188365443729844144, guid: 419030b53b4547a4984805a2400906e2, type: 3}
@@ -1544,7 +1506,7 @@ Transform:
   - {fileID: 1183775974}
   - {fileID: 157805214}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1961360159 stripped
 MonoBehaviour:
@@ -1557,6 +1519,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5632b1549de4b5e44ac678fb65c821a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2072660400
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4766398164218829567, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_Name
+      value: First Aid Kit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.11442
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7102336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055487140161728341, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06ccf40d74d51684bbd6a036cb92340b, type: 3}
 --- !u!1 &2116155978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1057722237825070478, guid: 6fa722e2572f6604fae96a870d2a34cc, type: 3}
