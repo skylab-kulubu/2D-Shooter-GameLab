@@ -145,6 +145,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 762245346535077777, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1881502066387887596, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -193,6 +197,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 4536480108074153618, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_Volume
+      value: 0.095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536480108074153618, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f460282e49066de46b1dbb1bd44b9a74, type: 3}
     - target: {fileID: 6926350745430375050, guid: a37a8b1ef71addf4a908fb88e180ad94, type: 3}
       propertyPath: m_Size.x
       value: 1.235054

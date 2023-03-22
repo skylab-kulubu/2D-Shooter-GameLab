@@ -9,6 +9,7 @@ public class AidKit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GetComponent<AudioSource>().Play();
             float maxHealth = collision.gameObject.GetComponent<PlayerHealth>().GetMaxPlayerHealth();
             float currentHealth = collision.gameObject.GetComponent<PlayerHealth>().GetPlayerHealthPoints();
             if (currentHealth >= maxHealth) return;

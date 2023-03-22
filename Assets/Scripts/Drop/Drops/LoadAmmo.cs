@@ -10,6 +10,8 @@ public class LoadAmmo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GetComponent<AudioSource>().Play();
+
             List<GameObject> magazine = collision.gameObject.GetComponent<Shooting>().GetCurrentMagazine();
             Weapon weapon = collision.gameObject.GetComponent<Shooting>().GetCurrentWeapon();
             if (magazine.Count >= weapon.GetMagazineCapacity()) return;

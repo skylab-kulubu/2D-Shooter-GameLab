@@ -20,7 +20,6 @@ public class DropManager : MonoBehaviour
         if (droppedAmount > 0) return;
         
         GameObject dropItem = RandomDropFormula();
-
         Instantiate(dropItem, gameObject.transform.position, Quaternion.identity);
 
         droppedAmount++;

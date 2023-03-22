@@ -1384,16 +1384,6 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: abd3079aeebdf0c4c8a4c91264484e24, type: 3}
   - sound: 15
     audioClip: {fileID: 8300000, guid: f460282e49066de46b1dbb1bd44b9a74, type: 3}
-  - sound: 3
-    audioClip: {fileID: 8300000, guid: 80791f18af542294db8eafdc8bb4efe9, type: 3}
-  - sound: 4
-    audioClip: {fileID: 8300000, guid: b02c6f18fc2198348a3c401b0710aa3e, type: 3}
-  - sound: 5
-    audioClip: {fileID: 8300000, guid: 1171c3978623f3a4287529895c9222fe, type: 3}
-  - sound: 6
-    audioClip: {fileID: 8300000, guid: d3b8feb7dfe55a24f9395a69b2f5b477, type: 3}
-  - sound: 7
-    audioClip: {fileID: 8300000, guid: 25e57401f5fb00d458b3bc30d9870fc6, type: 3}
   - sound: 9
     audioClip: {fileID: 8300000, guid: cb7a022ad1fe64c45927105866a6d49a, type: 3}
   - sound: 8
@@ -2483,7 +2473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6676399337546668529, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c2ca4a39808c374990638cd5bedffdd, type: 3}
