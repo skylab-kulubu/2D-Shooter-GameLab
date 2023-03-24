@@ -1,0 +1,2422 @@
+fileFormatVersion: 2
+guid: 9998ef03c011d9a43b4968e7d20d4018
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Allen Jr_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1136
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0bb3186ceaed14dbcad0b64fde31a2
+      internalID: -1298937063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1137
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67278cf359e9a684692ad0df0a372e3b
+      internalID: 1564885765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1136
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cfd24b599e32c439c3eac833ef423c
+      internalID: 1097511521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_3
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1136
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a43f2de8ccbbdd42bb4ec09ff37ae07
+      internalID: 1658711618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_4
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1136
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405f06719e00423489c2d8df69cd5392
+      internalID: -1436008261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1072
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e220ed72221bd04ba9011d2c12551e7
+      internalID: -452505695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1072
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75593238941919f459136efcf00eb521
+      internalID: 67225452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1072
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4bbd6002d6c834ab596560738990d8
+      internalID: 206630722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1072
+        width: 75
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd0cf98201f562469bbabcdcb7645aa
+      internalID: -2033559450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_9
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1072
+        width: 76
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770e9a765387b9d48b381db919f1944f
+      internalID: 1135243287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_10
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1008
+        width: 76
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be7ba8ab63ca2345bc78d5f482690b4
+      internalID: -564470896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1008
+        width: 75
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d83550ab43e4140a22aee438d6bd88
+      internalID: 1385579365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_12
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1008
+        width: 74
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a47e4e4d84c58d45b9c9d7a616c1c10
+      internalID: -545426446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1008
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c689e271807629c4b927f2c53b98aeb6
+      internalID: -1488953280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_14
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1008
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819c31bbe98939941bce03b7b3600a78
+      internalID: -1003674904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 944
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40046c3ce7969ad45a9c7df622384bc3
+      internalID: 103024793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_16
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 944
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c383e43e92d2ee24eaf08396b93a9a69
+      internalID: -366934888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_17
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 944
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757bf5feae89cfe42842d05b0e052c7e
+      internalID: 233558435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 944
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0990ed6f6f57c3f4ca00c9b1706b26ec
+      internalID: -348670755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_19
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 944
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2922cc7143322e49b518074c7eac26e
+      internalID: 67588443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_20
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 985
+        width: 180
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a1b7f9c59ff744aa55d10514c67888
+      internalID: 1066993305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_21
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 944
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9659e2ba02334db4fae9c3de7be35683
+      internalID: -1453847439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_22
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 944
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d21545bc8057c44aa462bf7e444c00
+      internalID: 1071315768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_23
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 979
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51de5a9ad144a342af5470c0eeeaffb
+      internalID: 1323445643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_24
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 973
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617c62be0e9fce047879b55ebd0f14ae
+      internalID: -1679685450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_25
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 967
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304229467ad36c8408bf684953d0b805
+      internalID: 1954665909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 880
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ced665f49cdb294388089eb19509253
+      internalID: -514530337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_27
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 880
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2c35b9f93b24b49a8d0aeceabf4c97
+      internalID: -110248621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_28
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 880
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ebb18bcbd43e8448074c37ca1c4a8a
+      internalID: 1889184254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_29
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 880
+        width: 78
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8ccb5f35b74094ca1d7592e063c955
+      internalID: 1827647646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_30
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 880
+        width: 82
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe00c2ead3815f4180dff8ef2b05a96
+      internalID: -1956561732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_31
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 864
+        width: 5
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52576deb8adb9a84697ae861a6e74880
+      internalID: -156808915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 864
+        width: 242
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a65ce85c939b5c49862e2835afadbb5
+      internalID: -339302242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_33
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 858
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61ab0532f3616f4cab239650c0a0808
+      internalID: 2116190616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_34
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 800
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2597a875c4591074ea7d6751b3175122
+      internalID: -407350341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_35
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 800
+        width: 82
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34a0172eb1638e4aaa60733d84c8d38
+      internalID: -1196119379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_36
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 800
+        width: 81
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0441bbdc391cee24c89533eacf7292c9
+      internalID: -1428866557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_37
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 800
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4099cc8a8a464fb43b64d2b9d19ae3fe
+      internalID: -732212146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_38
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 828
+        width: 222
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1b4ca4f45d3b24abfedcc0a982c8fe
+      internalID: 1819488792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_39
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 736
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68ab3736457e8b44a34eee77e324283
+      internalID: 1192364582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_40
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 736
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53e1e4258fc9714fa1b1b8bba76272f
+      internalID: 843059459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_41
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 736
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8567ce17a503f724b9eaf6cff494ae78
+      internalID: 972035682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_42
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 736
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8464ba9756b8b324f9d6ec09f6629701
+      internalID: 652030609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_43
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 736
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c584abe08cd2f47bb02ccbc55709d0
+      internalID: -1960726299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_44
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 736
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7dbc352f652b047bad75e4e7f34c08
+      internalID: -1412739646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_45
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 656
+        width: 83
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062053403663deb42b6858e0b14f2976
+      internalID: 2046712842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_46
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 656
+        width: 83
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91a32912e2b1a540a6fa6bddaf3aa89
+      internalID: 131277491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_47
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 656
+        width: 82
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c952e5560199d4abe3904d1656702b
+      internalID: 181558432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_48
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 656
+        width: 81
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8034cd6efa87c6949a5b18dc698c16b8
+      internalID: -342326500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_49
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 656
+        width: 81
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4185bd5ff07d82e4eb873feed5443775
+      internalID: -77405408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_50
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 656
+        width: 82
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df3f61b02ba70c428e87a60a180f258
+      internalID: -1638621948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_51
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 576
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41faa13634342b841bf033109713b064
+      internalID: 767433435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_52
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 576
+        width: 81
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c1d69edd6c18d48ab8e20a0c268ea4
+      internalID: 1215637944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_53
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 576
+        width: 80
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1035c757cab944489e5a0919d747b1
+      internalID: -354909471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_54
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 512
+        width: 83
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc162bb8249557408d5cd75da1e4e9f
+      internalID: -1394718442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_55
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 512
+        width: 83
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ef50b967127334ab25ef84855045fa
+      internalID: -1339244485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_56
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 512
+        width: 82
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5594f346edb04541bce79e71ad304d3
+      internalID: 1926012924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_57
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 512
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf22fb28ed2c534191a00ea21281378
+      internalID: -1009541920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_58
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 512
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401b5c708d43a53439fda303b4d9e671
+      internalID: -129992088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_59
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 512
+        width: 80
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee17334357aac141b4de474a43a95c1
+      internalID: 1653854394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_60
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 432
+        width: 73
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe94eedb8c3ac84a87389e081805f47
+      internalID: 508965253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_61
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 432
+        width: 65
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8ec62242addf74cb2d9ac8da5db3f5
+      internalID: 127032298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_62
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 432
+        width: 69
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7669a0606d4267143b893a70fb86d224
+      internalID: -1517750579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_63
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 432
+        width: 68
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5283c06b4b1602f409d558e6f05faf97
+      internalID: 1075761986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_64
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 432
+        width: 80
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03aa8c919346b7f489dbc8d0c9b971ff
+      internalID: 1674984405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_65
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 432
+        width: 81
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fcff6b1091256489738f5086979e73
+      internalID: 870879447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_66
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 432
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3069054f6d800eb42ae36e3484f746f6
+      internalID: 1333749467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_67
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 352
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc04516147be83d498cc0ad56871db9c
+      internalID: 84760440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_68
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a43be76df693814da8fc0d6b3f7612a
+      internalID: 1014239804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_69
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 352
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05720315372c39d4092328a2cf4b8fd4
+      internalID: 1696796503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_70
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 352
+        width: 87
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3314834af76182e4e960759d1c578c9b
+      internalID: -1938761441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_71
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 288
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613008a7a2480944089ca28634598383
+      internalID: -579702121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_72
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 288
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ea60b946aff374d9f90135b9630095
+      internalID: 143040941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_73
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 288
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe2f32ee03a23341b9a732302769182
+      internalID: 903531624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_74
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 288
+        width: 47
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d68056746780d4ca748d2321591dc2
+      internalID: 511515043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_75
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 224
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac7d2c54708c0c4c82127dba4333ca2
+      internalID: -803782763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_76
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 224
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcbaec113a15d5e479ec587d213b811d
+      internalID: -441632295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_77
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 224
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a21d7bc45fc7f04694bf5651f311f58
+      internalID: 507563395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_78
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 224
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353a0c43c303d794dbb895caeca6645c
+      internalID: 223332420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_79
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 224
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141a8de813bbf504ba2b0ebaee64bd47
+      internalID: 19019605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_80
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 224
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8925b8d7efbd10d4a93d32b488579fc6
+      internalID: 231958924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_81
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224
+        width: 44
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7adb1473981404bbbd089d00bd285e
+      internalID: 1448955619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_82
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 224
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619b5cd6a833a75458d4d206989895c6
+      internalID: 511474692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_83
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 224
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7f55af296d86943a5de2797fdc16a4
+      internalID: -1454598414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_84
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760c139357be68a48a45e1da4610d774
+      internalID: 1099473442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_85
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 160
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600c97f1ebb3c524282766e7e1c0471d
+      internalID: -964330476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_86
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 160
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9416ba41dfbd8764b93f6ca7de4b18db
+      internalID: -1580991110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_87
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da38764b0f09ce54e8b9d5e6dd7be3f5
+      internalID: -1820345294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_88
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7578ef7b6e98642a51448186ec03f6
+      internalID: 234783197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_89
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 96
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc5f07882ef4d6429813369520a71f5
+      internalID: 763350603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_90
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 96
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c890edd4dd2128640b070eac65d7a017
+      internalID: 839417359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_91
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 96
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27330db265d988e4596b742363edfea8
+      internalID: -1204997485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_92
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 96
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c056615e7d2153f488faec709c5ffb19
+      internalID: 495689554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_93
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 96
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4807f2984e08e474ca28a250ddf59341
+      internalID: -70043055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_94
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 96
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc1e87e56b142c45b34fb6d93d6af5e
+      internalID: 692666724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_95
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec056a37c22aa84693d2485840eef21
+      internalID: 800073027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_96
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 32
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604ade5d16d902d459531274aafebc0c
+      internalID: 22585428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_97
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 32
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58ddc4e054b72f418da0c2ec7f033dd
+      internalID: 662528879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_98
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 32
+        width: 53
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76beb6c092c475349aa27aaa4d7b6e68
+      internalID: -978912333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_99
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 32
+        width: 63
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eec948cde9ad774aa391dbb817fc22c
+      internalID: -1874753857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_100
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 32
+        width: 66
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c543c75c3a823804e8a220f0b2a888df
+      internalID: -760369470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_101
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 32
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7cf07bf48595374e9d0f0897eb910d9
+      internalID: 1735721945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_102
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 32
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436218510a6d2b847aefe908e1bef21b
+      internalID: 2055846121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Allen Jr_103
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 32
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5324da22469944aaaa71ae71f22b57
+      internalID: 676670339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Allen Jr_18: -348670755
+      Allen Jr_99: -1874753857
+      Allen Jr_37: -732212146
+      Allen Jr_34: -407350341
+      Allen Jr_87: -1820345294
+      Allen Jr_12: -545426446
+      Allen Jr_15: 103024793
+      Allen Jr_91: -1204997485
+      Allen Jr_5: -452505695
+      Allen Jr_48: -342326500
+      Allen Jr_0: -1298937063
+      Allen Jr_92: 495689554
+      Allen Jr_30: -1956561732
+      Allen Jr_60: 508965253
+      Allen Jr_3: 1658711618
+      Allen Jr_70: -1938761441
+      Allen Jr_33: 2116190616
+      Allen Jr_21: -1453847439
+      Allen Jr_36: -1428866557
+      Allen Jr_56: 1926012924
+      Allen Jr_9: 1135243287
+      Allen Jr_19: 67588443
+      Allen Jr_80: 231958924
+      Allen Jr_20: 1066993305
+      Allen Jr_41: 972035682
+      Allen Jr_27: -110248621
+      Allen Jr_82: 511474692
+      Allen Jr_17: 233558435
+      Allen Jr_16: -366934888
+      Allen Jr_24: -1679685450
+      Allen Jr_43: -1960726299
+      Allen Jr_95: 800073027
+      Allen Jr_58: -129992088
+      Allen Jr_98: -978912333
+      Allen Jr_25: 1954665909
+      Allen Jr_65: 870879447
+      Allen Jr_26: -514530337
+      Allen Jr_62: -1517750579
+      Allen Jr_88: 234783197
+      Allen Jr_6: 67225452
+      Allen Jr_35: -1196119379
+      Allen Jr_7: 206630722
+      Allen Jr_47: 181558432
+      Allen Jr_40: 843059459
+      Allen Jr_14: -1003674904
+      Allen Jr_76: -441632295
+      Allen Jr_66: 1333749467
+      Allen Jr_55: -1339244485
+      Allen Jr_75: -803782763
+      Allen Jr_42: 652030609
+      Allen Jr_57: -1009541920
+      Allen Jr_63: 1075761986
+      Allen Jr_89: 763350603
+      Allen Jr_13: -1488953280
+      Allen Jr_94: 692666724
+      Allen Jr_46: 131277491
+      Allen Jr_8: -2033559450
+      Allen Jr_103: 676670339
+      Allen Jr_51: 767433435
+      Allen Jr_68: 1014239804
+      Allen Jr_85: -964330476
+      Allen Jr_45: 2046712842
+      Allen Jr_23: 1323445643
+      Allen Jr_4: -1436008261
+      Allen Jr_50: -1638621948
+      Allen Jr_1: 1564885765
+      Allen Jr_11: 1385579365
+      Allen Jr_64: 1674984405
+      Allen Jr_29: 1827647646
+      Allen Jr_44: -1412739646
+      Allen Jr_101: 1735721945
+      Allen Jr_38: 1819488792
+      Allen Jr_53: -354909471
+      Allen Jr_54: -1394718442
+      Allen Jr_2: 1097511521
+      Allen Jr_69: 1696796503
+      Allen Jr_93: -70043055
+      Allen Jr_83: -1454598414
+      Allen Jr_31: -156808915
+      Allen Jr_97: 662528879
+      Allen Jr_61: 127032298
+      Allen Jr_22: 1071315768
+      Allen Jr_72: 143040941
+      Allen Jr_28: 1889184254
+      Allen Jr_90: 839417359
+      Allen Jr_10: -564470896
+      Allen Jr_84: 1099473442
+      Allen Jr_73: 903531624
+      Allen Jr_86: -1580991110
+      Allen Jr_100: -760369470
+      Allen Jr_81: 1448955619
+      Allen Jr_79: 19019605
+      Allen Jr_74: 511515043
+      Allen Jr_67: 84760440
+      Allen Jr_39: 1192364582
+      Allen Jr_32: -339302242
+      Allen Jr_52: 1215637944
+      Allen Jr_96: 22585428
+      Allen Jr_78: 223332420
+      Allen Jr_77: 507563395
+      Allen Jr_71: -579702121
+      Allen Jr_102: 2055846121
+      Allen Jr_59: 1653854394
+      Allen Jr_49: -77405408
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

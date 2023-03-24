@@ -21,6 +21,9 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] private BulletData bulletData;
     [SerializeField] private Transform bulletsTransform;
+
+    [SerializeField] private AudioClip bulletHit;
+    [SerializeField] private AudioClip closeHit;
     public BulletData BulletData { get { return bulletData; } }
 
 
@@ -30,7 +33,7 @@ public class Shooting : MonoBehaviour
 
     private float shootingDirection;
 
-    private Queue<GameObject> bullets = new Queue<GameObject>();
+    //private Queue<GameObject> bullets = new Queue<GameObject>();
 
 
     private void Start()
@@ -66,13 +69,13 @@ public class Shooting : MonoBehaviour
                 {
                     Debug.Log("instated");
                     GameObject bullet = Instantiate(currentWeapon.GetBullet().GetBulletPrefab(), bulletsTransform);
-                    bullets.Enqueue(bullet);
+                    //bullets.Enqueue(bullet);
                     magazine.Add(bullet);
                 }
                 else
                 {
 
-                    bullets.Enqueue(bulletsTransform.GetChild(bulletsTransform.childCount - 1).gameObject);
+                    //bullets.Enqueue(bulletsTransform.GetChild(bulletsTransform.childCount - 1).gameObject);
                     magazine.Add(bulletsTransform.GetChild(bulletsTransform.childCount - 1).gameObject);
 
                 }
@@ -197,13 +200,16 @@ public class Shooting : MonoBehaviour
 
             if (hittedEnemy != null)
             {
+                //GetComponent<AudioSource>().volume = 0.1f;
+                //GetComponent<AudioSource>().PlayOneShot(bulletHit);
                 EnemyStateManager enemyStateManager = hittedEnemy.transform.GetComponent<EnemyStateManager>();
                 enemyStateManager.GetAmountofDamage(currentWeapon.GetWeaponDamage());
                 enemyStateManager.SwitchState(enemyStateManager.TakeDamageState);
             }
 
 
-            GameObject bullet = bullets.Dequeue();
+            //GameObject bullet = bullets.Dequeue();
+            GameObject bullet = GetCurrentMagazine()[^1];
             LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
             if (lineRenderer == null) Debug.LogError("LineRenderer is null");
             lineRenderer.enabled = true;
@@ -213,7 +219,7 @@ public class Shooting : MonoBehaviour
             yield return new WaitForSeconds(lnOnFor);
             lineRenderer.startWidth = 0f;
             lineRenderer.endWidth = 0f;
-            bullets.Enqueue(bullet);
+            //bullets.Enqueue(bullet);
         }
         else
         {
@@ -228,6 +234,9 @@ public class Shooting : MonoBehaviour
                     {
                         if (hit.transform.CompareTag("Enemy"))
                         {
+                            //GetComponent<AudioSource>().volume = 0.1f;
+                            //GetComponent<AudioSource>().PlayOneShot(bulletHit);
+
                             hit.transform.GetComponent<EnemyStateManager>().GetAmountofDamage(currentWeapon.GetWeaponDamage());
                             hit.transform.GetComponent<EnemyStateManager>().SwitchState(hit.transform.GetComponent<EnemyStateManager>().TakeDamageState);
 
@@ -236,7 +245,8 @@ public class Shooting : MonoBehaviour
 
                     }
                     Debug.Log("ssa");
-                    GameObject bullet = bullets.Dequeue();
+                    GameObject bullet = GetCurrentMagazine()[^1];
+
                     LineRenderer lineRenderer = bullet.GetComponent<LineRenderer>();
                     lineRenderer.SetPosition(0, firePoint.position);
                     lineRenderer.SetPosition(1, firePoint.position + Quaternion.Euler(0f, 0f, angle) * transform.right * shootingDirection);
@@ -250,7 +260,6 @@ public class Shooting : MonoBehaviour
                     yield return new WaitForSeconds(lnOnFor);
                     lineRenderer.startWidth = 0f;
                     lineRenderer.endWidth = 0f;
-                    bullets.Enqueue(bullet);
 
                 }
             }
@@ -304,6 +313,9 @@ public class Shooting : MonoBehaviour
 
         if (hittedEnemy != null)
         {
+            //GetComponent<AudioSource>().volume = 0.1f;
+            //GetComponent<AudioSource>().PlayOneShot(closeHit);
+
             EnemyStateManager enemyStateManager = hittedEnemy.transform.GetComponent<EnemyStateManager>();
             enemyStateManager.GetAmountofDamage(currentWeapon.GetWeaponDamage());
             enemyStateManager.SwitchState(enemyStateManager.TakeDamageState);
