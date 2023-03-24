@@ -14,7 +14,9 @@ public class PlayerHealth:MonoBehaviour
         playerHealthPoints = Mathf.Max(playerHealthPoints - damage, 0);
         if (playerHealthPoints == 0)
         {
-            PlayerDie();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetBool("PlayerDead", true);
+
+            StartCoroutine(PlayerDie());
         }
     }
 
@@ -23,11 +25,14 @@ public class PlayerHealth:MonoBehaviour
         return playerHealthPoints;
     }
 
-    public void PlayerDie()
+    public IEnumerator PlayerDie()
     {
+
         isPlayerDead = true;
+
         Debug.Log("player dead");
         GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("SampleScene");
     }
 

@@ -6,6 +6,7 @@ public class EnemyDeathState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+
         enemy.GetComponent<AudioSource>().Stop();
         enemy.isDead = true;
         enemy.StartCoroutine(EnemyDie(enemy));

@@ -29,18 +29,23 @@ public class WeaponSelectSystem : MonoBehaviour
 
     public void PickUpKnife()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("SelectKnife");
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[0]);
 
     }
     public void PickUpBat()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("SelectBat");
+
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[1]);
 
     }
     public void PickUpPistol()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("SelectGun");
+
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[2]);
         FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().BulletData.PistolBulletAmount);
@@ -50,6 +55,8 @@ public class WeaponSelectSystem : MonoBehaviour
     }
     public void PickUpShotgun()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("SelectGun");
+
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[3]);
         FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().BulletData.ShotgunBulletAmount);
@@ -58,6 +65,8 @@ public class WeaponSelectSystem : MonoBehaviour
     }
     public void PickUpRifle()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("SelectGun");
+
         FindObjectOfType<Shooting>().ResetCurrentMagazine();
         FindObjectOfType<Shooting>().EquipWeapon(weapons[4]);
         FindObjectOfType<Shooting>().LoadMagazine(FindObjectOfType<Shooting>().GetCurrentMagazine(), FindObjectOfType<Shooting>().BulletData.RifleBulletAmount);

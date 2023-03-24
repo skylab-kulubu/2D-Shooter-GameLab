@@ -307,6 +307,15 @@ public class Shooting : MonoBehaviour
         ShakeCamera(currentWeapon.GetShakeIntensity(), .1f);
         shootingVector = transform.right;
         sinceLastShoot = 0;
+        if(currentWeapon.name == "Knife")
+        {
+            GetComponent<Animator>().SetTrigger("AttackKnife");
+        }
+        else if (currentWeapon.name == "Bat")
+        {
+            GetComponent<Animator>().SetTrigger("AttackBat");
+
+        }
 
         RaycastHit2D[] hits = Physics2D.RaycastAll(firePoint.position, shootingVector, shootingDirection);
         GameObject hittedEnemy = hits.Where(hit => hit.collider.CompareTag("Enemy")).Select(hit => hit.collider.gameObject).FirstOrDefault();
