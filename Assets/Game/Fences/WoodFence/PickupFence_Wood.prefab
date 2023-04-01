@@ -8,16 +8,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7784769157830427566, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ecae2ee73815c7946a2d4ee6d7d54093, type: 3}
+    - target: {fileID: -7784769157830427566, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: m_Color.b
-      value: 0.39607847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7784769157830427566, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: m_Color.g
-      value: 0.5019608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7784769157830427566, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: m_Color.r
-      value: 0.6901961
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7273578547981013859, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: fenceMaterial
@@ -26,6 +30,14 @@ PrefabInstance:
     - target: {fileID: -7273578547981013859, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: fenceMaterialNumber
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4486412927473362481, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: -4486412927473362481, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 1810781056822829333, guid: f03c7c5ca427a2b4399b75da7e0cd9f6, type: 3}
       propertyPath: m_Name
